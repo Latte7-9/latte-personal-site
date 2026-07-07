@@ -1,8 +1,10 @@
-﻿const nextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: "export",
   basePath: "/latte-site",
   images: {
     unoptimized: true,
   },
 };
-module.exports = nextConfig;
+
+export default nextConfig;
