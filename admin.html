@@ -1,1 +1,223 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Latte 管理后台</title><link rel="stylesheet" href="css/admin.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></head><body><div class="admin-container" id="appRoot"><div class="login-panel" id="loginPanel"><h1>☕ Latte 管理后台</h1><p class="subtitle">通过 GitHub API 管理网站内容</p><div class="form-group"><label>仓库</label><input type="text" id="repoInput" placeholder="Owner/Repo（如 Latte7-9/latte-site）"></div><div class="form-group"><label>GitHub Token</label><input type="password" id="tokenInput" placeholder="ghp_..."></div><button class="btn btn-primary btn-block" id="loginBtn">连接</button><div id="loginMsg" style="margin-top:1rem;text-align:center;font-size:0.78rem"></div><p style="text-align:center;margin-top:0.8rem;font-size:0.78rem;"><a href="https://latte7-9.github.io/latte-site/" target="_blank" rel="noopener" style="color:var(--latte-dark);text-decoration:none;">➜ 打开我的网站</a></p></div><div id="mainPanel" style="display:none"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem"><h1 style="font-size:1.3rem;font-weight:600">☕ Latte 管理后台</h1><div style="display:flex;gap:0.8rem;align-items:center;"><a href="https://latte7-9.github.io/latte-site/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">🌐 打开网站</a><span class="status-badge status-info" id="connStatus">已连接</span></div></div><div class="tab-bar" id="tabBar"><button class="tab-btn active" data-tab="site">🏠 站点</button><button class="tab-btn" data-tab="blog">📝 博客</button><button class="tab-btn" data-tab="guestbook">🦆 留言板</button><button class="tab-btn" data-tab="photo">📷 摄影</button><button class="tab-btn" data-tab="books">📖 书籍</button><button class="tab-btn" data-tab="hiking">⛰️ 登山</button><button class="tab-btn" data-tab="hobbies">✨ 爱好</button><button class="tab-btn" data-tab="images">🖼️ 图片</button><button class="tab-btn" data-tab="music">🎵 音乐</button></div><div class="tab-content active" id="tab-site"><div class="content-card"><h2>🏠 站点信息</h2><div class="form-group"><label>网站名称</label><input type="text" id="siteName"></div><div class="form-group"><label>标语</label><input type="text" id="siteTagline"></div><div class="form-group"><label>关于（支持 &lt;br&gt; 换行）</label><textarea id="siteAbout" rows="3"></textarea></div><div class="form-group"><label>邮箱</label><input type="text" id="siteEmail"></div><div class="action-bar"><span class="status-badge status-info" id="siteMsg" style="margin-right:auto"></span><button class="btn btn-primary" onclick="Admin.saveSite()">保存</button></div></div></div><div class="tab-content" id="tab-blog"><div class="content-card"><h2>📝 博客文章</h2><div id="blogList"></div><button class="btn btn-ghost btn-block" onclick="Admin.newBlogPost()" style="margin-top:0.8rem">+ 新建文章</button><div id="blogMsg" style="margin-top:0.5rem;font-size:0.75rem"></div></div></div><div class="tab-content" id="tab-guestbook"><div class="content-card"><h2>🦆 留言池</h2><div id="gbList"></div><div class="action-bar"><button class="btn btn-ghost" onclick="Admin.syncLocalGuestbook()">📥 同步本地留言</button><button class="btn btn-primary" onclick="Admin.saveGuestbook()">保存更改</button></div><div id="gbMsg" style="margin-top:0.5rem;font-size:0.75rem"></div></div></div><div class="tab-content" id="tab-photo"><div class="content-card"><h2>📷 摄影图集</h2><div id="photoList"></div><button class="btn btn-ghost btn-block" onclick="Admin.newAlbum()" style="margin-top:0.8rem">+ 新建图集</button><div class="action-bar"><span class="status-badge status-info" id="photoMsg" style="margin-right:auto"></span><button class="btn btn-primary" onclick="Admin.savePhoto()">保存</button></div></div></div><div class="tab-content" id="tab-books"><div class="content-card"><h2>📖 书籍管理</h2><div id="booksList"></div><div class="action-bar"><span class="status-badge status-info" id="booksMsg" style="margin-right:auto"></span><button class="btn btn-primary" onclick="Admin.saveBooks()">保存</button></div></div></div><div class="tab-content" id="tab-hiking"><div class="content-card"><h2>⛰️ 登山</h2><div id="hikingList"></div><div class="action-bar"><span class="status-badge status-info" id="hikingMsg" style="margin-right:auto"></span><button class="btn btn-primary" onclick="Admin.saveHiking()">保存</button></div></div></div><div class="tab-content" id="tab-hobbies"><div class="content-card"><h2>✨ 三分钟热度</h2><div id="hobbiesList"></div><button class="btn btn-ghost btn-block" onclick="Admin.newHobby()" style="margin-top:0.8rem">+ 添加爱好</button><div class="action-bar"><span class="status-badge status-info" id="hobbiesMsg" style="margin-right:auto"></span><button class="btn btn-primary" onclick="Admin.saveHobbies()">保存</button></div></div></div><div class="tab-content" id="tab-images"><div class="content-card"><h2>🖼️ 图片管理</h2><div class="form-group"><label>上传新图片</label><div style="display:flex;gap:0.5rem"><input type="file" id="imgFileInput" accept="image/*" style="display:none"><button class="btn btn-primary" onclick="document.getElementById('imgFileInput').click()">选择图片</button><span id="imgFileName" style="font-size:0.8rem;color:var(--ink-muted);align-self:center"></span></div></div><div id="imgMsg" style="font-size:0.75rem;margin-top:0.5rem"></div><div style="margin-top:1rem"><h3 style="font-size:0.85rem;color:var(--ink-secondary);margin-bottom:0.5rem">已上传图片</h3><div id="imgGrid" class="img-grid"></div></div></div></div><div class="tab-content" id="tab-music"><div class="content-card"><h2>🎵 网易云音乐同步</h2><p style="font-size:0.82rem;color:var(--ink-secondary);margin-bottom:1rem">手动触发服务器刷新听歌缓存（缓存有效期 30 分钟）</p><div id="musicStatus" style="font-size:0.82rem;margin-bottom:1rem"></div><button class="btn btn-primary" id="musicSyncBtn" onclick="Admin.syncMusic()">🔄 立即同步</button><div id="musicMsg" style="margin-top:0.8rem;font-size:0.75rem"></div></div></div></div><div id="richToolbar" class="rich-toolbar" style="display:none;position:fixed;z-index:100"><button data-tag="b"><strong>B</strong></button><button data-tag="i"><em>I</em></button><button data-tag="h3">H3</button><button data-tag="blockquote">"</button><button data-tag="a">🔗</button><button data-tag="br">↩</button><button data-tag="mark"><mark>M</mark></button></div></div><script src="js/admin.js"></script><script>var s=document.getElementById("jsStatus");if(s){s.textContent="✓ JS 已加载";s.style.color="#00a86b";}</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latte 内容管理后台</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="login-panel" id="loginPanel">
+      <p class="eyebrow">LATTE CMS</p>
+      <h1>内容管理后台</h1>
+      <p class="subtitle">通过 GitHub API 管理个人网站内容</p>
+
+      <div class="form-group">
+        <label for="repoInput">仓库</label>
+        <input type="text" id="repoInput" value="Latte7-9/latte-site" placeholder="Owner/Repo">
+      </div>
+      <div class="form-group">
+        <label for="tokenInput">GitHub Token</label>
+        <input type="password" id="tokenInput" placeholder="ghp_...">
+      </div>
+      <button class="btn btn-primary btn-block" id="loginBtn" type="button">连接后台</button>
+      <div class="status-line" id="loginMsg"></div>
+      <a class="site-link" href="https://latte7-9.github.io/latte-site/" target="_blank" rel="noopener">打开前台网站</a>
+    </section>
+
+    <section class="workspace" id="mainPanel" hidden>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">LATTE CMS</p>
+          <h1>内容管理后台</h1>
+        </div>
+        <div class="topbar-actions">
+          <span class="status-badge status-ok" id="connStatus">已连接</span>
+          <a class="btn btn-ghost btn-sm" href="https://latte7-9.github.io/latte-site/" target="_blank" rel="noopener">打开网站</a>
+        </div>
+      </header>
+
+      <nav class="tab-bar" id="tabBar" aria-label="后台板块">
+        <button class="tab-btn active" type="button" data-tab="site">站点</button>
+        <button class="tab-btn" type="button" data-tab="interests">兴趣</button>
+        <button class="tab-btn" type="button" data-tab="blog">博客</button>
+        <button class="tab-btn" type="button" data-tab="guestbook">留言池</button>
+        <button class="tab-btn" type="button" data-tab="photo">摄影</button>
+        <button class="tab-btn" type="button" data-tab="books">书单</button>
+        <button class="tab-btn" type="button" data-tab="hiking">徒步</button>
+        <button class="tab-btn" type="button" data-tab="images">图片</button>
+        <button class="tab-btn" type="button" data-tab="music">音乐</button>
+      </nav>
+
+      <section class="tab-content active" id="tab-site">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>站点信息</h2>
+              <p>编辑首页基础资料与联系方式。</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-action="save-site">保存站点</button>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="siteName">网站名称</label>
+              <input type="text" id="siteName">
+            </div>
+            <div class="form-group">
+              <label for="siteEmail">邮箱</label>
+              <input type="text" id="siteEmail">
+            </div>
+            <div class="form-group wide">
+              <label for="siteTagline">标语</label>
+              <input type="text" id="siteTagline">
+            </div>
+            <div class="form-group wide">
+              <label for="siteAbout">关于我（支持 HTML）</label>
+              <textarea id="siteAbout" rows="4" data-rich></textarea>
+            </div>
+          </div>
+          <div class="status-line" id="siteMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-interests">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>兴趣列表</h2>
+              <p>管理首页兴趣入口的名称、图标、描述和链接。</p>
+            </div>
+            <div class="button-row">
+              <button class="btn btn-ghost" type="button" data-action="new-interest">新增兴趣</button>
+              <button class="btn btn-primary" type="button" data-action="save-interests">保存兴趣</button>
+            </div>
+          </div>
+          <div id="interestList"></div>
+          <div class="status-line" id="interestMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-blog">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>博客管理</h2>
+              <p>新增、编辑、删除文章，保存后同步文章索引和 HTML 页面。</p>
+            </div>
+            <button class="btn btn-ghost" type="button" data-action="new-blog">新建文章</button>
+          </div>
+          <div id="blogList"></div>
+          <div class="status-line" id="blogMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-guestbook">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>留言池</h2>
+              <p>查看和删除留言，保存后同步到线上留言数据。</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-action="save-comments">保存留言</button>
+          </div>
+          <div id="commentList"></div>
+          <div class="status-line" id="commentMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-photo">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>摄影图集</h2>
+              <p>管理图集信息、封面和图集内图片。</p>
+            </div>
+            <div class="button-row">
+              <button class="btn btn-ghost" type="button" data-action="new-album">新增图集</button>
+              <button class="btn btn-primary" type="button" data-action="save-photo">保存摄影</button>
+            </div>
+          </div>
+          <div id="photoList"></div>
+          <div class="status-line" id="photoMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-books">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>书单管理</h2>
+              <p>管理已读、在读、想读，支持封面、书评和摘抄。</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-action="save-books">保存书单</button>
+          </div>
+          <div id="booksList"></div>
+          <div class="status-line" id="booksMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-hiking">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>徒步记录</h2>
+              <p>保留现有徒步板块管理能力。</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-action="save-hiking">保存徒步</button>
+          </div>
+          <div id="hikingList"></div>
+          <div class="status-line" id="hikingMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-images">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>图片管理</h2>
+              <p>上传图片到 images 目录，并可一键填入封面或图集字段。</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-action="pick-image">上传图片</button>
+          </div>
+          <div class="form-group">
+            <label for="imageTarget">上传后填入</label>
+            <select id="imageTarget"></select>
+          </div>
+          <input type="file" id="imgFileInput" accept="image/*" hidden>
+          <div class="status-line" id="imgMsg"></div>
+          <div id="imgGrid" class="img-grid"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-music">
+        <div class="content-card">
+          <div class="card-head">
+            <div>
+              <h2>音乐同步</h2>
+              <p>刷新 Railway 上的网易云听歌缓存。</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-action="sync-music">立即同步</button>
+          </div>
+          <div id="musicStatus" class="plain-text"></div>
+          <div class="status-line" id="musicMsg"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="richToolbar" class="rich-toolbar" hidden>
+    <button type="button" data-tag="strong">B</button>
+    <button type="button" data-tag="em">I</button>
+    <button type="button" data-tag="h3">H3</button>
+    <button type="button" data-tag="blockquote">引用</button>
+    <button type="button" data-tag="a">链接</button>
+    <button type="button" data-tag="br">换行</button>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

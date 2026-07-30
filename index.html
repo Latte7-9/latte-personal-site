@@ -1,193 +1,205 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Latte</title>
-
-<link rel="stylesheet" href="css/tokens.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/intro.css">
-<link rel="stylesheet" href="css/nav.css">
-<link rel="stylesheet" href="css/about.css">
-<link rel="stylesheet" href="css/blog.css?v=2">
-<link rel="stylesheet" href="css/interests-books.css">
-<link rel="stylesheet" href="css/music.css">
-<link rel="stylesheet" href="css/guestbook.css">
-<link rel="stylesheet" href="css/contact-footer.css">
-<link rel="stylesheet" href="css/vinyl.css">
-<link rel="stylesheet" href="css/text-effects.css">
-<link rel="stylesheet" href="css/responsive.css">
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latte 的个人小宇宙：博客、兴趣、音乐、书单和留言池。">
+  <title>Latte | 私人小宇宙</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/latte-planet.css?v=20260711-ripple-settle">
+  <link rel="stylesheet" href="css/answer-book.css">
+  <link rel="stylesheet" href="css/tarot-widget.css?v=20260708-latte-tarot-panel">
+  <script src="js/gsap.min.js" defer></script>
+  <script src="js/ScrollTrigger.min.js" defer></script>
+  <script src="js/latte-planet.js?v=20260711-ripple-settle" defer></script>
+  <script src="js/answer-book.js" defer></script>
+  <script src="js/tarot-widget.js?v=20260708-latte-tarot-panel" defer></script>
+  <script src="js/cursor.js?v=20260707-blue-mobile-nav" defer></script>
 </head>
 <body>
+  <div id="reading-progress" aria-hidden="true"></div>
 
-<div id="reading-progress"></div>
-
-<!-- ====== 入场层 ====== -->
-<div id="intro-layer">
-  <div class="intro-bg"></div>
-  <div class="intro-blob" id="introBlob"></div>
-  <div class="intro-particles" id="introParticles"></div>
-  <div class="intro-content">
-    <h1 class="intro-title" id="introTitle">Latte</h1>
-    <p class="intro-subtitle" id="introSubtitle">记录 · 分享 · 三分钟热度</p>
-    <div class="intro-hint" id="introHint">
-      <span class="intro-hint-text">进入</span>
-      <div class="intro-hint-arrow"></div>
-    </div>
+  <div class="motion-loader" id="motionLoader" aria-hidden="true">
+    <i class="loader-glow"></i>
+    <i class="loader-ripple loader-ripple-one"></i>
+    <i class="loader-ripple loader-ripple-two"></i>
   </div>
-</div>
 
-<!-- ====== 主页内容 ====== -->
-<div id="main-content">
-  <canvas class="grid-background" id="gridCanvas"></canvas>
+  <header class="planet-nav" data-motion="float">
+    <a class="planet-brand" href="#top" aria-label="Latte 首页">Latte</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="planet-links" id="planetLinks" aria-label="主导航">
+      <a href="#top" class="is-active">首页</a>
+      <a href="blog/">博客</a>
+      <a href="#message">留言池</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
 
-  <nav class="site-nav" id="siteNav">
-    <div class="nav-glass">
-      <a class="nav-brand" href="index.html">Latte</a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link active">首页</a>
-        <a href="blog/" class="nav-link">博客</a>
+  <main id="top" class="planet-page">
+    <section class="planet-hero" aria-labelledby="heroTitle">
+      <div class="cosmic-field" aria-hidden="true">
+        <span class="star star-a"></span>
+        <span class="star star-b"></span>
+        <span class="star star-c"></span>
+        <span class="star star-d"></span>
       </div>
-    </div>
-  </nav>
 
-  <section class="about section-container fade-up">
-    <div class="about-layout">
-      <div class="about-avatar">
-        <span class="avatar-emoji">🦁</span>
+      <div class="hero-copy" data-motion="lift">
+        <p class="motion-label">LATTE PLANET</p>
+        <h1 id="heroTitle">你好，我是LATTE</h1>
+        <p class="hero-lead">泪流满面算不算是一种生理盐水湿敷全脸</p>
       </div>
-      <div class="about-text">
-        <h2 class="about-name">Latte</h2>
-        <p class="about-meta" id="aboutMeta">狮子座 / ENTP / 兴趣广泛</p>
-        <p class="about-tagline" id="aboutTagline">三分钟热度，但足够热心</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="blog-preview section-container fade-up">
-    <div class="blog-header">
-      <span class="section-label text-shimmer">📦 博客</span>
-      <a class="btn-ghost" href="blog/">查看全部 →</a>
-    </div>
-    <div class="blog-scroll" id="homeBlogList"></div>
-  </section>
-
-  <section class="interests-books section-container fade-up">
-    <div class="dual-grid">
-      <div class="dual-col gradient-border-card tilt-card">
-        <span class="section-label" style="color:#ffb800">🎯 兴趣</span>
-        <div class="interest-tags" id="interestTags"></div>
+      <div class="planet-stage" data-motion="planet">
+        <div class="orbit orbit-wide"></div>
+        <div class="orbit orbit-tight"></div>
+        <article class="status-planet magnetic-card" aria-label="Latte 当前状态">
+          <p>STATUS</p>
+          <h2>Latte</h2>
+          <span>三分钟热度，但每一分钟都发光</span>
+          <div class="status-now">
+            <i></i>
+            <b>正在折腾个人网站首页</b>
+          </div>
+        </article>
       </div>
-      <div class="dual-col gradient-border-card tilt-card">
-        <span class="section-label" style="color:#00d4aa">📖 正在翻阅</span>
-        <div class="book-mini-list" id="bookMiniList"></div>
-      </div>
-    </div>
-  </section>
 
-  <section class="music-section fade-up">
-    <div class="music-card tilt-card">
-      <div class="music-label">🎍 耳机是精神输液管</div>
-      <div class="music-top5" id="musicTop5Static">
-        <div class="music-song-item" style="pointer-events:none">
-          <span class="music-song-cover no-cover"></span>
-          <span class="music-song-rank">—</span>
-          <span class="music-song-name" style="color:#666">正在连接网易云...</span>
+      <a class="floating-note note-blog magnetic-card loader-item" href="blog/" data-depth="0.6" aria-label="打开最新博客">
+        <p>BLOG NOTE</p>
+        <h2>最新博客</h2>
+        <span>最近写下的念头像贴在宇宙舱门上的纸条。</span>
+        <small class="note-meta">刚写下的新念头</small>
+        <i class="blog-line" aria-hidden="true"></i>
+      </a>
+
+      <article class="floating-note note-zodiac magnetic-card loader-item" data-depth="0.72" aria-label="个人信息：狮子座">
+        <i class="profile-note-mark" aria-hidden="true">🦁</i>
+        <p>STAR SIGN</p>
+        <h2>狮子座</h2>
+        <span>热度稳定输出</span>
+      </article>
+
+      <article class="floating-note note-music magnetic-card loader-item" data-depth="1.1">
+        <div class="record-small" aria-hidden="true"><i></i></div>
+        <div>
+          <p>NOW PLAYING</p>
+          <h2>黑胶卫星</h2>
+          <span>加入一些音乐</span>
+          <small class="note-meta">夜间播放中</small>
         </div>
+      </article>
+
+      <article class="floating-note note-mbti magnetic-card loader-item" data-depth="0.95" aria-label="个人信息：ENTP">
+        <i class="profile-note-mark profile-note-face" aria-hidden="true">¬‿¬</i>
+        <p>MBTI MODE</p>
+        <h2>ENTP</h2>
+        <span>灵感先冲再说</span>
+      </article>
+
+      <article class="floating-note note-message magnetic-card loader-item" data-depth="0.85">
+        <p>MESSAGE POOL</p>
+        <h2>留言池</h2>
+        <span>请投入一只小黄鸭</span>
+        <button class="duck-button" id="duckButton" type="button">投入留言</button>
+        <div class="duck-shape" aria-hidden="true">
+          <span></span>
+        </div>
+      </article>
+    </section>
+
+    <section class="module-zone">
+      <div class="section-heading" data-motion="lift">
+        <p class="motion-label">SCANABLE MODULES</p>
       </div>
-      <button class="btn-music-random" id="musicRandomBtn" disabled>
-        <span class="music-random-icon">🎧</span><span>加载中...</span>
-      </button>
-    </div>
-  </section>
-
-  <section class="guestbook section-container fade-up" style="margin-top:4rem;">
-    <div class="duck-pool-wrapper">
-      <div class="pool-tagline">🦆 欢迎投入小黄鸭</div>
-      <div class="pool-duck-count">池中已有 <span id="duckCount">0</span> 只鸭子</div>
-      <div class="duck-pool" id="duckPool">
-        <div class="pool-underwater-light"></div>
-        <canvas class="pool-ripple-canvas" id="poolRippleCanvas"></canvas>
-        <div class="pool-ducks-layer" id="poolDucksLayer"></div>
-        <canvas class="pool-wave-canvas" id="poolWaveCanvas"></canvas>
+      <div class="module-grid">
+        <a class="module-card magnetic-card" href="blog/">
+          <span class="module-orb pink"></span>
+          <h3>博客</h3>
+          <p>记录近况、想法和网站更新。</p>
+        </a>
+        <a class="module-card magnetic-card" href="interests/">
+          <span class="module-orb cyan"></span>
+          <h3>兴趣</h3>
+          <p>摄影、徒步、折腾和三分钟热度。</p>
+        </a>
+        <button class="module-card magnetic-card module-button" id="moduleMusic" type="button">
+          <span class="record-ring" aria-hidden="true"></span>
+          <h3>音乐</h3>
+          <p>最近的精神输液管</p>
+        </button>
+        <a class="module-card magnetic-card" href="#contact">
+          <span class="module-arrow" aria-hidden="true"></span>
+          <h3>联系</h3>
+          <p>社交链接和邮箱。</p>
+        </a>
       </div>
-      <form class="gb-form" id="guestbookForm">
-        <input type="text" id="gbName" placeholder="你的名字" maxlength="30">
-        <input type="text" id="gbText" placeholder="说点什么吧..." required maxlength="500">
-        <button type="submit" class="btn-primary">🦆 丢鸭子</button>
-      </form>
-      <div id="gbMsg" style="text-align:center;margin-top:0.4rem;font-size:0.75rem;"></div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact section-container fade-up" style="margin-top:4rem;">
-    <span class="section-label" style="text-align:center;display:block;">📦 来找我玩——</span>
-    <div class="contact-icons" id="contactIcons"></div>
-  </section>
-
-  <footer>
-    <div class="footer-inner section-container">
-      <span>&copy; 2026 Latte · 由 Codex 搭建</span>
+    <div class="message-tarot-grid" id="message">
+      <section class="message-console" aria-labelledby="messageTitle">
+        <div class="section-heading">
+          <p class="motion-label">MESSAGE POOL</p>
+          <h2 id="messageTitle">留言池</h2>
+          <p class="pool-intro">欢迎投入小黄鸭</p>
+        </div>
+        <form class="message-form" id="messageForm">
+          <label>
+            <span>名字</span>
+            <input id="guestName" type="text" maxlength="20" placeholder="匿名访客">
+          </label>
+          <label>
+            <span>留言</span>
+            <input id="guestText" type="text" maxlength="80" placeholder="投入一只小黄鸭">
+          </label>
+          <button type="submit">丢进池子</button>
+        </form>
+        <div class="duck-pool-scene" aria-live="polite">
+          <div class="pool-water" id="duckPoolScene"></div>
+          <div class="pool-message" id="poolMessage">点一只小黄鸭读取留言</div>
+        </div>
+      </section>
+      <section class="latte-tarot-panel" id="latteTarot" aria-labelledby="latteTarotTitle">
+        <div class="latte-tarot-shell" data-tarot-root>
+          <div class="tarot-panel-head">
+            <p class="motion-label">LATTE TAROT</p>
+            <h2 id="latteTarotTitle">LATTE在线塔罗</h2>
+            <p>赛博占卜，童叟无欺；有则有之，无则加勉。</p>
+          </div>
+          <div class="tarot-loading">正在洗牌，稍等一下下。</div>
+        </div>
+      </section>
     </div>
+  </main>
+
+  <aside class="vinyl-dock" id="vinylDock" aria-label="黑胶播放器">
+    <button class="vinyl-disc" id="vinylDisc" type="button" aria-label="展开黑胶播放器">
+      <span></span>
+    </button>
+    <div class="vinyl-info">
+      <p>NOW PLAYING</p>
+      <strong>夜间漂浮电台</strong>
+      <span>点击唱片展开 / 收起</span>
+      <div class="wave-line" aria-hidden="true"></div>
+    </div>
+  </aside>
+
+  <footer class="planet-footer" id="contact">
+    <div>
+      <p class="motion-label">CONTACT</p>
+      <h2>来找我玩</h2>
+    </div>
+    <nav aria-label="联系链接">
+      <a href="mailto:hello@latte.local">Email</a>
+      <a href="https://github.com/Latte7-9" target="_blank" rel="noopener">GitHub</a>
+      <a href="blog/">Blog</a>
+    </nav>
+    <span>&copy; 2026 Latte · GitHub Pages Ready</span>
   </footer>
-
-  <div class="vinyl-player" id="vinylPlayer">
-    <div class="vinyl-ripple" id="vinylRipple"></div>
-    <div class="vinyl-record-neon" id="vinylRecord"></div>
-    <div class="vinyl-panel" id="vinylPanel">
-      <button class="vinyl-close" id="vinylClose">&times;</button>
-      <div class="vinyl-panel-inner">
-        <div class="vinyl-info">
-          <div class="vinyl-title" id="vinylTitle">加载中...</div>
-          <div class="vinyl-artist" id="vinylArtist"></div>
-        </div>
-        <div class="vinyl-iframe-wrap" id="vinylIframe"><iframe id="vinylFrame" src="" frameborder="0" width="100%" height="66" allow="autoplay" style="display:none"></iframe></div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<script>
-window.config = {
-  SIM_RESOLUTION: 128, DYE_RESOLUTION: 1024, CAPTURE_RESOLUTION: 512,
-  DENSITY_DISSIPATION: 1, VELOCITY_DISSIPATION: 0.2, PRESSURE: 0.8,
-  PRESSURE_ITERATIONS: 20, CURL: 30, SPLAT_RADIUS: 0.25, SPLAT_FORCE: 6000,
-  SHADING: true, COLORFUL: true, COLOR_UPDATE_SPEED: 10, PAUSED: false,
-  BACK_COLOR: { r: 10, g: 10, b: 10 }, TRANSPARENT: false,
-  BLOOM: true, BLOOM_ITERATIONS: 8, BLOOM_RESOLUTION: 256,
-  BLOOM_INTENSITY: 0.3, BLOOM_THRESHOLD: 0.8, BLOOM_SOFT_KNEE: 0.7,
-  SUNRAYS: true, SUNRAYS_RESOLUTION: 196, SUNRAYS_WEIGHT: 0.8,
-};
-</script>
-<script>
-var hiddenProperty = (function() {
-  var prefixes = ['webkit', 'moz', 'ms', 'o'];
-  if ('hidden' in document) return 'hidden';
-  for (var i = 0; i < prefixes.length; i++) {
-    if ((prefixes[i] + 'Hidden') in document) return prefixes[i] + 'Hidden';
-  }
-  return null;
-})();
-window.visibilityChangeEvent = (hiddenProperty || 'hidden').replace(/[Hh]idden/, 'visibilitychange');
-window.hiddenProperty = hiddenProperty;
-window.switchPage = { switched: false };
-</script>
-<script src="js/particles.js"></script>
-<script src="js/background.js"></script>
-<script src="js/grid-bg.js"></script>
-<script src="js/nav.js"></script>
-<script src="js/cursor.js"></script>
-<script src="js/interactions.js"></script>
-<script src="js/intro.js"></script>
-<script src="js/scroll-anim.js"></script>
-<script src="js/vinyl.js"></script>
-<script src="js/duck-pool.js"></script>
-<script src="js/main.js"></script>
-<script src="js/data-render.js"></script>
 </body>
 </html>

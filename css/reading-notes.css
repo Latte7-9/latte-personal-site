@@ -1,0 +1,183 @@
+.photo-album-card,
+.reading-book-card {
+  margin-bottom: 18px;
+  padding: 0;
+}
+
+.photo-album-head,
+.reading-book-head {
+  padding: 18px 20px;
+}
+
+.photo-album-head h3,
+.reading-book-head h3 {
+  margin: 0;
+  color: #f8f8ff;
+  font-size: 1.25rem;
+}
+
+.photo-album-head p,
+.reading-book-head p {
+  margin: 8px 0 0;
+  color: #8f98af;
+  line-height: 1.7;
+}
+
+.photo-thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 10px;
+  padding: 0 18px 18px;
+}
+
+.photo-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+
+.photo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.28s ease;
+}
+
+.photo-thumb:hover img {
+  transform: scale(1.05);
+}
+
+.album-lightbox-modern {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  padding: clamp(16px, 4vw, 34px);
+  background: rgba(2, 4, 10, 0.92);
+  backdrop-filter: blur(20px);
+}
+
+.album-lightbox-modern img {
+  max-width: min(1120px, 92vw);
+  max-height: 72vh;
+  align-self: center;
+  justify-self: center;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.42);
+}
+
+.album-lightbox-top,
+.album-lightbox-bottom {
+  width: min(1120px, 92vw);
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #c9d0e5;
+}
+
+.album-lightbox-modern button {
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  color: #f8f8ff;
+  min-height: 40px;
+  padding: 0 14px;
+}
+
+.album-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  padding: 0 !important;
+  transform: translateY(-50%);
+  font-size: 1.35rem;
+}
+
+.album-lightbox-prev {
+  left: clamp(14px, 3vw, 34px);
+}
+
+.album-lightbox-next {
+  right: clamp(14px, 3vw, 34px);
+}
+
+.reading-book-card {
+  cursor: pointer;
+}
+
+.reading-book-main {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.reading-book-main img {
+  width: 48px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.reading-status {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 8px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(0, 212, 170, 0.1);
+  color: #00d4aa;
+  font-size: 0.72rem;
+}
+
+.reading-notes-panel {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 0 20px 20px;
+}
+
+.reading-book-card.is-open .reading-notes-panel {
+  display: grid;
+}
+
+.reading-note-box {
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  background: rgba(5, 7, 14, 0.36);
+}
+
+.reading-note-box h4 {
+  margin: 0 0 10px;
+  color: #ffda7a;
+}
+
+.reading-note-box p,
+.reading-note-box li {
+  color: #c9d0e5;
+  line-height: 1.8;
+}
+
+.reading-quote-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 720px) {
+  .reading-notes-panel {
+    grid-template-columns: 1fr;
+  }
+}

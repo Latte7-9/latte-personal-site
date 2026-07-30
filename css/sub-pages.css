@@ -27,7 +27,7 @@ body { background: var(--bg-deep); color: var(--text-body); }
   color: var(--text-muted); line-height: 1.8;
 }
 
-/* 书籍/登山/摄影卡片 */
+/* 书籍/徒步/摄影卡片 */
 .interest-card, .book-item, .climb-item {
   background: var(--bg-card) !important;
   border: 1px solid var(--border-subtle) !important;

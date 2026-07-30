@@ -1,0 +1,1142 @@
+{
+  "spreads": {
+    "single": {
+      "name": "单张牌",
+      "description": "最快拿到今天的一句话，适合只想先摸一下心里天气的时候。",
+      "positions": [
+        "当前指引"
+      ]
+    },
+    "three": {
+      "name": "三牌阵",
+      "description": "看一件事的时间线：它从哪里来，现在卡在哪，可能往哪去。",
+      "positions": [
+        "过去",
+        "现在",
+        "未来"
+      ]
+    },
+    "diamond": {
+      "name": "钻石牌阵",
+      "description": "把问题拆开看核心、根源、阻力和潜力。",
+      "positions": [
+        "核心",
+        "根源",
+        "阻力",
+        "潜力",
+        "建议"
+      ]
+    },
+    "moon": {
+      "name": "月亮牌阵",
+      "description": "看情绪、直觉和潜意识，适合说不清、睡不着、心里有雾的时候。",
+      "positions": [
+        "新月",
+        "上弦",
+        "满月",
+        "下弦"
+      ]
+    },
+    "horseshoe": {
+      "name": "马蹄形",
+      "description": "从背景一路看到建议和结果，适合需要一点可执行方向的问题。",
+      "positions": [
+        "远期过去",
+        "近期过去",
+        "当前",
+        "近期未来",
+        "外部影响",
+        "建议",
+        "结果"
+      ]
+    },
+    "celtic": {
+      "name": "凯尔特十字",
+      "description": "完整看复杂局面，适合牵涉很多人和很多原因的大问题。",
+      "positions": [
+        "核心",
+        "交叉",
+        "意识目标",
+        "根基过去",
+        "近期过去",
+        "近期未来",
+        "自我",
+        "环境",
+        "希望与恐惧",
+        "结果"
+      ]
+    }
+  },
+  "cards": [
+    {
+      "name": "愚者",
+      "arcana": "major",
+      "element": "风",
+      "keywords": [
+        "开始",
+        "自由",
+        "冒险"
+      ],
+      "upright": "愚者正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "愚者逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m00.jpg"
+    },
+    {
+      "name": "魔术师",
+      "arcana": "major",
+      "element": "风",
+      "keywords": [
+        "创造",
+        "资源",
+        "行动"
+      ],
+      "upright": "魔术师正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "魔术师逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m01.jpg"
+    },
+    {
+      "name": "女祭司",
+      "arcana": "major",
+      "element": "水",
+      "keywords": [
+        "直觉",
+        "沉默",
+        "洞察"
+      ],
+      "upright": "女祭司正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "女祭司逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m02.jpg"
+    },
+    {
+      "name": "女皇",
+      "arcana": "major",
+      "element": "土",
+      "keywords": [
+        "滋养",
+        "丰盛",
+        "创造"
+      ],
+      "upright": "女皇正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "女皇逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m03.jpg"
+    },
+    {
+      "name": "皇帝",
+      "arcana": "major",
+      "element": "火",
+      "keywords": [
+        "秩序",
+        "边界",
+        "掌控"
+      ],
+      "upright": "皇帝正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "皇帝逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m04.jpg"
+    },
+    {
+      "name": "教皇",
+      "arcana": "major",
+      "element": "土",
+      "keywords": [
+        "传统",
+        "学习",
+        "信念"
+      ],
+      "upright": "教皇正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "教皇逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m05.jpg"
+    },
+    {
+      "name": "恋人",
+      "arcana": "major",
+      "element": "风",
+      "keywords": [
+        "选择",
+        "关系",
+        "一致"
+      ],
+      "upright": "恋人正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "恋人逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m06.jpg"
+    },
+    {
+      "name": "战车",
+      "arcana": "major",
+      "element": "水",
+      "keywords": [
+        "推进",
+        "意志",
+        "胜利"
+      ],
+      "upright": "战车正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "战车逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m07.jpg"
+    },
+    {
+      "name": "力量",
+      "arcana": "major",
+      "element": "火",
+      "keywords": [
+        "温柔",
+        "勇气",
+        "耐性"
+      ],
+      "upright": "力量正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "力量逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m08.jpg"
+    },
+    {
+      "name": "隐士",
+      "arcana": "major",
+      "element": "土",
+      "keywords": [
+        "独处",
+        "寻找",
+        "智慧"
+      ],
+      "upright": "隐士正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "隐士逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m09.jpg"
+    },
+    {
+      "name": "命运之轮",
+      "arcana": "major",
+      "element": "火",
+      "keywords": [
+        "变化",
+        "周期",
+        "转机"
+      ],
+      "upright": "命运之轮正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "命运之轮逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m10.jpg"
+    },
+    {
+      "name": "正义",
+      "arcana": "major",
+      "element": "风",
+      "keywords": [
+        "判断",
+        "公平",
+        "责任"
+      ],
+      "upright": "正义正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "正义逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m11.jpg"
+    },
+    {
+      "name": "倒吊人",
+      "arcana": "major",
+      "element": "水",
+      "keywords": [
+        "暂停",
+        "换位",
+        "牺牲"
+      ],
+      "upright": "倒吊人正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "倒吊人逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m12.jpg"
+    },
+    {
+      "name": "死神",
+      "arcana": "major",
+      "element": "水",
+      "keywords": [
+        "结束",
+        "转化",
+        "更新"
+      ],
+      "upright": "死神正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "死神逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m13.jpg"
+    },
+    {
+      "name": "节制",
+      "arcana": "major",
+      "element": "火",
+      "keywords": [
+        "调和",
+        "流动",
+        "耐心"
+      ],
+      "upright": "节制正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "节制逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m14.jpg"
+    },
+    {
+      "name": "恶魔",
+      "arcana": "major",
+      "element": "土",
+      "keywords": [
+        "束缚",
+        "欲望",
+        "执念"
+      ],
+      "upright": "恶魔正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "恶魔逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m15.jpg"
+    },
+    {
+      "name": "高塔",
+      "arcana": "major",
+      "element": "火",
+      "keywords": [
+        "崩塌",
+        "真相",
+        "重建"
+      ],
+      "upright": "高塔正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "高塔逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m16.jpg"
+    },
+    {
+      "name": "星星",
+      "arcana": "major",
+      "element": "风",
+      "keywords": [
+        "希望",
+        "疗愈",
+        "愿景"
+      ],
+      "upright": "星星正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "星星逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m17.jpg"
+    },
+    {
+      "name": "月亮",
+      "arcana": "major",
+      "element": "水",
+      "keywords": [
+        "梦境",
+        "迷雾",
+        "潜意识"
+      ],
+      "upright": "月亮正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "月亮逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m18.jpg"
+    },
+    {
+      "name": "太阳",
+      "arcana": "major",
+      "element": "火",
+      "keywords": [
+        "明朗",
+        "快乐",
+        "生命力"
+      ],
+      "upright": "太阳正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "太阳逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m19.jpg"
+    },
+    {
+      "name": "审判",
+      "arcana": "major",
+      "element": "火",
+      "keywords": [
+        "召唤",
+        "觉醒",
+        "复盘"
+      ],
+      "upright": "审判正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "审判逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m20.jpg"
+    },
+    {
+      "name": "世界",
+      "arcana": "major",
+      "element": "土",
+      "keywords": [
+        "完成",
+        "整合",
+        "循环"
+      ],
+      "upright": "世界正位像是在提醒你：先看见问题里已经出现的力量，再决定要不要往前走。",
+      "reversed": "世界逆位的时候，不是坏消息，更像是让你先把节奏和边界重新调一下。",
+      "image": "images/tarot/cards/m21.jpg"
+    },
+    {
+      "name": "权杖Ace",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "灵感",
+        "启动",
+        "火花"
+      ],
+      "upright": "权杖Ace正位把重点放在灵感和启动上。它不是要你立刻赢，而是把火花变成一个真实动作。",
+      "reversed": "权杖Ace逆位时，灵感可能有点卡住。先别硬推，看看是不是启动的方式需要调整。",
+      "image": "images/tarot/cards/w01.jpg"
+    },
+    {
+      "name": "权杖二",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "规划",
+        "远景",
+        "选择"
+      ],
+      "upright": "权杖二正位把重点放在规划和远景上。它不是要你立刻赢，而是把选择变成一个真实动作。",
+      "reversed": "权杖二逆位时，规划可能有点卡住。先别硬推，看看是不是远景的方式需要调整。",
+      "image": "images/tarot/cards/w02.jpg"
+    },
+    {
+      "name": "权杖三",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "扩张",
+        "等待",
+        "合作"
+      ],
+      "upright": "权杖三正位把重点放在扩张和等待上。它不是要你立刻赢，而是把合作变成一个真实动作。",
+      "reversed": "权杖三逆位时，扩张可能有点卡住。先别硬推，看看是不是等待的方式需要调整。",
+      "image": "images/tarot/cards/w03.jpg"
+    },
+    {
+      "name": "权杖四",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "庆祝",
+        "稳定",
+        "归属"
+      ],
+      "upright": "权杖四正位把重点放在庆祝和稳定上。它不是要你立刻赢，而是把归属变成一个真实动作。",
+      "reversed": "权杖四逆位时，庆祝可能有点卡住。先别硬推，看看是不是稳定的方式需要调整。",
+      "image": "images/tarot/cards/w04.jpg"
+    },
+    {
+      "name": "权杖五",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "摩擦",
+        "竞争",
+        "练习"
+      ],
+      "upright": "权杖五正位把重点放在摩擦和竞争上。它不是要你立刻赢，而是把练习变成一个真实动作。",
+      "reversed": "权杖五逆位时，摩擦可能有点卡住。先别硬推，看看是不是竞争的方式需要调整。",
+      "image": "images/tarot/cards/w05.jpg"
+    },
+    {
+      "name": "权杖六",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "认可",
+        "胜利",
+        "曝光"
+      ],
+      "upright": "权杖六正位把重点放在认可和胜利上。它不是要你立刻赢，而是把曝光变成一个真实动作。",
+      "reversed": "权杖六逆位时，认可可能有点卡住。先别硬推，看看是不是胜利的方式需要调整。",
+      "image": "images/tarot/cards/w06.jpg"
+    },
+    {
+      "name": "权杖七",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "防守",
+        "立场",
+        "挑战"
+      ],
+      "upright": "权杖七正位把重点放在防守和立场上。它不是要你立刻赢，而是把挑战变成一个真实动作。",
+      "reversed": "权杖七逆位时，防守可能有点卡住。先别硬推，看看是不是立场的方式需要调整。",
+      "image": "images/tarot/cards/w07.jpg"
+    },
+    {
+      "name": "权杖八",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "加速",
+        "消息",
+        "推进"
+      ],
+      "upright": "权杖八正位把重点放在加速和消息上。它不是要你立刻赢，而是把推进变成一个真实动作。",
+      "reversed": "权杖八逆位时，加速可能有点卡住。先别硬推，看看是不是消息的方式需要调整。",
+      "image": "images/tarot/cards/w08.jpg"
+    },
+    {
+      "name": "权杖九",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "坚持",
+        "警觉",
+        "韧性"
+      ],
+      "upright": "权杖九正位把重点放在坚持和警觉上。它不是要你立刻赢，而是把韧性变成一个真实动作。",
+      "reversed": "权杖九逆位时，坚持可能有点卡住。先别硬推，看看是不是警觉的方式需要调整。",
+      "image": "images/tarot/cards/w09.jpg"
+    },
+    {
+      "name": "权杖十",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "负担",
+        "责任",
+        "过载"
+      ],
+      "upright": "权杖十正位把重点放在负担和责任上。它不是要你立刻赢，而是把过载变成一个真实动作。",
+      "reversed": "权杖十逆位时，负担可能有点卡住。先别硬推，看看是不是责任的方式需要调整。",
+      "image": "images/tarot/cards/w10.jpg"
+    },
+    {
+      "name": "权杖侍从",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "探索",
+        "热情",
+        "新手"
+      ],
+      "upright": "权杖侍从正位把重点放在探索和热情上。它不是要你立刻赢，而是把新手变成一个真实动作。",
+      "reversed": "权杖侍从逆位时，探索可能有点卡住。先别硬推，看看是不是热情的方式需要调整。",
+      "image": "images/tarot/cards/w11.jpg"
+    },
+    {
+      "name": "权杖骑士",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "冲刺",
+        "冒险",
+        "行动"
+      ],
+      "upright": "权杖骑士正位把重点放在冲刺和冒险上。它不是要你立刻赢，而是把行动变成一个真实动作。",
+      "reversed": "权杖骑士逆位时，冲刺可能有点卡住。先别硬推，看看是不是冒险的方式需要调整。",
+      "image": "images/tarot/cards/w12.jpg"
+    },
+    {
+      "name": "权杖皇后",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "魅力",
+        "自信",
+        "创造"
+      ],
+      "upright": "权杖皇后正位把重点放在魅力和自信上。它不是要你立刻赢，而是把创造变成一个真实动作。",
+      "reversed": "权杖皇后逆位时，魅力可能有点卡住。先别硬推，看看是不是自信的方式需要调整。",
+      "image": "images/tarot/cards/w13.jpg"
+    },
+    {
+      "name": "权杖国王",
+      "arcana": "minor",
+      "suit": "权杖",
+      "element": "火",
+      "keywords": [
+        "领导",
+        "愿景",
+        "担当"
+      ],
+      "upright": "权杖国王正位把重点放在领导和愿景上。它不是要你立刻赢，而是把担当变成一个真实动作。",
+      "reversed": "权杖国王逆位时，领导可能有点卡住。先别硬推，看看是不是愿景的方式需要调整。",
+      "image": "images/tarot/cards/w14.jpg"
+    },
+    {
+      "name": "圣杯Ace",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "灵感",
+        "启动",
+        "火花"
+      ],
+      "upright": "圣杯Ace正位把重点放在灵感和启动上。它不是要你立刻赢，而是把火花变成一个真实动作。",
+      "reversed": "圣杯Ace逆位时，灵感可能有点卡住。先别硬推，看看是不是启动的方式需要调整。",
+      "image": "images/tarot/cards/c01.jpg"
+    },
+    {
+      "name": "圣杯二",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "规划",
+        "远景",
+        "选择"
+      ],
+      "upright": "圣杯二正位把重点放在规划和远景上。它不是要你立刻赢，而是把选择变成一个真实动作。",
+      "reversed": "圣杯二逆位时，规划可能有点卡住。先别硬推，看看是不是远景的方式需要调整。",
+      "image": "images/tarot/cards/c02.jpg"
+    },
+    {
+      "name": "圣杯三",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "扩张",
+        "等待",
+        "合作"
+      ],
+      "upright": "圣杯三正位把重点放在扩张和等待上。它不是要你立刻赢，而是把合作变成一个真实动作。",
+      "reversed": "圣杯三逆位时，扩张可能有点卡住。先别硬推，看看是不是等待的方式需要调整。",
+      "image": "images/tarot/cards/c03.jpg"
+    },
+    {
+      "name": "圣杯四",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "庆祝",
+        "稳定",
+        "归属"
+      ],
+      "upright": "圣杯四正位把重点放在庆祝和稳定上。它不是要你立刻赢，而是把归属变成一个真实动作。",
+      "reversed": "圣杯四逆位时，庆祝可能有点卡住。先别硬推，看看是不是稳定的方式需要调整。",
+      "image": "images/tarot/cards/c04.jpg"
+    },
+    {
+      "name": "圣杯五",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "摩擦",
+        "竞争",
+        "练习"
+      ],
+      "upright": "圣杯五正位把重点放在摩擦和竞争上。它不是要你立刻赢，而是把练习变成一个真实动作。",
+      "reversed": "圣杯五逆位时，摩擦可能有点卡住。先别硬推，看看是不是竞争的方式需要调整。",
+      "image": "images/tarot/cards/c05.jpg"
+    },
+    {
+      "name": "圣杯六",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "认可",
+        "胜利",
+        "曝光"
+      ],
+      "upright": "圣杯六正位把重点放在认可和胜利上。它不是要你立刻赢，而是把曝光变成一个真实动作。",
+      "reversed": "圣杯六逆位时，认可可能有点卡住。先别硬推，看看是不是胜利的方式需要调整。",
+      "image": "images/tarot/cards/c06.jpg"
+    },
+    {
+      "name": "圣杯七",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "防守",
+        "立场",
+        "挑战"
+      ],
+      "upright": "圣杯七正位把重点放在防守和立场上。它不是要你立刻赢，而是把挑战变成一个真实动作。",
+      "reversed": "圣杯七逆位时，防守可能有点卡住。先别硬推，看看是不是立场的方式需要调整。",
+      "image": "images/tarot/cards/c07.jpg"
+    },
+    {
+      "name": "圣杯八",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "加速",
+        "消息",
+        "推进"
+      ],
+      "upright": "圣杯八正位把重点放在加速和消息上。它不是要你立刻赢，而是把推进变成一个真实动作。",
+      "reversed": "圣杯八逆位时，加速可能有点卡住。先别硬推，看看是不是消息的方式需要调整。",
+      "image": "images/tarot/cards/c08.jpg"
+    },
+    {
+      "name": "圣杯九",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "坚持",
+        "警觉",
+        "韧性"
+      ],
+      "upright": "圣杯九正位把重点放在坚持和警觉上。它不是要你立刻赢，而是把韧性变成一个真实动作。",
+      "reversed": "圣杯九逆位时，坚持可能有点卡住。先别硬推，看看是不是警觉的方式需要调整。",
+      "image": "images/tarot/cards/c09.jpg"
+    },
+    {
+      "name": "圣杯十",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "负担",
+        "责任",
+        "过载"
+      ],
+      "upright": "圣杯十正位把重点放在负担和责任上。它不是要你立刻赢，而是把过载变成一个真实动作。",
+      "reversed": "圣杯十逆位时，负担可能有点卡住。先别硬推，看看是不是责任的方式需要调整。",
+      "image": "images/tarot/cards/c10.jpg"
+    },
+    {
+      "name": "圣杯侍从",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "探索",
+        "热情",
+        "新手"
+      ],
+      "upright": "圣杯侍从正位把重点放在探索和热情上。它不是要你立刻赢，而是把新手变成一个真实动作。",
+      "reversed": "圣杯侍从逆位时，探索可能有点卡住。先别硬推，看看是不是热情的方式需要调整。",
+      "image": "images/tarot/cards/c11.jpg"
+    },
+    {
+      "name": "圣杯骑士",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "冲刺",
+        "冒险",
+        "行动"
+      ],
+      "upright": "圣杯骑士正位把重点放在冲刺和冒险上。它不是要你立刻赢，而是把行动变成一个真实动作。",
+      "reversed": "圣杯骑士逆位时，冲刺可能有点卡住。先别硬推，看看是不是冒险的方式需要调整。",
+      "image": "images/tarot/cards/c12.jpg"
+    },
+    {
+      "name": "圣杯皇后",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "魅力",
+        "自信",
+        "创造"
+      ],
+      "upright": "圣杯皇后正位把重点放在魅力和自信上。它不是要你立刻赢，而是把创造变成一个真实动作。",
+      "reversed": "圣杯皇后逆位时，魅力可能有点卡住。先别硬推，看看是不是自信的方式需要调整。",
+      "image": "images/tarot/cards/c13.jpg"
+    },
+    {
+      "name": "圣杯国王",
+      "arcana": "minor",
+      "suit": "圣杯",
+      "element": "水",
+      "keywords": [
+        "领导",
+        "愿景",
+        "担当"
+      ],
+      "upright": "圣杯国王正位把重点放在领导和愿景上。它不是要你立刻赢，而是把担当变成一个真实动作。",
+      "reversed": "圣杯国王逆位时，领导可能有点卡住。先别硬推，看看是不是愿景的方式需要调整。",
+      "image": "images/tarot/cards/c14.jpg"
+    },
+    {
+      "name": "宝剑Ace",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "灵感",
+        "启动",
+        "火花"
+      ],
+      "upright": "宝剑Ace正位把重点放在灵感和启动上。它不是要你立刻赢，而是把火花变成一个真实动作。",
+      "reversed": "宝剑Ace逆位时，灵感可能有点卡住。先别硬推，看看是不是启动的方式需要调整。",
+      "image": "images/tarot/cards/s01.jpg"
+    },
+    {
+      "name": "宝剑二",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "规划",
+        "远景",
+        "选择"
+      ],
+      "upright": "宝剑二正位把重点放在规划和远景上。它不是要你立刻赢，而是把选择变成一个真实动作。",
+      "reversed": "宝剑二逆位时，规划可能有点卡住。先别硬推，看看是不是远景的方式需要调整。",
+      "image": "images/tarot/cards/s02.jpg"
+    },
+    {
+      "name": "宝剑三",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "扩张",
+        "等待",
+        "合作"
+      ],
+      "upright": "宝剑三正位把重点放在扩张和等待上。它不是要你立刻赢，而是把合作变成一个真实动作。",
+      "reversed": "宝剑三逆位时，扩张可能有点卡住。先别硬推，看看是不是等待的方式需要调整。",
+      "image": "images/tarot/cards/s03.jpg"
+    },
+    {
+      "name": "宝剑四",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "庆祝",
+        "稳定",
+        "归属"
+      ],
+      "upright": "宝剑四正位把重点放在庆祝和稳定上。它不是要你立刻赢，而是把归属变成一个真实动作。",
+      "reversed": "宝剑四逆位时，庆祝可能有点卡住。先别硬推，看看是不是稳定的方式需要调整。",
+      "image": "images/tarot/cards/s04.jpg"
+    },
+    {
+      "name": "宝剑五",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "摩擦",
+        "竞争",
+        "练习"
+      ],
+      "upright": "宝剑五正位把重点放在摩擦和竞争上。它不是要你立刻赢，而是把练习变成一个真实动作。",
+      "reversed": "宝剑五逆位时，摩擦可能有点卡住。先别硬推，看看是不是竞争的方式需要调整。",
+      "image": "images/tarot/cards/s05.jpg"
+    },
+    {
+      "name": "宝剑六",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "认可",
+        "胜利",
+        "曝光"
+      ],
+      "upright": "宝剑六正位把重点放在认可和胜利上。它不是要你立刻赢，而是把曝光变成一个真实动作。",
+      "reversed": "宝剑六逆位时，认可可能有点卡住。先别硬推，看看是不是胜利的方式需要调整。",
+      "image": "images/tarot/cards/s06.jpg"
+    },
+    {
+      "name": "宝剑七",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "防守",
+        "立场",
+        "挑战"
+      ],
+      "upright": "宝剑七正位把重点放在防守和立场上。它不是要你立刻赢，而是把挑战变成一个真实动作。",
+      "reversed": "宝剑七逆位时，防守可能有点卡住。先别硬推，看看是不是立场的方式需要调整。",
+      "image": "images/tarot/cards/s07.jpg"
+    },
+    {
+      "name": "宝剑八",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "加速",
+        "消息",
+        "推进"
+      ],
+      "upright": "宝剑八正位把重点放在加速和消息上。它不是要你立刻赢，而是把推进变成一个真实动作。",
+      "reversed": "宝剑八逆位时，加速可能有点卡住。先别硬推，看看是不是消息的方式需要调整。",
+      "image": "images/tarot/cards/s08.jpg"
+    },
+    {
+      "name": "宝剑九",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "坚持",
+        "警觉",
+        "韧性"
+      ],
+      "upright": "宝剑九正位把重点放在坚持和警觉上。它不是要你立刻赢，而是把韧性变成一个真实动作。",
+      "reversed": "宝剑九逆位时，坚持可能有点卡住。先别硬推，看看是不是警觉的方式需要调整。",
+      "image": "images/tarot/cards/s09.jpg"
+    },
+    {
+      "name": "宝剑十",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "负担",
+        "责任",
+        "过载"
+      ],
+      "upright": "宝剑十正位把重点放在负担和责任上。它不是要你立刻赢，而是把过载变成一个真实动作。",
+      "reversed": "宝剑十逆位时，负担可能有点卡住。先别硬推，看看是不是责任的方式需要调整。",
+      "image": "images/tarot/cards/s10.jpg"
+    },
+    {
+      "name": "宝剑侍从",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "探索",
+        "热情",
+        "新手"
+      ],
+      "upright": "宝剑侍从正位把重点放在探索和热情上。它不是要你立刻赢，而是把新手变成一个真实动作。",
+      "reversed": "宝剑侍从逆位时，探索可能有点卡住。先别硬推，看看是不是热情的方式需要调整。",
+      "image": "images/tarot/cards/s11.jpg"
+    },
+    {
+      "name": "宝剑骑士",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "冲刺",
+        "冒险",
+        "行动"
+      ],
+      "upright": "宝剑骑士正位把重点放在冲刺和冒险上。它不是要你立刻赢，而是把行动变成一个真实动作。",
+      "reversed": "宝剑骑士逆位时，冲刺可能有点卡住。先别硬推，看看是不是冒险的方式需要调整。",
+      "image": "images/tarot/cards/s12.jpg"
+    },
+    {
+      "name": "宝剑皇后",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "魅力",
+        "自信",
+        "创造"
+      ],
+      "upright": "宝剑皇后正位把重点放在魅力和自信上。它不是要你立刻赢，而是把创造变成一个真实动作。",
+      "reversed": "宝剑皇后逆位时，魅力可能有点卡住。先别硬推，看看是不是自信的方式需要调整。",
+      "image": "images/tarot/cards/s13.jpg"
+    },
+    {
+      "name": "宝剑国王",
+      "arcana": "minor",
+      "suit": "宝剑",
+      "element": "风",
+      "keywords": [
+        "领导",
+        "愿景",
+        "担当"
+      ],
+      "upright": "宝剑国王正位把重点放在领导和愿景上。它不是要你立刻赢，而是把担当变成一个真实动作。",
+      "reversed": "宝剑国王逆位时，领导可能有点卡住。先别硬推，看看是不是愿景的方式需要调整。",
+      "image": "images/tarot/cards/s14.jpg"
+    },
+    {
+      "name": "星币Ace",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "灵感",
+        "启动",
+        "火花"
+      ],
+      "upright": "星币Ace正位把重点放在灵感和启动上。它不是要你立刻赢，而是把火花变成一个真实动作。",
+      "reversed": "星币Ace逆位时，灵感可能有点卡住。先别硬推，看看是不是启动的方式需要调整。",
+      "image": "images/tarot/cards/p01.jpg"
+    },
+    {
+      "name": "星币二",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "规划",
+        "远景",
+        "选择"
+      ],
+      "upright": "星币二正位把重点放在规划和远景上。它不是要你立刻赢，而是把选择变成一个真实动作。",
+      "reversed": "星币二逆位时，规划可能有点卡住。先别硬推，看看是不是远景的方式需要调整。",
+      "image": "images/tarot/cards/p02.jpg"
+    },
+    {
+      "name": "星币三",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "扩张",
+        "等待",
+        "合作"
+      ],
+      "upright": "星币三正位把重点放在扩张和等待上。它不是要你立刻赢，而是把合作变成一个真实动作。",
+      "reversed": "星币三逆位时，扩张可能有点卡住。先别硬推，看看是不是等待的方式需要调整。",
+      "image": "images/tarot/cards/p03.jpg"
+    },
+    {
+      "name": "星币四",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "庆祝",
+        "稳定",
+        "归属"
+      ],
+      "upright": "星币四正位把重点放在庆祝和稳定上。它不是要你立刻赢，而是把归属变成一个真实动作。",
+      "reversed": "星币四逆位时，庆祝可能有点卡住。先别硬推，看看是不是稳定的方式需要调整。",
+      "image": "images/tarot/cards/p04.jpg"
+    },
+    {
+      "name": "星币五",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "摩擦",
+        "竞争",
+        "练习"
+      ],
+      "upright": "星币五正位把重点放在摩擦和竞争上。它不是要你立刻赢，而是把练习变成一个真实动作。",
+      "reversed": "星币五逆位时，摩擦可能有点卡住。先别硬推，看看是不是竞争的方式需要调整。",
+      "image": "images/tarot/cards/p05.jpg"
+    },
+    {
+      "name": "星币六",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "认可",
+        "胜利",
+        "曝光"
+      ],
+      "upright": "星币六正位把重点放在认可和胜利上。它不是要你立刻赢，而是把曝光变成一个真实动作。",
+      "reversed": "星币六逆位时，认可可能有点卡住。先别硬推，看看是不是胜利的方式需要调整。",
+      "image": "images/tarot/cards/p06.jpg"
+    },
+    {
+      "name": "星币七",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "防守",
+        "立场",
+        "挑战"
+      ],
+      "upright": "星币七正位把重点放在防守和立场上。它不是要你立刻赢，而是把挑战变成一个真实动作。",
+      "reversed": "星币七逆位时，防守可能有点卡住。先别硬推，看看是不是立场的方式需要调整。",
+      "image": "images/tarot/cards/p07.jpg"
+    },
+    {
+      "name": "星币八",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "加速",
+        "消息",
+        "推进"
+      ],
+      "upright": "星币八正位把重点放在加速和消息上。它不是要你立刻赢，而是把推进变成一个真实动作。",
+      "reversed": "星币八逆位时，加速可能有点卡住。先别硬推，看看是不是消息的方式需要调整。",
+      "image": "images/tarot/cards/p08.jpg"
+    },
+    {
+      "name": "星币九",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "坚持",
+        "警觉",
+        "韧性"
+      ],
+      "upright": "星币九正位把重点放在坚持和警觉上。它不是要你立刻赢，而是把韧性变成一个真实动作。",
+      "reversed": "星币九逆位时，坚持可能有点卡住。先别硬推，看看是不是警觉的方式需要调整。",
+      "image": "images/tarot/cards/p09.jpg"
+    },
+    {
+      "name": "星币十",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "负担",
+        "责任",
+        "过载"
+      ],
+      "upright": "星币十正位把重点放在负担和责任上。它不是要你立刻赢，而是把过载变成一个真实动作。",
+      "reversed": "星币十逆位时，负担可能有点卡住。先别硬推，看看是不是责任的方式需要调整。",
+      "image": "images/tarot/cards/p10.jpg"
+    },
+    {
+      "name": "星币侍从",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "探索",
+        "热情",
+        "新手"
+      ],
+      "upright": "星币侍从正位把重点放在探索和热情上。它不是要你立刻赢，而是把新手变成一个真实动作。",
+      "reversed": "星币侍从逆位时，探索可能有点卡住。先别硬推，看看是不是热情的方式需要调整。",
+      "image": "images/tarot/cards/p11.jpg"
+    },
+    {
+      "name": "星币骑士",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "冲刺",
+        "冒险",
+        "行动"
+      ],
+      "upright": "星币骑士正位把重点放在冲刺和冒险上。它不是要你立刻赢，而是把行动变成一个真实动作。",
+      "reversed": "星币骑士逆位时，冲刺可能有点卡住。先别硬推，看看是不是冒险的方式需要调整。",
+      "image": "images/tarot/cards/p12.jpg"
+    },
+    {
+      "name": "星币皇后",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "魅力",
+        "自信",
+        "创造"
+      ],
+      "upright": "星币皇后正位把重点放在魅力和自信上。它不是要你立刻赢，而是把创造变成一个真实动作。",
+      "reversed": "星币皇后逆位时，魅力可能有点卡住。先别硬推，看看是不是自信的方式需要调整。",
+      "image": "images/tarot/cards/p13.jpg"
+    },
+    {
+      "name": "星币国王",
+      "arcana": "minor",
+      "suit": "星币",
+      "element": "土",
+      "keywords": [
+        "领导",
+        "愿景",
+        "担当"
+      ],
+      "upright": "星币国王正位把重点放在领导和愿景上。它不是要你立刻赢，而是把担当变成一个真实动作。",
+      "reversed": "星币国王逆位时，领导可能有点卡住。先别硬推，看看是不是愿景的方式需要调整。",
+      "image": "images/tarot/cards/p14.jpg"
+    }
+  ]
+}

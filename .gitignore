@@ -1,10 +1,13 @@
-﻿git_tmp/
+git_tmp/
 
 # Netease cookie
 
 node_modules/
 pnpm-lock.yaml
+data/fm-store.json
+work/*.log
 
 .superpowers/
 out/
 .next/
+.env

@@ -30,26 +30,24 @@ body::after {
 }
 
 /* 鑷畾涔夐湏铏瑰厜鏍?*/
-body, a, button, input, textarea, [data-clickable] { cursor: none; }
+html.has-neon-cursor,
+html.has-neon-cursor * {
+  cursor: url("../images/latte-cursor.svg") 4 4, auto !important;
+}
+
+html.has-neon-cursor a,
+html.has-neon-cursor button,
+html.has-neon-cursor input,
+html.has-neon-cursor textarea,
+html.has-neon-cursor select,
+html.has-neon-cursor [data-clickable],
+html.has-neon-cursor .intro-hint,
+html.has-neon-cursor .magnetic-card {
+  cursor: url("../images/latte-cursor-hover.svg") 4 4, pointer !important;
+}
 
 #neon-cursor {
-  position: fixed; pointer-events: none; z-index: 10000;
-  width: 20px; height: 20px;
-  border: 1.5px solid rgba(255, 61, 113, 0.6);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width var(--duration-fast), height var(--duration-fast), border-color var(--duration-fast);
-}
-#neon-cursor::after {
-  content: ""; position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 4px; height: 4px;
-  background: var(--neon-pink); border-radius: 50%;
-  box-shadow: 0 0 12px var(--neon-pink);
-}
-#neon-cursor.hover {
-  width: 40px; height: 40px;
-  border-color: var(--neon-cyan);
+  display: none;
 }
 
 /* 闃呰杩涘害鏉?*/

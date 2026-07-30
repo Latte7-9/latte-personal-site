@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latte - 情绪歌单</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/nav.css"><link rel="stylesheet" href="../css/contact-footer.css"><link rel="stylesheet" href="../css/latte-subtheme.css"><link rel="stylesheet" href="../css/music-page.css">
+  <script src="../js/gsap.min.js" defer></script><script src="../js/ScrollTrigger.min.js" defer></script><script src="../js/cursor.js?v=20260710-playlist" defer></script><script src="../js/music-page.js?v=20260710-emotion-playlist" defer></script>
+</head>
+<body>
+  <div id="reading-progress"></div>
+  <nav class="site-nav"><div class="nav-glass"><a class="nav-brand" href="../index.html">Latte</a><div class="nav-links"><a href="../index.html" class="nav-link">首页</a><a href="../blog/index.html" class="nav-link">博客</a><a href="../index.html#message" class="nav-link">留言池</a><a href="../index.html#contact" class="nav-link">联系</a></div></div></nav>
+  <main class="music-page">
+    <section class="page-hero music-hero fm-hero"><p class="motion-label">EMOTION PLAYLIST</p><h1>给此刻推荐 12 首歌</h1><p class="blog-hero-sub">写下你现在的心情、天气或发生的事。我会从最近常听和喜欢歌曲中，为这一刻整理一份可直接去网易云播放的歌单。</p><a class="music-profile-link" href="https://y.music.163.com/m/user?id=547894281" target="_blank" rel="noopener">打开我的网易云主页</a></section>
+    <section class="music-shell fm-generator" aria-labelledby="fmPromptTitle"><div class="music-section-heading"><div><p class="motion-label">TELL ME</p><h2 id="fmPromptTitle">描述一下此刻</h2></div><span class="fm-pill" id="fmLibraryStatus">歌库待同步</span></div><form class="fm-prompt-form" id="fmPromptForm"><label for="fmPrompt">心情、天气或今天发生的事</label><textarea id="fmPrompt" rows="4" maxlength="420" placeholder="例：今天长沙下雨，有点累，但想听一点温柔、慢慢亮起来的歌。"></textarea><div class="fm-form-actions"><button class="fm-primary-button" id="fmGenerateBtn" type="submit">生成歌单</button><p id="fmStatus" class="fm-status">最近常听优先，再从喜欢歌曲中补齐。</p></div><div class="fm-generation" id="fmGeneration" hidden aria-live="polite"><div class="fm-generation-head"><span id="fmGenerationLabel">正在准备歌单</span><b id="fmGenerationPercent">0%</b></div><div class="fm-generation-track"><i id="fmGenerationBar"></i></div><ol class="fm-generation-steps" id="fmGenerationSteps"><li>整理最近常听</li><li>匹配此刻情绪</li><li>补齐喜欢歌曲</li><li>整理推荐顺序</li></ol></div></form></section>
+    <section class="music-shell fm-weekly-shell" id="fmWeeklyShell" aria-labelledby="fmWeeklyTitle">
+      <div class="music-section-heading">
+        <div>
+          <p class="motion-label">RECENTLY PLAYED</p>
+          <h2 id="fmWeeklyTitle">&#26368;&#36817;&#24120;&#21548; 10 &#39318;</h2>
+          <p class="fm-weekly-note">&#39318;&#39029;&#30340;&#28418;&#28014;&#40657;&#33014;&#30005;&#21488;&#20250;&#20248;&#20808;&#20351;&#29992;&#31532; 1 &#39318;&#65307;&#28857;&#20987;&#20219;&#24847;&#27468;&#26354;&#21487;&#21435;&#32593;&#26131;&#20113;&#25773;&#25918;&#12290;</p>
+        </div>
+        <span class="fm-pill" id="fmWeeklyStatus">&#27491;&#22312;&#35835;&#21462;</span>
+      </div>
+      <div class="fm-weekly-grid" id="fmWeeklyGrid" aria-live="polite"></div>
+    </section>
+    <section class="music-shell fm-playlist-shell" id="fmPlaylistShell" hidden aria-labelledby="fmPlaylistTitle"><div class="music-section-heading"><div><p class="motion-label">YOUR PLAYLIST</p><h2 id="fmPlaylistTitle">等待推荐</h2></div></div><div class="fm-playlist-grid" id="fmPlaylistGrid"></div></section>
+  </main>
+  <footer><div class="footer-inner" style="max-width:1120px;margin:0 auto;padding:0 1.5rem;"><span>&copy; 2026 Latte · GitHub Pages Ready</span></div></footer>
+</body>
+</html>

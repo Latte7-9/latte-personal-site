@@ -1,354 +1,977 @@
-// ADMIN_V3_LOADED_20260624
-// ====== Latte 管理后台 v3.0 ======
+// Latte 独立内容管理后台
 var Admin = (function() {
-  var R = '', T = '', site = null, blog = { posts: [] }, comments = [];
-  var API_BASE = 'https://latte-site-production.up.railway.app';
+  var repo = '';
+  var token = '';
+  var site = null;
+  var blog = { posts: [] };
+  var comments = [];
+  var images = [];
+  var editingBlogIndex = null;
+  var pendingImageTarget = '';
+  var apiBase = 'https://latte-site-production.up.railway.app';
 
-  function b64e(s) { return btoa(unescape(encodeURIComponent(s))); }
-  function b64d(s) {
-    var raw = atob(s.replace(/\s/g, ''));
-    var t = decodeURIComponent(escape(raw));
-    if (t.charCodeAt(0) === 0xFEFF) t = t.slice(1);
-    return t;
+  function $(id) { return document.getElementById(id); }
+
+  function esc(value) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(value == null ? '' : String(value)));
+    return div.innerHTML;
   }
-  function esc(s) { var d = document.createElement('div'); d.appendChild(document.createTextNode(s||'')); return d.innerHTML; }
 
-  function gh(method, path, bodySha, bodyObj) {
-    var url = 'https://api.github.com/repos/' + R + '/contents/' + path;
-    console.log('[Admin] fetch ' + method + ' ' + url);
-    var headers = { 'Authorization': 'Bearer ' + T, 'Accept': 'application/vnd.github+json' };
+  function b64e(value) {
+    return btoa(unescape(encodeURIComponent(value)));
+  }
+
+  function b64d(value) {
+    var text = decodeURIComponent(escape(atob(String(value || '').replace(/\s/g, ''))));
+    return text.charCodeAt(0) === 0xFEFF ? text.slice(1) : text;
+  }
+
+  function setStatus(id, type, text) {
+    var el = $(id);
+    if (!el) return;
+    el.textContent = text || '';
+    el.className = 'status-line';
+    if (text) el.className += ' status-' + type;
+  }
+
+  function gh(method, path, sha, body) {
+    var headers = {
+      Authorization: 'Bearer ' + token,
+      Accept: 'application/vnd.github+json'
+    };
     var opts = { method: method, headers: headers };
-    if (method === 'PUT' && bodyObj) {
-      var b = Object.assign({}, bodyObj);
-      if (bodySha) b.sha = bodySha;
-      opts.body = JSON.stringify(b);
+    if (body) {
+      headers['Content-Type'] = 'application/json';
+      var payload = Object.assign({}, body);
+      if (sha) payload.sha = sha;
+      opts.body = JSON.stringify(payload);
     }
-    var ctrl = new AbortController(); var tmr = setTimeout(function(){ctrl.abort();},15000);
+
+    var ctrl = new AbortController();
+    var timer = setTimeout(function() { ctrl.abort(); }, 20000);
     opts.signal = ctrl.signal;
-    return fetch(url, opts).then(function(r) {
-      clearTimeout(tmr); console.log('[Admin] response ' + r.status);
-      if (!r.ok) throw new Error(r.status + ': ' + r.statusText);
-      return r.json();
-    }).catch(function(err) {
-      clearTimeout(tmr);
-      if (err.name === 'AbortError') throw new Error('请求超时(15s)');
-      throw err;
+
+    return fetch('https://api.github.com/repos/' + repo + '/contents/' + path, opts)
+      .then(function(res) {
+        clearTimeout(timer);
+        if (!res.ok) {
+          return res.text().then(function(text) {
+            var msg = res.status + ': ' + res.statusText;
+            if (text) msg += ' - ' + text.slice(0, 160);
+            throw new Error(msg);
+          });
+        }
+        return res.json();
+      })
+      .catch(function(err) {
+        clearTimeout(timer);
+        if (err.name === 'AbortError') throw new Error('请求超时，请检查网络或 GitHub 连接');
+        throw err;
+      });
+  }
+
+  function ghGet(path) { return gh('GET', path); }
+
+  function ghPut(path, content, sha, message) {
+    return gh('PUT', path, sha, {
+      message: message || ('Update ' + path),
+      content: b64e(content)
     });
   }
 
-  function ghPut(path, content, sha) { return gh('PUT', path, sha, { message: 'Update ' + path, content: b64e(content) }); }
-  function ghGet(path) { return gh('GET', path); }
+  function readJson(path, fallback) {
+    return ghGet(path).then(function(res) {
+      return JSON.parse(b64d(res.content));
+    }).catch(function() {
+      return fallback;
+    });
+  }
 
-  function msg(elId, type, text) {
-    var el = document.getElementById(elId); if (!el) return;
-    el.textContent = text; el.className = 'status-badge status-' + type;
+  function saveJson(path, value, statusId, message) {
+    setStatus(statusId, 'info', '保存中...');
+    return ghGet(path)
+      .then(function(current) {
+        return ghPut(path, JSON.stringify(value, null, 2), current.sha, message);
+      })
+      .then(function() {
+        setStatus(statusId, 'ok', '已保存');
+      })
+      .catch(function(err) {
+        setStatus(statusId, 'err', '保存失败：' + friendlyError(err));
+        throw err;
+      });
+  }
+
+  function friendlyError(err) {
+    var msg = err && err.message ? err.message : String(err);
+    if (msg.indexOf('401') !== -1) return 'Token 无效或已过期';
+    if (msg.indexOf('403') !== -1) return 'Token 权限不足，需要 contents 写入权限';
+    if (msg.indexOf('404') !== -1) return '仓库或文件不存在';
+    if (msg.indexOf('409') !== -1) return '线上内容已变化，请刷新后台后重试';
+    return msg;
+  }
+
+  function iconLabel(icon) {
+    var map = { camera: '摄影', book: '书籍', sparkle: '爱好', mountain: '徒步' };
+    return map[icon] || icon || '未命名';
+  }
+
+  function ensureDataShape() {
+    if (!site) site = {};
+    if (!site.contact) site.contact = {};
+    if (!Array.isArray(site.interests)) site.interests = [];
+    if (!blog || !Array.isArray(blog.posts)) blog = { posts: [] };
+    if (!Array.isArray(comments)) comments = [];
+  }
+
+  function matchInterest(item, kind) {
+    var page = String(item.page || '').toLowerCase();
+    var icon = String(item.icon || '').toLowerCase();
+    var name = String(item.name || '').toLowerCase();
+    if (kind === 'photography') return page.indexOf('photography') !== -1 || icon === 'camera' || name.indexOf('摄影') !== -1 || name.indexOf('鎽勫奖') !== -1;
+    if (kind === 'books') return page.indexOf('books') !== -1 || icon === 'book' || name.indexOf('书') !== -1 || name.indexOf('涔') !== -1;
+    if (kind === 'hobbies') return page.indexOf('hobbies') !== -1 || icon === 'sparkle' || name.indexOf('热度') !== -1 || name.indexOf('鐑') !== -1;
+    if (kind === 'hiking') return page.indexOf('hiking') !== -1 || icon === 'mountain' || name.indexOf('徒步') !== -1 || name.indexOf('鐧') !== -1;
+    return false;
+  }
+
+  function getInterest(kind, defaults) {
+    ensureDataShape();
+    var item = site.interests.find(function(it) { return matchInterest(it, kind); });
+    if (!item) {
+      item = Object.assign({}, defaults);
+      site.interests.push(item);
+    }
+    return item;
+  }
+
+  function getPhotoInterest() {
+    var item = getInterest('photography', {
+      name: '摄影',
+      icon: 'camera',
+      page: 'interests/photography.html',
+      description: '',
+      albums: []
+    });
+    if (!Array.isArray(item.albums)) item.albums = [];
+    return item;
+  }
+
+  function getBooksInterest() {
+    var item = getInterest('books', {
+      name: '书籍',
+      icon: 'book',
+      page: 'interests/books.html',
+      description: '',
+      read: [],
+      reading: [],
+      wantToRead: []
+    });
+    ['read', 'reading', 'wantToRead'].forEach(function(key) {
+      if (!Array.isArray(item[key])) item[key] = [];
+    });
+    return item;
+  }
+
+  function getHikingInterest() {
+    var item = getInterest('hiking', {
+      name: '徒步',
+      icon: 'mountain',
+      page: 'interests/hiking.html',
+      description: '',
+      climbed: [],
+      wantToClimb: [],
+      journal: ''
+    });
+    if (!Array.isArray(item.climbed)) item.climbed = [];
+    if (!Array.isArray(item.wantToClimb)) item.wantToClimb = [];
+    return item;
   }
 
   function login() {
-    console.log('[Admin] login() called');
-    var btn = document.getElementById('loginBtn');
-    btn.textContent = '连接中...'; btn.disabled = true;
-    R = document.getElementById('repoInput').value.trim();
-    T = document.getElementById('tokenInput').value.trim();
-    if (!R || !T) { alert('请填写仓库名和 Token'); btn.textContent = '连接'; btn.disabled = false; return; }
-    msg('loginMsg', 'info', '连接中...');
-    sessionStorage.setItem('latte_admin_v3', JSON.stringify({ r: R, t: T }));
-    ghGet('data/site.json').then(function(j) {
-      site = JSON.parse(b64d(j.content));
-      return ghGet('data/blog.json').then(function(bj) { blog = JSON.parse(b64d(bj.content)); }).catch(function() { blog = { posts: [] }; });
-    }).then(function() {
-      return ghGet('data/comments.json').then(function(cj) { comments = JSON.parse(b64d(cj.content)); }).catch(function() { comments = []; });
-    }).then(function() {
-      document.getElementById('loginPanel').style.display = 'none';
-      document.getElementById('mainPanel').style.display = 'block';
-      btn.textContent = '连接'; btn.disabled = false;
-      msg('connStatus', 'ok', '已连接');
+    repo = $('repoInput').value.trim();
+    token = $('tokenInput').value.trim();
+    if (!repo || !token) {
+      setStatus('loginMsg', 'err', '请填写仓库和 GitHub Token');
+      return;
+    }
+
+    $('loginBtn').disabled = true;
+    $('loginBtn').textContent = '连接中...';
+    setStatus('loginMsg', 'info', '正在读取仓库内容...');
+
+    Promise.all([
+      readJson('data/site.json', {}),
+      readJson('data/blog.json', { posts: [] }),
+      readJson('data/comments.json', [])
+    ]).then(function(values) {
+      site = values[0];
+      blog = values[1];
+      comments = values[2];
+      ensureDataShape();
+      sessionStorage.setItem('latte_admin_session', JSON.stringify({ repo: repo, token: token }));
+      $('loginPanel').hidden = true;
+      $('mainPanel').hidden = false;
       renderAll();
+      setStatus('loginMsg', 'ok', '');
+      loadImages();
     }).catch(function(err) {
-      console.error('[Admin] login failed', err);
-      btn.textContent = '连接'; btn.disabled = false;
-      var tip = err.message;
-      if (tip === 'Failed to fetch') tip = '网络不通 — 按F12看Console/Network面板';
-      else if (tip.indexOf('401') !== -1) tip = '认证失败(401) — Token无效或过期';
-      else if (tip.indexOf('404') !== -1) tip = '仓库/文件不存在(404)';
-      else if (tip.indexOf('403') !== -1) tip = '权限不足(403) — Token需repo或Contents权限';
-      msg('loginMsg', 'err', '连接失败: ' + tip);
+      setStatus('loginMsg', 'err', '连接失败：' + friendlyError(err));
+    }).finally(function() {
+      $('loginBtn').disabled = false;
+      $('loginBtn').textContent = '连接后台';
     });
   }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('loginBtn').addEventListener('click', login);
-    document.getElementById('tabBar').addEventListener('click', function(e) {
-      var btn = e.target.closest('.tab-btn'); if (!btn) return;
-      document.querySelectorAll('.tab-btn').forEach(function(t) { t.classList.remove('active'); });
-      btn.classList.add('active');
-      document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
-      document.getElementById('tab-' + btn.getAttribute('data-tab')).classList.add('active');
-      refreshTab(btn.getAttribute('data-tab'));
-    });
-    var imgInput = document.getElementById('imgFileInput');
-    if (imgInput) imgInput.addEventListener('change', function() {
-      var f = imgInput.files[0]; if (f) { document.getElementById('imgFileName').textContent = f.name; uploadImage(f); }
-    });
-    initRichToolbar();
-    var saved = sessionStorage.getItem('latte_admin_v3');
-    if (saved) { try { var c = JSON.parse(saved); R = c.r; T = c.t; } catch(e) { sessionStorage.removeItem('latte_admin_v3'); } }
-  });
-
-  function refreshTab(name) { if (name === 'images') loadImages(); if (name === 'music') loadMusicStatus(); }
 
   function renderAll() {
-    document.getElementById('siteName').value = site.name || '';
-    document.getElementById('siteTagline').value = site.tagline || '';
-    document.getElementById('siteAbout').value = site.about || '';
-    document.getElementById('siteEmail').value = (site.contact && site.contact.email) || '';
-    renderBlog(); renderGuestbook(); renderPhoto(); renderBooks(); renderHiking(); renderHobbies();
-  }  // ====== 1. 站点 ======
-  function saveSite() {
-    site.name = document.getElementById('siteName').value;
-    site.tagline = document.getElementById('siteTagline').value;
-    site.about = document.getElementById('siteAbout').value;
+    renderSite();
+    renderInterests();
+    renderBlog();
+    renderComments();
+    renderPhoto();
+    renderBooks();
+    renderHiking();
+    renderImageTargets();
+    loadMusicStatus();
+  }
+
+  function switchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-tab') === name);
+    });
+    document.querySelectorAll('.tab-content').forEach(function(panel) {
+      panel.classList.toggle('active', panel.id === 'tab-' + name);
+    });
+    if (name === 'images') {
+      renderImageTargets();
+      loadImages();
+    }
+    if (name === 'music') loadMusicStatus();
+  }
+
+  function renderSite() {
+    $('siteName').value = site.name || '';
+    $('siteTagline').value = site.tagline || '';
+    $('siteAbout').value = site.about || '';
+    $('siteEmail').value = site.contact && site.contact.email ? site.contact.email : (site.email || '');
+  }
+
+  function collectSiteBase() {
+    site.name = $('siteName').value.trim();
+    site.tagline = $('siteTagline').value.trim();
+    site.about = $('siteAbout').value;
     if (!site.contact) site.contact = {};
-    site.contact.email = document.getElementById('siteEmail').value;
-    msg('siteMsg', 'info', '保存中...');
-    ghGet('data/site.json').then(function(j) {
-      return ghPut('data/site.json', JSON.stringify(site, null, 2), j.sha);
-    }).then(function() { msg('siteMsg', 'ok', '已保存'); }).catch(function(err) { msg('siteMsg', 'err', '失败: ' + err.message); });
+    site.contact.email = $('siteEmail').value.trim();
   }
 
-  // ====== 2. 博客 ======
+  function saveSite() {
+    collectSiteBase();
+    return saveJson('data/site.json', site, 'siteMsg', 'Update site content');
+  }
+
+  function renderInterests() {
+    var list = $('interestList');
+    if (!site.interests.length) {
+      list.innerHTML = '<div class="empty-state">暂无兴趣入口</div>';
+      return;
+    }
+    list.innerHTML = site.interests.map(function(item, index) {
+      return '<article class="item-card" data-interest-index="' + index + '">' +
+        '<div class="item-header">' +
+          '<div><div class="item-title">' + esc(item.name || iconLabel(item.icon)) + '</div>' +
+          '<div class="item-meta">' + esc(item.page || '') + '</div></div>' +
+          '<button class="btn btn-danger btn-sm" type="button" data-action="delete-interest" data-index="' + index + '">删除</button>' +
+        '</div>' +
+        '<div class="row-grid">' +
+          field('名称', 'int-name', item.name) +
+          field('图标', 'int-icon', item.icon, 'camera/book/sparkle/mountain') +
+          field('链接', 'int-page', item.page, 'interests/books.html', 'span-2') +
+          textareaField('描述', 'int-desc', item.description, 2, 'span-4') +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  function collectInterests() {
+    document.querySelectorAll('[data-interest-index]').forEach(function(card) {
+      var index = Number(card.getAttribute('data-interest-index'));
+      var item = site.interests[index];
+      if (!item) return;
+      item.name = card.querySelector('.int-name').value.trim();
+      item.icon = card.querySelector('.int-icon').value.trim();
+      item.page = card.querySelector('.int-page').value.trim();
+      item.description = card.querySelector('.int-desc').value;
+    });
+  }
+
+  function newInterest() {
+    site.interests.push({ name: '', icon: '', page: '', description: '' });
+    renderInterests();
+    renderImageTargets();
+  }
+
+  function deleteInterest(index) {
+    if (!confirm('确定删除这个兴趣入口？关联的专属数据也会从 site.json 中移除。')) return;
+    site.interests.splice(index, 1);
+    renderInterests();
+    renderPhoto();
+    renderBooks();
+    renderHiking();
+    renderImageTargets();
+  }
+
+  function saveInterests() {
+    collectInterests();
+    return saveJson('data/site.json', site, 'interestMsg', 'Update interests');
+  }
+
   function renderBlog() {
-    var list = document.getElementById('blogList');
-    if (!blog.posts || !blog.posts.length) { list.innerHTML = '<p style="color:var(--ink-muted);text-align:center;padding:1rem;">暂无文章</p>'; return; }
-    list.innerHTML = blog.posts.map(function(p, i) {
-      return '<div class="item-card"><div class="item-header"><div><span class="item-title">' + esc(p.title) + '</span><span class="item-meta" style="margin-left:0.5rem;">' + esc(p.date) + '</span></div><div><button class="btn btn-ghost btn-sm" onclick="Admin.editBlogPost(' + i + ')">编辑</button><button class="btn btn-danger btn-sm" onclick="Admin.deleteBlogPost(' + i + ')" style="margin-left:0.3rem;">删除</button></div></div><div class="item-body">' + (p.summary || '') + '</div></div>';
+    var list = $('blogList');
+    if (!blog.posts.length) {
+      list.innerHTML = '<div class="empty-state">暂无博客文章</div>';
+      return;
+    }
+    list.innerHTML = blog.posts.map(function(post, index) {
+      if (editingBlogIndex === index) return renderBlogEditor(post, index);
+      return '<article class="item-card">' +
+        '<div class="item-header">' +
+          '<div><div class="item-title">' + esc(post.title || '未命名文章') + '</div>' +
+          '<div class="item-meta">' + esc(post.date || '') + ' · ' + esc(post.file || post.slug || '') + '</div></div>' +
+          '<div class="button-row">' +
+            '<button class="btn btn-ghost btn-sm" type="button" data-action="edit-blog" data-index="' + index + '">编辑</button>' +
+            '<button class="btn btn-danger btn-sm" type="button" data-action="delete-blog" data-index="' + index + '">删除</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="plain-text">' + esc(post.summary || post.excerpt || '') + '</div>' +
+      '</article>';
     }).join('');
-  }
-  function newBlogPost() { var slug = 'post-' + new Date().toISOString().slice(0,10);
-    blog.posts.unshift({ title: '新文章', date: new Date().toISOString().slice(0,10), summary: '', content: '', file: slug + '.html' });
-    renderBlog(); editBlogPost(0);
-  }
-  function deleteBlogPost(i) { if (!confirm('确定删除？')) return; blog.posts.splice(i, 1); saveBlog(); }
-  function editBlogPost(i) {
-    var p = blog.posts[i];
-    document.getElementById('blogList').innerHTML = '<div class="content-card" style="margin-top:0;"><h2>编辑文章</h2><div class="form-group"><label>标题</label><input id="bpTitle" value="' + esc(p.title) + '"></div><div class="form-group"><label>日期</label><input type="date" id="bpDate" value="' + esc(p.date) + '"></div><div class="form-group"><label>摘要</label><textarea id="bpSummary" rows="2">' + esc(p.summary) + '</textarea></div><div class="form-group"><label>正文 (HTML)</label><textarea id="bpContent" rows="10" data-rich="true">' + esc(p.content) + '</textarea></div>' +
-      '<div class="form-group"><label>页面文件名（如 my-post.html）</label><input id="bpFile" value="' + esc(p.file) + '"></div>' +
-      '<div class="action-bar"><button class="btn btn-ghost" onclick="Admin.renderBlog()">取消</button><button class="btn btn-primary" id="bpSaveBtn">保存文章</button></div></div>';
-    document.getElementById('bpSaveBtn').addEventListener('click', function() {
-      blog.posts[i].title = document.getElementById('bpTitle').value;
-      blog.posts[i].date = document.getElementById('bpDate').value;
-      blog.posts[i].summary = document.getElementById('bpSummary').value;
-      blog.posts[i].content = document.getElementById('bpContent').value;
-      blog.posts[i].file = document.getElementById('bpFile').value;
-      saveBlog(i);
-    });
-  }
-  function saveBlog(editedIdx) {
-    msg('blogMsg', 'info', '保存中...');
-    ghGet('data/blog.json').then(function(j) {
-      return ghPut('data/blog.json', JSON.stringify(blog, null, 2), j.sha);
-    }).then(function() {
-      if (editedIdx !== undefined && editedIdx >= 0) {
-        var p = blog.posts[editedIdx];
-        if (p.file) {
-          var html = '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>' + esc(p.title) + ' - Latte</title>\n<link rel="stylesheet" href="../../css/tokens.css">\n<link rel="stylesheet" href="../../css/base.css">\n<link rel="stylesheet" href="../../css/nav.css">\n<link rel="stylesheet" href="../../css/contact-footer.css">\n<link rel="stylesheet" href="../../css/blog.css">\n</head>\n<body>\n<div id="reading-progress"></div>\n<nav class="site-nav"><div class="nav-glass">\n  <a class="nav-brand" href="../../index.html">Latte</a>\n  <div class="nav-links">\n    <a href="../../index.html" class="nav-link">首页</a>\n    <a href="../index.html" class="nav-link">博客</a>\n  </div>\n</div></nav>\n<article class="blog-article">\n  <div class="gradient-border-card blog-article-card">\n    <div class="blog-article-date">' + p.date + '</div>\n    <h1 class="blog-article-title">' + p.title + '</h1>\n    <div class="blog-article-body">' + (p.content || '') + '</div>\n    <div style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border-subtle);">\n      <a href="../index.html" class="blog-article-back">← 返回博客</a>\n    </div>\n  </div>\n</article>\n<footer>\n  <div class="footer-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem;">\n    <span>&copy; 2026 Latte · 由 Codex 搭建</span>\n  </div>\n</footer>\n<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></' + 'script>\n<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></' + 'script>\n<script src="../../js/cursor.js"></' + 'script>\n</body>\n</html>';
-          var path = 'blog/posts/' + p.file;
-          return ghGet(path).then(function(existing) {
-            return ghPut(path, html, existing.sha);
-          }).catch(function() {
-            return ghPut(path, html);
-          });
-        }
-      }
-    }).then(function() { msg('blogMsg', 'ok', '已保存'); renderBlog(); })
-      .catch(function(err) { msg('blogMsg', 'err', '失败: ' + err.message); });
-  }
-// ====== 3. 留言板 ======
-  function renderGuestbook() {
-    var list = document.getElementById('gbList');
-    if (!comments || !comments.length) { list.innerHTML = '<p style="color:var(--ink-muted);text-align:center;padding:1rem;">暂无留言</p>'; return; }
-    list.innerHTML = comments.map(function(c, i) {
-      return '<div class="item-card"><div class="item-header"><span class="item-title">' + esc(c.name || '匿名') + '</span><div><span class="item-meta" style="margin-right:0.5rem;">' + esc(c.date) + '</span><button class="btn btn-danger btn-sm" onclick="Admin.deleteComment(' + i + ')">删除</button></div></div><div class="item-body">' + esc(c.text) + '</div></div>';
-    }).join('');
-  }
-  function deleteComment(i) { if (!confirm('确定删除？')) return; comments.splice(i, 1); saveGuestbook(); }
-  function syncLocalGuestbook() {
-    var local = JSON.parse(localStorage.getItem('gb_local') || '[]');
-    if (!local.length) { msg('gbMsg', 'info', '没有待同步的本地留言'); return; }
-    var added = 0;
-    local.forEach(function(c) { if (!comments.some(function(x) { return x.text===c.text&&x.name===c.name&&x.date===c.date; })) { comments.unshift(c); added++; } });
-    if (!added) { msg('gbMsg', 'info', '没有新留言'); return; }
-    msg('gbMsg', 'info', '同步中...');
-    ghGet('data/comments.json').then(function(j) { return ghPut('data/comments.json', JSON.stringify(comments,null,2), j.sha); })
-      .then(function() { localStorage.removeItem('gb_local'); msg('gbMsg', 'ok', '已同步'+added+'条'); renderGuestbook(); }).catch(function(err) { msg('gbMsg', 'err', '失败: '+err.message); });
-  }
-  function saveGuestbook() {
-    msg('gbMsg', 'info', '保存中...');
-    ghGet('data/comments.json').then(function(j) { return ghPut('data/comments.json', JSON.stringify(comments,null,2), j.sha); })
-      .then(function() { msg('gbMsg', 'ok', '已保存'); renderGuestbook(); }).catch(function(err) { msg('gbMsg', 'err', '失败: '+err.message); });
   }
 
-  // ====== 4. 摄影 ======
-  function getPhoto() {
-    if (!site.interests) site.interests = [];
-    var it = site.interests.find(function(i) { return i.name === '摄影'; });
-    if (!it) { it = { name:'摄影',icon:'camera',page:'interests/photography.html',description:'',albums:[] }; site.interests.push(it); }
-    if (!it.albums) it.albums = [];
-    return it;
+  function renderBlogEditor(post, index) {
+    return '<article class="item-card" data-blog-editor="' + index + '">' +
+      '<div class="item-header"><div class="item-title">编辑文章</div><button class="btn btn-ghost btn-sm" type="button" data-action="cancel-blog">取消</button></div>' +
+      '<div class="row-grid">' +
+        field('标题', 'blog-title', post.title, '', 'span-2') +
+        field('日期', 'blog-date', post.date, 'YYYY-MM-DD') +
+        field('页面文件名', 'blog-file', post.file || post.slug || '', 'my-post.html') +
+        textareaField('摘要', 'blog-summary', post.summary || post.excerpt || '', 3, 'span-4') +
+        textareaField('正文 HTML', 'blog-content', post.content || '', 12, 'span-4', true) +
+      '</div>' +
+      '<div class="button-row"><button class="btn btn-primary" type="button" data-action="save-blog-editor" data-index="' + index + '">保存文章</button></div>' +
+    '</article>';
   }
-  function renderPhoto() {
-    var it = getPhoto();
-    if (!it.albums.length) { document.getElementById('photoList').innerHTML = '<p style="color:var(--ink-muted);text-align:center;padding:1rem;">暂无图集</p>'; return; }
-    var h = '';
-    it.albums.forEach(function(a, i) {
-      h += '<div class="item-card"><div class="item-header"><span class="item-title">📷 ' + esc(a.name||'未命名') + '</span><button class="btn btn-danger btn-sm" onclick="Admin.deleteAlbum('+i+')">删除</button></div><div class="form-group"><label>名称</label><input class="pa-name" value="'+esc(a.name||'')+'"></div><div class="form-group"><label>描述</label><input class="pa-desc" value="'+esc(a.description||'')+'"></div><div class="form-group"><label>封面路径</label><input class="pa-cover" value="'+esc(a.cover||'')+'"></div><div class="form-group"><label>图片（一行一个路径）</label><textarea class="pa-imgs" rows="3">'+(a.images||[]).join('\n')+'</textarea></div><div class="form-group"><label>日志</label><textarea class="pa-journal" rows="3" data-rich="true">'+esc(a.journal||'')+'</textarea></div></div>';
+
+  function newBlogPost() {
+    var today = new Date().toISOString().slice(0, 10);
+    blog.posts.unshift({
+      title: '新文章',
+      date: today,
+      summary: '',
+      content: '',
+      file: 'post-' + today + '.html'
     });
-    document.getElementById('photoList').innerHTML = h;
+    editingBlogIndex = 0;
+    renderBlog();
   }
-  function newAlbum() { getPhoto().albums.push({ name:'',description:'',cover:'',images:[],journal:'' }); renderPhoto(); }
-  function deleteAlbum(i) { if (!confirm('确定删除？')) return; getPhoto().albums.splice(i,1); renderPhoto(); }
-  function savePhoto() {
-    var it = getPhoto();
-    var cards = document.querySelectorAll('#photoList .item-card');
-    cards.forEach(function(card, i) { it.albums[i].name=card.querySelector('.pa-name').value; it.albums[i].description=card.querySelector('.pa-desc').value; it.albums[i].cover=card.querySelector('.pa-cover').value; it.albums[i].images=card.querySelector('.pa-imgs').value.split('\n').filter(function(l){return l.trim();}); it.albums[i].journal=card.querySelector('.pa-journal').value; });
-    msg('photoMsg','info','保存中...');
-    ghGet('data/site.json').then(function(j){return ghPut('data/site.json',JSON.stringify(site,null,2),j.sha);}).then(function(){msg('photoMsg','ok','已保存');}).catch(function(err){msg('photoMsg','err','失败: '+err.message);});
+
+  function saveBlogEditor(index) {
+    var card = document.querySelector('[data-blog-editor="' + index + '"]');
+    if (!card) return;
+    var post = blog.posts[index];
+    post.title = card.querySelector('.blog-title').value.trim();
+    post.date = card.querySelector('.blog-date').value.trim();
+    post.summary = card.querySelector('.blog-summary').value;
+    post.excerpt = post.summary;
+    post.content = card.querySelector('.blog-content').value;
+    post.file = normalizeHtmlFile(card.querySelector('.blog-file').value.trim() || slugify(post.title) + '.html');
+    editingBlogIndex = null;
+    saveBlog(index);
   }
-  // ====== 5. 书籍 ======
-  function getBooks() { var it=site.interests.find(function(i){return i.name==='书籍';}); if(!it){it={name:'书籍',icon:'book',page:'interests/books.html',description:'',read:[],reading:[],wantToRead:[]};site.interests.push(it);} return it; }
-  function renderBooks() {
-    var it=getBooks();
-    var sections=[{key:'reading',label:'📖 在读',arr:it.reading||[]},{key:'read',label:'✅ 已读',arr:it.read||[]},{key:'wantToRead',label:'📋 想读',arr:it.wantToRead||[]}];
-    var h='';
-    sections.forEach(function(sec){
-      h+='<div class="section-group"><h3>'+sec.label+'</h3>';
-      sec.arr.forEach(function(b,j){
-        h+='<div class="item-card"><div class="item-header"><span class="item-title">'+esc(b.title||'')+'</span>'+
-          '<button class="btn btn-danger btn-sm" onclick="Admin.deleteBook(\''+sec.key+'\','+j+')">删除</button></div>'+
-          '<div class="form-group"><label>书名</label><input class="bk-title" value="'+esc(b.title||'')+'"></div>'+
-          '<div class="form-group"><label>作者</label><input class="bk-author" value="'+esc(b.author||'')+'"></div>'+
-          '<div class="form-group"><label>封面</label><input class="bk-cover" value="'+esc(b.cover||'')+'"></div>'+
-          '<div class="form-group"><label>书评</label><textarea class="bk-review" rows="2">'+esc(b.review||'')+'</textarea></div></div>';
+
+  function normalizeHtmlFile(value) {
+    return /\.html$/i.test(value) ? value : value + '.html';
+  }
+
+  function slugify(value) {
+    var text = String(value || 'post').trim().toLowerCase();
+    text = text.replace(/[^\w\u4e00-\u9fa5-]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    return text || ('post-' + Date.now());
+  }
+
+  function deleteBlog(index) {
+    if (!confirm('确定删除这篇文章？这里只会移除博客索引，不会删除已生成的历史 HTML 文件。')) return;
+    blog.posts.splice(index, 1);
+    editingBlogIndex = null;
+    saveBlog();
+  }
+
+  function saveBlog(editedIndex) {
+    setStatus('blogMsg', 'info', '保存博客索引中...');
+    return ghGet('data/blog.json')
+      .then(function(current) {
+        return ghPut('data/blog.json', JSON.stringify(blog, null, 2), current.sha, 'Update blog data');
+      })
+      .then(function() {
+        if (editedIndex == null || editedIndex < 0) return null;
+        var post = blog.posts[editedIndex];
+        if (!post || !post.file) return null;
+        return saveBlogHtml(post);
+      })
+      .then(function() {
+        setStatus('blogMsg', 'ok', '博客已保存');
+        renderBlog();
+      })
+      .catch(function(err) {
+        setStatus('blogMsg', 'err', '保存失败：' + friendlyError(err));
       });
-      h+='<button class="btn btn-ghost btn-sm" onclick="Admin.newBook(\''+sec.key+'\')" style="margin-top:0.3rem;">+ 添加</button></div>';
+  }
+
+  function saveBlogHtml(post) {
+    var path = 'blog/posts/' + post.file;
+    var html = buildBlogHtml(post);
+    return ghGet(path)
+      .then(function(existing) {
+        return ghPut(path, html, existing.sha, 'Update blog post ' + post.file);
+      })
+      .catch(function() {
+        return ghPut(path, html, null, 'Create blog post ' + post.file);
+      });
+  }
+
+  function buildBlogHtml(post) {
+    return '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>' + esc(post.title) + ' - Latte</title>\n<link rel="stylesheet" href="../../css/tokens.css">\n<link rel="stylesheet" href="../../css/base.css">\n<link rel="stylesheet" href="../../css/nav.css">\n<link rel="stylesheet" href="../../css/contact-footer.css">\n<link rel="stylesheet" href="../../css/blog.css">\n<link rel="stylesheet" href="../../css/blog-comments.css">\n</head>\n<body>\n<div id="reading-progress"></div>\n<nav class="site-nav"><div class="nav-glass"><a class="nav-brand" href="../../index.html">Latte</a><div class="nav-links"><a href="../../index.html" class="nav-link">首页</a><a href="../index.html" class="nav-link">博客</a><a href="../../index.html#message" class="nav-link">留言池</a></div></div></nav>\n<article class="blog-article">\n<div class="gradient-border-card blog-article-card">\n<div class="blog-article-date">' + esc(post.date) + '</div>\n<h1 class="blog-article-title">' + esc(post.title) + '</h1>\n<div class="blog-article-body">' + (post.content || '') + '</div>\n<div style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border-subtle);"><a href="../index.html" class="blog-article-back">返回博客</a></div>\n</div>\n</article>\n<footer><div class="footer-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem;"><span>&copy; 2026 Latte · 用 Codex 搭建</span></div></footer>\n<script src="../../js/gsap.min.js"></' + 'script>\n<script src="../../js/ScrollTrigger.min.js"></' + 'script>\n<script src="../../js/cursor.js"></' + 'script>\n<script src="../../js/blog-comments.js"></' + 'script>\n</body>\n</html>\n';
+  }
+
+  function renderComments() {
+    var list = $('commentList');
+    if (!comments.length) {
+      list.innerHTML = '<div class="empty-state">暂无留言</div>';
+      return;
+    }
+    list.innerHTML = comments.map(function(comment, index) {
+      return '<article class="item-card">' +
+        '<div class="item-header">' +
+          '<div><div class="item-title">' + esc(comment.name || '匿名') + '</div><div class="item-meta">' + esc(comment.date || '') + '</div></div>' +
+          '<button class="btn btn-danger btn-sm" type="button" data-action="delete-comment" data-index="' + index + '">删除</button>' +
+        '</div>' +
+        '<div class="plain-text">' + esc(comment.text || '') + '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  function deleteComment(index) {
+    if (!confirm('确定删除这条留言？')) return;
+    comments.splice(index, 1);
+    renderComments();
+    saveComments();
+  }
+
+  function saveComments() {
+    return saveJson('data/comments.json', comments, 'commentMsg', 'Update comments');
+  }
+
+  function renderPhoto() {
+    var photo = getPhotoInterest();
+    var list = $('photoList');
+    if (!photo.albums.length) {
+      list.innerHTML = '<div class="empty-state">暂无摄影图集</div>';
+      return;
+    }
+    list.innerHTML = photo.albums.map(function(album, index) {
+      return '<article class="item-card" data-album-index="' + index + '">' +
+        '<div class="item-header">' +
+          '<div><div class="item-title">' + esc(album.name || ('图集 ' + (index + 1))) + '</div><div class="item-meta">' + ((album.images || []).length) + ' 张图片</div></div>' +
+          '<button class="btn btn-danger btn-sm" type="button" data-action="delete-album" data-index="' + index + '">删除</button>' +
+        '</div>' +
+        '<div class="row-grid">' +
+          field('图集名称', 'album-name', album.name, '', 'span-2') +
+          field('封面路径', 'album-cover', album.cover, 'images/photo.jpg', 'span-2') +
+          textareaField('描述', 'album-desc', album.description, 2, 'span-4') +
+          textareaField('图片路径（一行一张）', 'album-images', (album.images || []).join('\n'), 5, 'span-4') +
+          textareaField('图集记录 HTML', 'album-journal', album.journal, 4, 'span-4', true) +
+        '</div>' +
+        '<div class="button-row">' +
+          '<button class="btn btn-ghost btn-sm" type="button" data-action="upload-album-cover" data-index="' + index + '">上传封面</button>' +
+          '<button class="btn btn-ghost btn-sm" type="button" data-action="upload-album-image" data-index="' + index + '">上传到图集</button>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  function collectPhoto() {
+    var photo = getPhotoInterest();
+    photo.albums = Array.from(document.querySelectorAll('[data-album-index]')).map(function(card) {
+      return {
+        name: card.querySelector('.album-name').value.trim(),
+        description: card.querySelector('.album-desc').value,
+        cover: card.querySelector('.album-cover').value.trim(),
+        images: lines(card.querySelector('.album-images').value),
+        journal: card.querySelector('.album-journal').value
+      };
     });
-    document.getElementById('booksList').innerHTML=h;
-  }
-  function newBook(key){var it=getBooks();(it[key]||(it[key]=[])).push({title:'',author:'',cover:'',review:''});renderBooks();}
-  function deleteBook(key,i){getBooks()[key].splice(i,1);renderBooks();}
-  function saveBooks(){
-    var it=getBooks();
-    var groups=document.querySelectorAll('#booksList .section-group');
-    ['reading','read','wantToRead'].forEach(function(key,gi){var grp=groups[gi];if(!grp)return;var cards=grp.querySelectorAll('.item-card');it[key]=Array.from(cards).map(function(card){return{title:card.querySelector('.bk-title').value,author:card.querySelector('.bk-author').value,cover:card.querySelector('.bk-cover').value,review:card.querySelector('.bk-review').value};});});
-    msg('booksMsg','info','保存中...');
-    ghGet('data/site.json').then(function(j){return ghPut('data/site.json',JSON.stringify(site,null,2),j.sha);}).then(function(){msg('booksMsg','ok','已保存');renderBooks();}).catch(function(err){msg('booksMsg','err','失败: '+err.message);});
   }
 
-  // ====== 6. 登山 ======
-  function getHiking(){var it=site.interests.find(function(i){return i.name==='登山';});if(!it){it={name:'登山',icon:'mountain',page:'interests/hiking.html',description:'',climbed:[],wantToClimb:[],journal:'',images:[]};site.interests.push(it);}return it;}
-  function renderHiking(){
-    var it=getHiking();
-    var h='<div class="section-group"><h3>📝 登山日志</h3><textarea id="hikeJournal" rows="4" data-rich="true">'+esc(it.journal||'')+'</textarea></div>';
-    h+='<div class="section-group"><h3>⛰️ 已登顶</h3>';
-    (it.climbed||[]).forEach(function(m,j){h+='<div class="item-card"><div class="item-header"><span class="item-title">'+esc(m.name||'')+'</span><button class="btn btn-danger btn-sm" onclick="Admin.deleteClimbed('+j+')">删除</button></div><div class="form-group"><label>山名</label><input class="hc-name" value="'+esc(m.name||'')+'"></div><div class="form-group"><label>日期</label><input class="hc-date" value="'+esc(m.date||'')+'"></div><div class="form-group"><label>备注</label><textarea class="hc-note" rows="2">'+esc(m.note||'')+'</textarea></div></div>';});
-    h+='<button class="btn btn-ghost btn-sm" onclick="Admin.newClimbed()">+ 添加</button></div>';
-    h+='<div class="section-group"><h3>🗻 想去</h3>';
-    (it.wantToClimb||[]).forEach(function(m,j){h+='<div class="item-card"><div class="item-header"><span class="item-title">'+esc(m.name||'')+'</span><button class="btn btn-danger btn-sm" onclick="Admin.deleteWantClimb('+j+')">删除</button></div><div class="form-group"><label>山名</label><input class="hw-name" value="'+esc(m.name||'')+'"></div><div class="form-group"><label>理由</label><input class="hw-reason" value="'+esc(m.reason||'')+'"></div></div>';});
-    h+='<button class="btn btn-ghost btn-sm" onclick="Admin.newWantClimb()">+ 添加</button></div>';
-    document.getElementById('hikingList').innerHTML=h;
-  }
-  function newClimbed(){var it=getHiking();if(!it.climbed)it.climbed=[];it.climbed.push({name:'',date:'',note:''});renderHiking();}
-  function newWantClimb(){var it=getHiking();if(!it.wantToClimb)it.wantToClimb=[];it.wantToClimb.push({name:'',reason:''});renderHiking();}
-  function deleteClimbed(i){getHiking().climbed.splice(i,1);renderHiking();}
-  function deleteWantClimb(i){getHiking().wantToClimb.splice(i,1);renderHiking();}
-  function saveHiking(){
-    var it=getHiking();it.journal=document.getElementById('hikeJournal').value;
-    var g1=document.querySelectorAll('#hikingList .section-group')[1];
-    if(g1){it.climbed=Array.from(g1.querySelectorAll('.item-card')).map(function(card){return{name:card.querySelector('.hc-name').value,date:card.querySelector('.hc-date').value,note:card.querySelector('.hc-note').value};});}
-    var g2=document.querySelectorAll('#hikingList .section-group')[2];
-    if(g2){it.wantToClimb=Array.from(g2.querySelectorAll('.item-card')).map(function(card){return{name:card.querySelector('.hw-name').value,reason:card.querySelector('.hw-reason').value};});}
-    msg('hikingMsg','info','保存中...');
-    ghGet('data/site.json').then(function(j){return ghPut('data/site.json',JSON.stringify(site,null,2),j.sha);}).then(function(){msg('hikingMsg','ok','已保存');}).catch(function(err){msg('hikingMsg','err','失败: '+err.message);});
+  function newAlbum() {
+    getPhotoInterest().albums.push({ name: '', description: '', cover: '', images: [], journal: '' });
+    renderPhoto();
+    renderImageTargets();
   }
 
-  // ====== 7. 爱好 ======
-  function getHobbies(){var it=site.interests.find(function(i){return i.name==='三分钟热度';});if(!it){it={name:'三分钟热度',icon:'sparkle',page:'interests/hobbies.html',description:'',hobbies:[]};site.interests.push(it);}return it;}
-  function renderHobbies(){var it=getHobbies();var h=(it.hobbies||[]).map(function(hb,i){return '<div class="item-card"><div class="item-header"><span class="item-title">'+esc(hb)+'</span><button class="btn btn-danger btn-sm" onclick="Admin.deleteHobby('+i+')">删除</button></div><input class="hobby-input" value="'+esc(hb)+'"></div>';}).join('');document.getElementById('hobbiesList').innerHTML=h||'<p style="color:var(--ink-muted);text-align:center;padding:1rem;">暂无爱好</p>';}
-  function newHobby(){getHobbies().hobbies.push('');renderHobbies();}
-  function deleteHobby(i){getHobbies().hobbies.splice(i,1);renderHobbies();}
-  function saveHobbies(){var it=getHobbies();it.hobbies=Array.from(document.querySelectorAll('#hobbiesList .hobby-input')).map(function(i){return i.value.trim();}).filter(Boolean);msg('hobbiesMsg','info','保存中...');ghGet('data/site.json').then(function(j){return ghPut('data/site.json',JSON.stringify(site,null,2),j.sha);}).then(function(){msg('hobbiesMsg','ok','已保存');}).catch(function(err){msg('hobbiesMsg','err','失败: '+err.message);});}
-  // ====== 8. 图片管理 ======
+  function deleteAlbum(index) {
+    if (!confirm('确定删除这个图集？图片文件不会被删除。')) return;
+    getPhotoInterest().albums.splice(index, 1);
+    renderPhoto();
+    renderImageTargets();
+  }
+
+  function savePhoto() {
+    collectPhoto();
+    renderImageTargets();
+    return saveJson('data/site.json', site, 'photoMsg', 'Update photography');
+  }
+
+  function renderBooks() {
+    var books = getBooksInterest();
+    var sections = [
+      { key: 'reading', label: '在读' },
+      { key: 'read', label: '已读' },
+      { key: 'wantToRead', label: '想读' }
+    ];
+    $('booksList').innerHTML = sections.map(function(section) {
+      var rows = books[section.key] || [];
+      return '<section class="section-group" data-book-section="' + section.key + '">' +
+        '<div class="section-title"><span>' + section.label + '</span>' +
+        '<button class="btn btn-ghost btn-sm" type="button" data-action="new-book" data-key="' + section.key + '">新增书籍</button></div>' +
+        (rows.length ? rows.map(function(book, index) { return renderBookEditor(section.key, book, index); }).join('') : '<div class="empty-state">暂无记录</div>') +
+      '</section>';
+    }).join('');
+  }
+
+  function renderBookEditor(key, book, index) {
+    if (!Array.isArray(book.excerpts)) {
+      if (Array.isArray(book.quotes)) book.excerpts = book.quotes;
+      else if (Array.isArray(book.extracts)) book.excerpts = book.extracts;
+      else book.excerpts = [];
+    }
+    return '<article class="item-card" data-book-key="' + key + '" data-book-index="' + index + '">' +
+      '<div class="item-header">' +
+        '<div><div class="item-title">' + esc(book.title || '未命名书籍') + '</div><div class="item-meta">' + esc(book.author || '') + '</div></div>' +
+        '<button class="btn btn-danger btn-sm" type="button" data-action="delete-book" data-key="' + key + '" data-index="' + index + '">删除</button>' +
+      '</div>' +
+      '<div class="row-grid">' +
+        field('书名', 'book-title', book.title, '', 'span-2') +
+        field('作者', 'book-author', book.author, '', 'span-2') +
+        field('封面路径', 'book-cover', book.cover, 'images/book.jpg', 'span-4') +
+        textareaField('书评 HTML', 'book-review', book.review || book.note || '', 4, 'span-4', true) +
+        textareaField('摘抄（一行一条）', 'book-excerpts', book.excerpts.join('\n'), 5, 'span-4') +
+      '</div>' +
+      '<div class="button-row"><button class="btn btn-ghost btn-sm" type="button" data-action="upload-book-cover" data-key="' + key + '" data-index="' + index + '">上传封面</button></div>' +
+    '</article>';
+  }
+
+  function collectBooks() {
+    var books = getBooksInterest();
+    ['reading', 'read', 'wantToRead'].forEach(function(key) { books[key] = []; });
+    document.querySelectorAll('[data-book-key]').forEach(function(card) {
+      var key = card.getAttribute('data-book-key');
+      books[key].push({
+        title: card.querySelector('.book-title').value.trim(),
+        author: card.querySelector('.book-author').value.trim(),
+        cover: card.querySelector('.book-cover').value.trim(),
+        review: card.querySelector('.book-review').value,
+        excerpts: lines(card.querySelector('.book-excerpts').value)
+      });
+    });
+  }
+
+  function newBook(key) {
+    getBooksInterest()[key].push({ title: '', author: '', cover: '', review: '', excerpts: [] });
+    renderBooks();
+    renderImageTargets();
+  }
+
+  function deleteBook(key, index) {
+    if (!confirm('确定删除这本书？')) return;
+    getBooksInterest()[key].splice(index, 1);
+    renderBooks();
+    renderImageTargets();
+  }
+
+  function saveBooks() {
+    collectBooks();
+    renderImageTargets();
+    return saveJson('data/site.json', site, 'booksMsg', 'Update books');
+  }
+
+  function renderHiking() {
+    var hiking = getHikingInterest();
+    $('hikingList').innerHTML =
+      '<section class="section-group">' +
+        '<div class="section-title"><span>徒步日志</span></div>' +
+        '<textarea class="inline-input" id="hikingJournal" rows="5" data-rich>' + esc(hiking.journal || '') + '</textarea>' +
+      '</section>' +
+      '<section class="section-group" id="climbedGroup">' +
+        '<div class="section-title"><span>已走过</span><button class="btn btn-ghost btn-sm" type="button" data-action="new-climbed">新增</button></div>' +
+        (hiking.climbed.length ? hiking.climbed.map(renderClimbed).join('') : '<div class="empty-state">暂无记录</div>') +
+      '</section>' +
+      '<section class="section-group" id="wantClimbGroup">' +
+        '<div class="section-title"><span>想去</span><button class="btn btn-ghost btn-sm" type="button" data-action="new-want-climb">新增</button></div>' +
+        (hiking.wantToClimb.length ? hiking.wantToClimb.map(renderWantClimb).join('') : '<div class="empty-state">暂无记录</div>') +
+      '</section>';
+  }
+
+  function renderClimbed(item, index) {
+    return '<article class="item-card" data-climbed-index="' + index + '">' +
+      '<div class="item-header"><div class="item-title">' + esc(item.name || '未命名山峰') + '</div>' +
+      '<button class="btn btn-danger btn-sm" type="button" data-action="delete-climbed" data-index="' + index + '">删除</button></div>' +
+      '<div class="row-grid">' + field('山名', 'climbed-name', item.name, '', 'span-2') + field('日期', 'climbed-date', item.date, '2026-05', 'span-2') + textareaField('备注', 'climbed-note', item.note, 2, 'span-4') + '</div>' +
+    '</article>';
+  }
+
+  function renderWantClimb(item, index) {
+    return '<article class="item-card" data-want-climb-index="' + index + '">' +
+      '<div class="item-header"><div class="item-title">' + esc(item.name || '未命名目的地') + '</div>' +
+      '<button class="btn btn-danger btn-sm" type="button" data-action="delete-want-climb" data-index="' + index + '">删除</button></div>' +
+      '<div class="row-grid">' + field('山名', 'want-name', item.name, '', 'span-2') + field('理由', 'want-reason', item.reason, '', 'span-2') + '</div>' +
+    '</article>';
+  }
+
+  function collectHiking() {
+    var hiking = getHikingInterest();
+    hiking.journal = $('hikingJournal').value;
+    hiking.climbed = Array.from(document.querySelectorAll('[data-climbed-index]')).map(function(card) {
+      return {
+        name: card.querySelector('.climbed-name').value.trim(),
+        date: card.querySelector('.climbed-date').value.trim(),
+        note: card.querySelector('.climbed-note').value
+      };
+    });
+    hiking.wantToClimb = Array.from(document.querySelectorAll('[data-want-climb-index]')).map(function(card) {
+      return {
+        name: card.querySelector('.want-name').value.trim(),
+        reason: card.querySelector('.want-reason').value.trim()
+      };
+    });
+  }
+
+  function newClimbed() {
+    getHikingInterest().climbed.push({ name: '', date: '', note: '' });
+    renderHiking();
+  }
+
+  function newWantClimb() {
+    getHikingInterest().wantToClimb.push({ name: '', reason: '' });
+    renderHiking();
+  }
+
+  function deleteClimbed(index) {
+    if (!confirm('确定删除这条已走过记录？')) return;
+    getHikingInterest().climbed.splice(index, 1);
+    renderHiking();
+  }
+
+  function deleteWantClimb(index) {
+    if (!confirm('确定删除这条想去记录？')) return;
+    getHikingInterest().wantToClimb.splice(index, 1);
+    renderHiking();
+  }
+
+  function saveHiking() {
+    collectHiking();
+    return saveJson('data/site.json', site, 'hikingMsg', 'Update hiking');
+  }
+
+  function lines(value) {
+    return String(value || '').split(/\r?\n/).map(function(line) { return line.trim(); }).filter(Boolean);
+  }
+
+  function field(label, className, value, placeholder, extraClass) {
+    return '<div class="form-group ' + (extraClass || '') + '"><label>' + label + '</label><input class="' + className + '" value="' + esc(value || '') + '" placeholder="' + esc(placeholder || '') + '"></div>';
+  }
+
+  function textareaField(label, className, value, rows, extraClass, rich) {
+    return '<div class="form-group ' + (extraClass || '') + '"><label>' + label + '</label><textarea class="' + className + '" rows="' + (rows || 3) + '"' + (rich ? ' data-rich' : '') + '>' + esc(value || '') + '</textarea></div>';
+  }
+
+  function renderImageTargets() {
+    var sel = $('imageTarget');
+    if (!sel) return;
+    var previous = sel.value || pendingImageTarget;
+    var options = [{ value: '', label: '仅上传到 images 目录' }];
+    getPhotoInterest().albums.forEach(function(album, index) {
+      options.push({ value: 'photo-cover:' + index, label: '摄影图集封面：' + (album.name || ('图集 ' + (index + 1))) });
+      options.push({ value: 'photo-image:' + index, label: '加入摄影图集：' + (album.name || ('图集 ' + (index + 1))) });
+    });
+    var books = getBooksInterest();
+    [
+      { key: 'reading', label: '在读' },
+      { key: 'read', label: '已读' },
+      { key: 'wantToRead', label: '想读' }
+    ].forEach(function(section) {
+      (books[section.key] || []).forEach(function(book, index) {
+        options.push({ value: 'book-cover:' + section.key + ':' + index, label: '书籍封面：' + section.label + ' / ' + (book.title || ('第 ' + (index + 1) + ' 本')) });
+      });
+    });
+    sel.innerHTML = options.map(function(opt) {
+      return '<option value="' + esc(opt.value) + '">' + esc(opt.label) + '</option>';
+    }).join('');
+    sel.value = options.some(function(opt) { return opt.value === previous; }) ? previous : '';
+  }
+
+  function pickImage(target) {
+    pendingImageTarget = target || $('imageTarget').value || '';
+    $('imgFileInput').click();
+  }
+
   function uploadImage(file) {
+    if (!file) return;
+    var path = 'images/' + file.name;
     var reader = new FileReader();
-    reader.onload = function(e) {
-      var b64 = e.target.result.split(',')[1];
-      msg('imgMsg', 'info', '上传中...');
-      ghGet('images/' + file.name).then(function(j) { return gh('PUT', 'images/' + file.name, j.sha, { message: 'Upload ' + file.name, content: b64 }); })
-        .catch(function() { return gh('PUT', 'images/' + file.name, null, { message: 'Upload ' + file.name, content: b64 }); })
-        .then(function() { msg('imgMsg', 'ok', '已上传: images/' + file.name); document.getElementById('imgFileName').textContent = ''; document.getElementById('imgFileInput').value = ''; loadImages(); })
-        .catch(function(err) { msg('imgMsg', 'err', '失败: ' + err.message); });
+    setStatus('imgMsg', 'info', '上传中：' + file.name);
+    reader.onload = function(event) {
+      var content = String(event.target.result || '').split(',')[1];
+      ghGet(path)
+        .then(function(existing) {
+          return gh('PUT', path, existing.sha, { message: 'Upload ' + file.name, content: content });
+        })
+        .catch(function() {
+          return gh('PUT', path, null, { message: 'Upload ' + file.name, content: content });
+        })
+        .then(function() {
+          applyImagePath(pendingImageTarget || $('imageTarget').value || '', path);
+          setStatus('imgMsg', 'ok', '已上传：' + path);
+          $('imgFileInput').value = '';
+          pendingImageTarget = '';
+          loadImages();
+        })
+        .catch(function(err) {
+          setStatus('imgMsg', 'err', '上传失败：' + friendlyError(err));
+        });
     };
     reader.readAsDataURL(file);
   }
+
+  function applyImagePath(target, path) {
+    if (!target) return;
+    var parts = target.split(':');
+    if (parts[0] === 'photo-cover') {
+      var coverInput = document.querySelector('[data-album-index="' + parts[1] + '"] .album-cover');
+      if (coverInput) coverInput.value = path;
+    }
+    if (parts[0] === 'photo-image') {
+      var imageArea = document.querySelector('[data-album-index="' + parts[1] + '"] .album-images');
+      if (imageArea) imageArea.value = imageArea.value.trim() ? imageArea.value.trim() + '\n' + path : path;
+    }
+    if (parts[0] === 'book-cover') {
+      var card = document.querySelector('[data-book-key="' + parts[1] + '"][data-book-index="' + parts[2] + '"]');
+      var bookInput = card && card.querySelector('.book-cover');
+      if (bookInput) bookInput.value = path;
+    }
+  }
+
   function loadImages() {
-    fetch('https://api.github.com/repos/' + R + '/contents/images', { headers: { 'Authorization': 'Bearer ' + T } })
-      .then(function(r) { if (!r.ok) throw new Error(''); return r.json(); })
-      .then(function(files) {
-        var imgs = files.filter(function(f) { return f.type === 'file' && /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(f.name); });
-        document.getElementById('imgGrid').innerHTML = imgs.map(function(f) { return '<div class="img-grid-item"><img src="' + f.download_url + '" alt="' + f.name + '" loading="lazy"><span class="img-name">' + f.name + '</span></div>'; }).join('') || '<p style="color:var(--ink-muted);width:100%;">暂无图片</p>';
-      }).catch(function() { document.getElementById('imgGrid').innerHTML = '<p style="color:var(--ink-muted);">暂无图片</p>'; });
+    if (!repo || !token) return;
+    return fetch('https://api.github.com/repos/' + repo + '/contents/images', {
+      headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json' }
+    }).then(function(res) {
+      if (!res.ok) throw new Error(res.status + ': ' + res.statusText);
+      return res.json();
+    }).then(function(files) {
+      images = files.filter(function(file) {
+        return file.type === 'file' && /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(file.name);
+      });
+      renderImages();
+    }).catch(function(err) {
+      $('imgGrid').innerHTML = '<div class="empty-state">图片列表加载失败：' + esc(friendlyError(err)) + '</div>';
+    });
   }
 
-  // ====== 9. 音乐同步 ======
+  function renderImages() {
+    var grid = $('imgGrid');
+    if (!images.length) {
+      grid.innerHTML = '<div class="empty-state">暂无已上传图片</div>';
+      return;
+    }
+    grid.innerHTML = images.map(function(file) {
+      var path = 'images/' + file.name;
+      return '<article class="img-card">' +
+        '<img src="' + esc(file.download_url) + '" alt="' + esc(file.name) + '" loading="lazy">' +
+        '<div class="img-card-body">' +
+          '<div class="img-name" title="' + esc(path) + '">' + esc(file.name) + '</div>' +
+          '<button class="btn btn-ghost btn-sm" type="button" data-action="copy-image-path" data-path="' + esc(path) + '">复制路径</button>' +
+          '<button class="btn btn-ghost btn-sm" type="button" data-action="use-image-path" data-path="' + esc(path) + '">填入当前目标</button>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  function copyPath(path) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(path).then(function() {
+        setStatus('imgMsg', 'ok', '已复制：' + path);
+      }).catch(function() {
+        window.prompt('复制图片路径', path);
+      });
+    } else {
+      window.prompt('复制图片路径', path);
+    }
+  }
+
   function loadMusicStatus() {
-    fetch(API_BASE + '/api/netease/status').then(function(r) { return r.json(); }).then(function(d) {
-      document.getElementById('musicStatus').innerHTML = '当前缓存: <strong>' + d.songCount + '</strong> 首歌 | 更新于: ' + (d.cachedAt ? new Date(d.cachedAt).toLocaleString('zh-CN') : '未知');
-    }).catch(function() { document.getElementById('musicStatus').textContent = '无法连接音乐服务'; });
-  }
-  function syncMusic() {
-    msg('musicMsg', 'info', '同步中...');
-    fetch(API_BASE + '/api/netease/sync', { method: 'POST' }).then(function(r) { return r.json(); })
-      .then(function(d) { msg('musicMsg', 'ok', '同步完成！共 ' + d.songCount + ' 首'); loadMusicStatus(); })
-      .catch(function(err) { msg('musicMsg', 'err', '失败: ' + err.message); });
+    if (!$('musicStatus')) return;
+    fetch(apiBase + '/api/netease/status')
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        $('musicStatus').textContent = '当前缓存：' + (data.songCount || 0) + ' 首；更新时间：' + (data.cachedAt ? new Date(data.cachedAt).toLocaleString('zh-CN', { hour12: false }) : '暂无');
+      })
+      .catch(function() {
+        $('musicStatus').textContent = '无法连接音乐服务';
+      });
   }
 
-  // ====== 富文本工具栏 ======
+  function syncMusic() {
+    setStatus('musicMsg', 'info', '同步中...');
+    fetch(apiBase + '/api/netease/sync', { method: 'POST' })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        setStatus('musicMsg', 'ok', '同步完成，共 ' + (data.songCount || 0) + ' 首');
+        loadMusicStatus();
+      })
+      .catch(function(err) {
+        setStatus('musicMsg', 'err', '同步失败：' + friendlyError(err));
+      });
+  }
+
   function initRichToolbar() {
-    var tb = document.getElementById('richToolbar'), activeTA = null;
-    document.addEventListener('focusin', function(e) {
-      if (e.target.tagName === 'TEXTAREA' && e.target.hasAttribute('data-rich')) {
-        activeTA = e.target; var r = e.target.getBoundingClientRect();
-        tb.style.left = Math.max(5, r.left) + 'px'; tb.style.top = Math.max(5, r.top + window.scrollY - 44) + 'px'; tb.style.display = 'flex';
-      }
+    var toolbar = $('richToolbar');
+    var active = null;
+
+    document.addEventListener('focusin', function(event) {
+      if (event.target.tagName !== 'TEXTAREA' || !event.target.hasAttribute('data-rich')) return;
+      active = event.target;
+      var rect = active.getBoundingClientRect();
+      toolbar.hidden = false;
+      toolbar.style.left = Math.max(8, rect.left) + 'px';
+      toolbar.style.top = Math.max(8, rect.top + window.scrollY - 44) + 'px';
     });
-    document.addEventListener('click', function(e) { if (!e.target.closest('[data-rich]') && !e.target.closest('#richToolbar')) { tb.style.display = 'none'; activeTA = null; } });
-    tb.addEventListener('click', function(e) {
-      var btn = e.target.closest('button'); if (!btn || !activeTA) return; e.preventDefault();
-      var tag = btn.getAttribute('data-tag'); if (!tag) return;
-      var ta = activeTA, s = ta.selectionStart, n = ta.selectionEnd, v = ta.value, sel = v.substring(s, n), w = ['', ''];
-      switch (tag) {
-        case 'b': w = ['<strong>', '</strong>']; break;
-        case 'i': w = ['<em>', '</em>']; break;
-        case 'h3': w = ['<h3>', '</h3>']; break;
-        case 'blockquote': w = ['<blockquote><p>', '</p></blockquote>']; break;
-        case 'mark': w = ['<mark>', '</mark>']; break;
-        case 'br': w = ['', '<br>']; sel = ''; break;
-        case 'a': var url = prompt('链接地址:', 'https://'); if (!url) return; w = ['<a href="' + url + '">', '</a>']; break;
-      }
-      var rep = w[0] + sel + w[1]; ta.value = v.substring(0, s) + rep + v.substring(n);
-      ta.focus(); var np = s + w[0].length + sel.length + (tag === 'br' ? 4 : 0); ta.setSelectionRange(np, np);
-      ta.dispatchEvent(new Event('input', { bubbles: true }));
+
+    document.addEventListener('click', function(event) {
+      if (event.target.closest('[data-rich]') || event.target.closest('#richToolbar')) return;
+      toolbar.hidden = true;
+      active = null;
+    });
+
+    toolbar.addEventListener('click', function(event) {
+      var btn = event.target.closest('button');
+      if (!btn || !active) return;
+      event.preventDefault();
+      insertRichTag(active, btn.getAttribute('data-tag'));
     });
   }
+
+  function insertRichTag(textarea, tag) {
+    var start = textarea.selectionStart;
+    var end = textarea.selectionEnd;
+    var value = textarea.value;
+    var selected = value.slice(start, end);
+    var before = '';
+    var after = '';
+
+    if (tag === 'strong') { before = '<strong>'; after = '</strong>'; }
+    if (tag === 'em') { before = '<em>'; after = '</em>'; }
+    if (tag === 'h3') { before = '<h3>'; after = '</h3>'; }
+    if (tag === 'blockquote') { before = '<blockquote><p>'; after = '</p></blockquote>'; }
+    if (tag === 'br') { selected = ''; after = '<br>'; }
+    if (tag === 'a') {
+      var url = window.prompt('链接地址', 'https://');
+      if (!url) return;
+      before = '<a href="' + esc(url) + '" target="_blank" rel="noopener">';
+      after = '</a>';
+    }
+
+    var next = before + selected + after;
+    textarea.value = value.slice(0, start) + next + value.slice(end);
+    textarea.focus();
+    textarea.setSelectionRange(start + before.length + selected.length, start + before.length + selected.length);
+  }
+
+  function handleAction(event) {
+    var btn = event.target.closest('[data-action]');
+    if (!btn) return;
+    var action = btn.getAttribute('data-action');
+    var index = Number(btn.getAttribute('data-index'));
+    var key = btn.getAttribute('data-key');
+    var path = btn.getAttribute('data-path');
+
+    if (action === 'save-site') saveSite();
+    if (action === 'new-interest') newInterest();
+    if (action === 'save-interests') saveInterests();
+    if (action === 'delete-interest') deleteInterest(index);
+    if (action === 'new-blog') newBlogPost();
+    if (action === 'edit-blog') { editingBlogIndex = index; renderBlog(); }
+    if (action === 'cancel-blog') { editingBlogIndex = null; renderBlog(); }
+    if (action === 'save-blog-editor') saveBlogEditor(index);
+    if (action === 'delete-blog') deleteBlog(index);
+    if (action === 'delete-comment') deleteComment(index);
+    if (action === 'save-comments') saveComments();
+    if (action === 'new-album') newAlbum();
+    if (action === 'delete-album') deleteAlbum(index);
+    if (action === 'save-photo') savePhoto();
+    if (action === 'upload-album-cover') pickImage('photo-cover:' + index);
+    if (action === 'upload-album-image') pickImage('photo-image:' + index);
+    if (action === 'new-book') newBook(key);
+    if (action === 'delete-book') deleteBook(key, index);
+    if (action === 'save-books') saveBooks();
+    if (action === 'upload-book-cover') pickImage('book-cover:' + key + ':' + index);
+    if (action === 'new-climbed') newClimbed();
+    if (action === 'new-want-climb') newWantClimb();
+    if (action === 'delete-climbed') deleteClimbed(index);
+    if (action === 'delete-want-climb') deleteWantClimb(index);
+    if (action === 'save-hiking') saveHiking();
+    if (action === 'pick-image') pickImage();
+    if (action === 'copy-image-path') copyPath(path);
+    if (action === 'use-image-path') {
+      applyImagePath($('imageTarget').value, path);
+      setStatus('imgMsg', 'ok', '已填入：' + path);
+    }
+    if (action === 'sync-music') syncMusic();
+  }
+
+  function init() {
+    $('loginBtn').addEventListener('click', login);
+    $('tabBar').addEventListener('click', function(event) {
+      var btn = event.target.closest('.tab-btn');
+      if (btn) switchTab(btn.getAttribute('data-tab'));
+    });
+    document.addEventListener('click', handleAction);
+    $('imgFileInput').addEventListener('change', function(event) {
+      uploadImage(event.target.files && event.target.files[0]);
+    });
+    initRichToolbar();
+
+    var saved = sessionStorage.getItem('latte_admin_session');
+    if (saved) {
+      try {
+        var parsed = JSON.parse(saved);
+        if (parsed.repo) $('repoInput').value = parsed.repo;
+        if (parsed.token) $('tokenInput').value = parsed.token;
+      } catch (err) {}
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
 
   return {
-    login: login, saveSite: saveSite,
-    renderBlog: renderBlog, newBlogPost: newBlogPost, deleteBlogPost: deleteBlogPost, editBlogPost: editBlogPost, saveBlog: saveBlog,
-    deleteComment: deleteComment, syncLocalGuestbook: syncLocalGuestbook, saveGuestbook: saveGuestbook,
-    newAlbum: newAlbum, deleteAlbum: deleteAlbum, savePhoto: savePhoto,
-    renderBooks: renderBooks, newBook: newBook, deleteBook: deleteBook, saveBooks: saveBooks,
-    renderHiking: renderHiking, newClimbed: newClimbed, newWantClimb: newWantClimb, deleteClimbed: deleteClimbed, deleteWantClimb: deleteWantClimb, saveHiking: saveHiking,
-    renderHobbies: renderHobbies, newHobby: newHobby, deleteHobby: deleteHobby, saveHobbies: saveHobbies,
-    loadImages: loadImages, loadMusicStatus: loadMusicStatus, syncMusic: syncMusic
+    login: login,
+    saveSite: saveSite,
+    saveInterests: saveInterests,
+    saveBlog: saveBlog,
+    saveComments: saveComments,
+    savePhoto: savePhoto,
+    saveBooks: saveBooks,
+    saveHiking: saveHiking,
+    loadImages: loadImages,
+    syncMusic: syncMusic
   };
 })();

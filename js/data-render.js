@@ -54,7 +54,7 @@ function renderInterestsBooksFallback() {
       { name: '摄影', icon: 'camera', page: 'interests/photography.html' },
       { name: '书籍', icon: 'book', page: 'interests/books.html' },
       { name: '三分钟热度', icon: 'sparkle', page: 'interests/hobbies.html', hobbies: ['手冲咖啡','钩织','吉他','烹饪','动漫','徒步','想学攀岩'] },
-      { name: '登山', icon: 'mountain', page: 'interests/hiking.html' }
+      { name: '徒步', icon: 'mountain', page: 'interests/hiking.html' }
     ],
     books: [
       { title: '《我与地坛》', author: '史铁生' },

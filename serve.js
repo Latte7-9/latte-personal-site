@@ -18,22 +18,38 @@ const mime = {
   '.svg': 'image/svg+xml'
 };
 
+function sendHeaders(res, status, contentType) {
+  res.writeHead(status, {
+    'Content-Type': contentType,
+    'Access-Control-Allow-Origin': '*',
+    'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+    'Pragma': 'no-cache'
+  });
+}
+
 function serveStatic(req, res) {
   let f = req.url.split('?')[0];
+  try {
+    f = decodeURIComponent(f);
+  } catch (e) {
+    res.writeHead(400);
+    res.end('Bad request');
+    return;
+  }
   if (f === '/') f = '/index.html';
   const fp = path.join(D, f);
 
   fs.readFile(fp, (e, d) => {
     if (!e) {
-      const ext = path.extname(f);
-      res.writeHead(200, { 'Content-Type': mime[ext] || 'text/plain', 'Access-Control-Allow-Origin': '*' });
+      const ext = path.extname(f).toLowerCase();
+      sendHeaders(res, 200, mime[ext] || 'text/plain');
       res.end(d);
       return;
     }
     if (f.endsWith('/')) {
       fs.readFile(path.join(D, f + 'index.html'), (e2, d2) => {
         if (!e2) {
-          res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Access-Control-Allow-Origin': '*' });
+          sendHeaders(res, 200, 'text/html; charset=utf-8');
           res.end(d2);
           return;
         }
@@ -42,7 +58,7 @@ function serveStatic(req, res) {
     } else if (!path.extname(f)) {
       fs.readFile(path.join(D, f + '/index.html'), (e2, d2) => {
         if (!e2) {
-          res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Access-Control-Allow-Origin': '*' });
+          sendHeaders(res, 200, 'text/html; charset=utf-8');
           res.end(d2);
           return;
         }

@@ -330,8 +330,8 @@ function renderHikingPage(interest) {
   var journal = interest.journal || '';
 
   var html = '<div class="book-tabs">';
-  html += '<button class="active" onclick="switchBookTab(\'climbed\')">已登山脉</button>';
-  html += '<button onclick="switchBookTab(\'wantClimb\')">想要征服</button>';
+  html += '<button class="active" onclick="switchBookTab(\'climbed\')">已走过</button>';
+  html += '<button onclick="switchBookTab(\'wantClimb\')">想去徒步</button>';
   if (journal) html += '<button onclick="switchBookTab(\'journal\')">随笔</button>';
   if (images.length) html += '<button onclick="switchBookTab(\'photos\')">照片</button>';
   html += '</div>';
@@ -339,17 +339,17 @@ function renderHikingPage(interest) {
   html += '<div class="book-tab-content active" id="tab-climbed">';
   if (climbed.length) {
     html += '<div class="mountain-list">' + climbed.map(function(m) {
-      return '<div class="mountain-card"><div class="mountain-icon">' + ICONS.mountain + '</div><div class="mountain-info"><div class="mountain-name">' + m.name + '</div><div class="mountain-detail">' + (m.date || '') + (m.note ? ' · ' + m.note : '') + '</div></div><span class="tag-climbed">已登顶</span></div>';
+      return '<div class="mountain-card"><div class="mountain-icon">' + ICONS.mountain + '</div><div class="mountain-info"><div class="mountain-name">' + m.name + '</div><div class="mountain-detail">' + (m.date || '') + (m.note ? ' · ' + m.note : '') + '</div></div><span class="tag-climbed">已走过</span></div>';
     }).join('') + '</div>';
-  } else { html += '<div class="album-empty">还没有已登山脉</div>'; }
+  } else { html += '<div class="album-empty">还没有徒步记录</div>'; }
   html += '</div>';
 
   html += '<div class="book-tab-content" id="tab-wantClimb">';
   if (wantToClimb.length) {
     html += '<div class="mountain-list">' + wantToClimb.map(function(m) {
-      return '<div class="mountain-card"><div class="mountain-icon">' + ICONS.mountain + '</div><div class="mountain-info"><div class="mountain-name">' + m.name + '</div>' + (m.reason ? '<div class="mountain-detail">' + m.reason + '</div>' : '') + '</div><span class="tag-wanted">想要征服</span></div>';
+      return '<div class="mountain-card"><div class="mountain-icon">' + ICONS.mountain + '</div><div class="mountain-info"><div class="mountain-name">' + m.name + '</div>' + (m.reason ? '<div class="mountain-detail">' + m.reason + '</div>' : '') + '</div><span class="tag-wanted">想去徒步</span></div>';
     }).join('') + '</div>';
-  } else { html += '<div class="album-empty">还没有想要征服的山</div>'; }
+  } else { html += '<div class="album-empty">还没有想去徒步的地方</div>'; }
   html += '</div>';
 
   if (journal) {
@@ -905,12 +905,19 @@ function initGuestbook() {
 
 
 
-document.addEventListener('DOMContentLoaded', () => { initBackToTop();
+function latteInitPage() {
+  initBackToTop();
   highlightNav();
   initGuestbook();
-  var homePromise = renderHome();
-  homePromise.then(function() { initFadeIn(); });
+  var hasHomeModules = document.querySelector('.about .container, .random-listen .container, .interest-grid, #homeBlogList');
+  if (hasHomeModules) {
+    var homePromise = renderHome();
+    homePromise.then(function() { initFadeIn(); });
+  }
   if (document.querySelector('.blog-list')) renderBlog();
   if (document.querySelector('.interest-page')) renderInterestPage();
-  if (!document.querySelector('.blog-list') && !document.querySelector('.interest-page')) initFadeIn();
-});
+  if (!hasHomeModules && !document.querySelector('.blog-list') && !document.querySelector('.interest-page')) initFadeIn();
+}
+
+window.LatteInitPage = latteInitPage;
+document.addEventListener('DOMContentLoaded', latteInitPage);
