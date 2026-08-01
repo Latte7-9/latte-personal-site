@@ -1,0 +1,48 @@
+name: Sync Netease Recently Played
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-netease.yml'
+      - 'scripts/sync-netease.js'
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-netease-recently-played
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Read public Netease profile
+        env:
+          NETEASE_UID: '547894281'
+        run: node scripts/sync-netease.js
+
+      - name: Commit changed songs
+        shell: bash
+        run: |
+          if git diff --quiet -- data/currently.json; then
+            echo "Recently played songs are unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/currently.json
+          git commit -m "chore: sync Netease recently played"
+          git push

@@ -1010,26 +1010,28 @@ var Admin = (function() {
 
   function loadMusicStatus() {
     if (!$('musicStatus')) return;
-    fetch(apiBase + '/api/netease/status')
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        $('musicStatus').textContent = '当前缓存：' + (data.songCount || 0) + ' 首；更新时间：' + (data.cachedAt ? new Date(data.cachedAt).toLocaleString('zh-CN', { hour12: false }) : '暂无');
-      })
-      .catch(function() {
-        $('musicStatus').textContent = '无法连接音乐服务';
-      });
+    var data = currently.netease || {};
+    var count = Array.isArray(data.songs) ? data.songs.length : 0;
+    $('musicStatus').textContent = '当前缓存：' + count + ' 首；更新时间：' + (data.updatedAt ? new Date(data.updatedAt).toLocaleString('zh-CN', { hour12: false }) : '暂无');
   }
 
   function syncMusic() {
     setStatus('musicMsg', 'info', '同步中...');
-    fetch(apiBase + '/api/netease/sync', { method: 'POST' })
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        setStatus('musicMsg', 'ok', '同步完成，共 ' + (data.songCount || 0) + ' 首');
-        loadMusicStatus();
+    fetch('https://api.github.com/repos/' + repo + '/actions/workflows/sync-netease.yml/dispatches', {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ref: 'main' })
+    })
+      .then(function(res) {
+        if (!res.ok) throw new Error('GitHub 返回 HTTP ' + res.status);
+        setStatus('musicMsg', 'ok', '同步任务已启动，约 1 分钟后刷新后台即可看到最新歌曲。');
       })
       .catch(function(err) {
-        setStatus('musicMsg', 'err', '同步失败：' + friendlyError(err));
+        setStatus('musicMsg', 'err', '启动同步失败：' + friendlyError(err) + '。请确认 Token 具有 Actions 写权限。');
       });
   }
 
