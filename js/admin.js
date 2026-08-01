@@ -97,18 +97,23 @@ var Admin = (function() {
     });
   }
 
-  function saveJson(path, value, statusId, message) {
-    setStatus(statusId, 'info', '保存中...');
+  function putJson(path, value, message) {
     return ghGet(path)
       .then(function(current) {
         return ghPut(path, JSON.stringify(value, null, 2), current.sha, message);
-      })
+      });
+  }
+
+  function saveJson(path, value, statusId, message) {
+    setStatus(statusId, 'info', '保存中...');
+    return putJson(path, value, message)
       .then(function() {
         setStatus(statusId, 'ok', '已保存');
+        return true;
       })
       .catch(function(err) {
         setStatus(statusId, 'err', '保存失败：' + friendlyError(err));
-        throw err;
+        return false;
       });
   }
 
@@ -612,16 +617,22 @@ var Admin = (function() {
 
   function collectBooks() {
     var books = getBooksInterest();
+    var originals = {
+      reading: (books.reading || []).slice(),
+      read: (books.read || []).slice(),
+      wantToRead: (books.wantToRead || []).slice()
+    };
     ['reading', 'read', 'wantToRead'].forEach(function(key) { books[key] = []; });
     document.querySelectorAll('[data-book-key]').forEach(function(card) {
       var key = card.getAttribute('data-book-key');
-      books[key].push({
+      var index = Number(card.getAttribute('data-book-index'));
+      books[key].push(Object.assign({}, originals[key][index] || {}, {
         title: card.querySelector('.book-title').value.trim(),
         author: card.querySelector('.book-author').value.trim(),
         cover: card.querySelector('.book-cover').value.trim(),
         review: card.querySelector('.book-review').value,
         excerpts: lines(card.querySelector('.book-excerpts').value)
-      });
+      }));
     });
   }
 
@@ -850,9 +861,19 @@ var Admin = (function() {
       tarotGuide = JSON.parse($('guideJson').value);
     } catch (err) {
       setStatus('personalityMsg', 'err', 'JSON 格式有误，请检查逗号和引号');
-      return Promise.reject(err);
+      return Promise.resolve(false);
     }
-    return Promise.all([saveJson('data/latte-personality-layer.json', personality, 'personalityMsg', 'Update personality layer'), saveJson('data/tarot-conversation-guide.json', tarotGuide, 'personalityMsg', 'Update tarot conversation guide')]);
+    setStatus('personalityMsg', 'info', '保存中...');
+    return Promise.all([
+      putJson('data/latte-personality-layer.json', personality, 'Update personality layer'),
+      putJson('data/tarot-conversation-guide.json', tarotGuide, 'Update tarot conversation guide')
+    ]).then(function() {
+      setStatus('personalityMsg', 'ok', '人格层与会话指南已保存');
+      return true;
+    }).catch(function(err) {
+      setStatus('personalityMsg', 'err', '保存失败：' + friendlyError(err));
+      return false;
+    });
   }
 
   function field(label, className, value, placeholder, extraClass) {
