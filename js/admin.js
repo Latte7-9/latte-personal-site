@@ -217,6 +217,10 @@ var Admin = (function() {
 
     $('loginBtn').disabled = true;
     $('loginBtn').textContent = '连接中...';
+    $('mainPanel').hidden = true;
+    $('loginPanel').hidden = false;
+    $('connStatus').textContent = '未连接';
+    $('connStatus').className = 'status-badge status-err';
     setStatus('loginMsg', 'info', '正在读取仓库内容...');
 
     Promise.all([
@@ -239,6 +243,7 @@ var Admin = (function() {
       answerBook = values[7];
       ensureDataShape();
       $('connStatus').textContent = '已连接：' + repo;
+      $('connStatus').className = 'status-badge status-ok';
       sessionStorage.setItem('latte_admin_session', JSON.stringify({ repo: repo, token: token }));
       $('loginPanel').hidden = true;
       $('mainPanel').hidden = false;
@@ -246,6 +251,8 @@ var Admin = (function() {
       setStatus('loginMsg', 'ok', '');
       loadImages();
     }).catch(function(err) {
+      $('mainPanel').hidden = true;
+      $('loginPanel').hidden = false;
       setStatus('loginMsg', 'err', '连接失败：' + friendlyError(err));
     }).finally(function() {
       $('loginBtn').disabled = false;
