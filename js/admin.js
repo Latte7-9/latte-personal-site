@@ -1,5 +1,6 @@
 // Latte 独立内容管理后台
 var Admin = (function() {
+  var defaultRepo = 'Latte7-9/latte-personal-site';
   var repo = '';
   var token = '';
   var site = null;
@@ -64,7 +65,9 @@ var Admin = (function() {
           return res.text().then(function(text) {
             var msg = res.status + ': ' + res.statusText;
             if (text) msg += ' - ' + text.slice(0, 160);
-            throw new Error(msg);
+            var error = new Error(msg);
+            error.status = res.status;
+            throw error;
           });
         }
         return res.json();
@@ -88,8 +91,9 @@ var Admin = (function() {
   function readJson(path, fallback) {
     return ghGet(path).then(function(res) {
       return JSON.parse(b64d(res.content));
-    }).catch(function() {
-      return fallback;
+    }).catch(function(err) {
+      if (err && err.status === 404) return fallback;
+      throw err;
     });
   }
 
@@ -234,6 +238,7 @@ var Admin = (function() {
       tarotGuide = values[6];
       answerBook = values[7];
       ensureDataShape();
+      $('connStatus').textContent = '已连接：' + repo;
       sessionStorage.setItem('latte_admin_session', JSON.stringify({ repo: repo, token: token }));
       $('loginPanel').hidden = true;
       $('mainPanel').hidden = false;
@@ -726,7 +731,10 @@ var Admin = (function() {
         values.push(item[1].replace(/\\'/g, "'").replace(/\\n/g, '\n'));
       }
       return values;
-    }).catch(function() { return []; });
+    }).catch(function(err) {
+      if (err && err.status === 404) return [];
+      throw err;
+    });
   }
 
   function renderCurrently() {
@@ -1116,7 +1124,8 @@ var Admin = (function() {
     if (saved) {
       try {
         var parsed = JSON.parse(saved);
-        if (parsed.repo) $('repoInput').value = parsed.repo;
+        if (parsed.repo && parsed.repo !== 'Latte7-9/latte-site') $('repoInput').value = parsed.repo;
+        else $('repoInput').value = defaultRepo;
         if (parsed.token) $('tokenInput').value = parsed.token;
       } catch (err) {}
     }
