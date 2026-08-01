@@ -6,6 +6,11 @@ var Admin = (function() {
   var blog = { posts: [] };
   var comments = [];
   var images = [];
+  var currently = { netease: { songs: [], status: '', updatedAt: '' } };
+  var tarot = { spreads: {}, cards: [] };
+  var personality = {};
+  var tarotGuide = {};
+  var answerBook = [];
   var editingBlogIndex = null;
   var pendingImageTarget = '';
   var apiBase = 'https://latte-site-production.up.railway.app';
@@ -123,6 +128,15 @@ var Admin = (function() {
     if (!Array.isArray(site.interests)) site.interests = [];
     if (!blog || !Array.isArray(blog.posts)) blog = { posts: [] };
     if (!Array.isArray(comments)) comments = [];
+    if (!currently || typeof currently !== 'object') currently = {};
+    if (!currently.netease) currently.netease = {};
+    if (!Array.isArray(currently.netease.songs)) currently.netease.songs = [];
+    if (!tarot || typeof tarot !== 'object') tarot = { spreads: {}, cards: [] };
+    if (!tarot.spreads) tarot.spreads = {};
+    if (!Array.isArray(tarot.cards)) tarot.cards = [];
+    if (!personality || typeof personality !== 'object') personality = {};
+    if (!tarotGuide || typeof tarotGuide !== 'object') tarotGuide = {};
+    if (!Array.isArray(answerBook)) answerBook = [];
   }
 
   function matchInterest(item, kind) {
@@ -204,11 +218,21 @@ var Admin = (function() {
     Promise.all([
       readJson('data/site.json', {}),
       readJson('data/blog.json', { posts: [] }),
-      readJson('data/comments.json', [])
+      readJson('data/comments.json', []),
+      readJson('data/currently.json', { netease: { songs: [] } }),
+      readJson('data/tarot-cards.json', { spreads: {}, cards: [] }),
+      readJson('data/latte-personality-layer.json', {}),
+      readJson('data/tarot-conversation-guide.json', {}),
+      readAnswerBook()
     ]).then(function(values) {
       site = values[0];
       blog = values[1];
       comments = values[2];
+      currently = values[3];
+      tarot = values[4];
+      personality = values[5];
+      tarotGuide = values[6];
+      answerBook = values[7];
       ensureDataShape();
       sessionStorage.setItem('latte_admin_session', JSON.stringify({ repo: repo, token: token }));
       $('loginPanel').hidden = true;
@@ -232,6 +256,10 @@ var Admin = (function() {
     renderPhoto();
     renderBooks();
     renderHiking();
+    renderCurrently();
+    renderTarot();
+    renderAnswerBook();
+    renderPersonality();
     renderImageTargets();
     loadMusicStatus();
   }
@@ -686,6 +714,132 @@ var Admin = (function() {
     return String(value || '').split(/\r?\n/).map(function(line) { return line.trim(); }).filter(Boolean);
   }
 
+  function readAnswerBook() {
+    return ghGet('js/answer-book.js').then(function(res) {
+      var source = b64d(res.content);
+      var match = source.match(/var answers = \[([\s\S]*?)\];/);
+      if (!match) return [];
+      var values = [];
+      var regex = /'((?:\\.|[^'])*)'/g;
+      var item;
+      while ((item = regex.exec(match[1]))) {
+        values.push(item[1].replace(/\\'/g, "'").replace(/\\n/g, '\n'));
+      }
+      return values;
+    }).catch(function() { return []; });
+  }
+
+  function renderCurrently() {
+    var data = currently.netease || {};
+    $('currentlyStatus').value = data.status || '';
+    $('currentlyUpdatedAt').value = data.updatedAt || '';
+    $('songList').innerHTML = (data.songs || []).map(function(song, index) {
+      return '<article class="item-card data-row" data-song-index="' + index + '">' +
+        '<div class="item-header"><div class="item-title">' + esc(song.name || '未命名歌曲') + '</div><button class="btn btn-danger btn-sm" type="button" data-action="delete-song" data-index="' + index + '">删除</button></div>' +
+        '<div class="row-grid">' + field('歌曲名', 'song-name', song.name, '', 'span-2') + field('歌手', 'song-artists', song.artists, '', 'span-2') + field('歌曲 ID', 'song-id', song.id, '', 'span-2') + field('播放次数', 'song-play-count', song.playCount, '0', 'span-2') + field('封面地址', 'song-cover', song.cover, '', 'span-2') + field('歌曲链接', 'song-url', song.url, '', 'span-2') + '</div></article>';
+    }).join('') || '<div class="empty-state">暂无歌曲缓存</div>';
+  }
+
+  function collectCurrently() {
+    if (!currently.netease) currently.netease = {};
+    currently.netease.status = $('currentlyStatus').value.trim();
+    currently.netease.updatedAt = $('currentlyUpdatedAt').value.trim();
+    currently.netease.songs = Array.from(document.querySelectorAll('[data-song-index]')).map(function(card) {
+      return { id: Number(card.querySelector('.song-id').value) || 0, name: card.querySelector('.song-name').value.trim(), artists: card.querySelector('.song-artists').value.trim(), cover: card.querySelector('.song-cover').value.trim(), playCount: Number(card.querySelector('.song-play-count').value) || 0, url: card.querySelector('.song-url').value.trim() };
+    });
+  }
+
+  function newSong() {
+    currently.netease.songs.push({ id: 0, name: '', artists: '', cover: '', playCount: 0, url: '' });
+    renderCurrently();
+  }
+
+  function deleteSong(index) {
+    if (!confirm('确定删除这首歌曲缓存？')) return;
+    currently.netease.songs.splice(index, 1);
+    renderCurrently();
+  }
+
+  function saveCurrently() {
+    collectCurrently();
+    return saveJson('data/currently.json', currently, 'currentlyMsg', 'Update currently cache');
+  }
+
+  function renderTarot() {
+    var spreadEntries = Object.keys(tarot.spreads || {});
+    $('spreadList').innerHTML = spreadEntries.map(function(key) {
+      var spread = tarot.spreads[key] || {};
+      return '<article class="item-card" data-spread-key="' + esc(key) + '"><div class="item-header"><div class="item-title">' + esc(spread.name || key) + '</div><button class="btn btn-danger btn-sm" type="button" data-action="delete-spread" data-key="' + esc(key) + '">删除</button></div><div class="row-grid">' + field('标识', 'spread-id', key, '', 'span-2') + field('名称', 'spread-name', spread.name, '', 'span-2') + textareaField('描述', 'spread-description', spread.description, 3, 'span-4') + textareaField('牌位（一行一条）', 'spread-positions', (spread.positions || []).join('\n'), 3, 'span-4') + '</div></article>';
+    }).join('') || '<div class="empty-state">暂无牌阵</div>';
+    $('cardList').innerHTML = tarot.cards.map(function(card, index) {
+      return '<article class="item-card" data-card-index="' + index + '"><div class="item-header"><div class="item-title">' + esc(card.name || '未命名牌') + '</div></div><div class="row-grid">' + field('名称', 'card-name', card.name, '', 'span-2') + field('类型', 'card-arcana', card.arcana, 'major/minor', 'span-2') + field('元素', 'card-element', card.element, '', 'span-2') + field('图片路径', 'card-image', card.image, '', 'span-2') + textareaField('关键词（一行一条）', 'card-keywords', (card.keywords || []).join('\n'), 3, 'span-4') + textareaField('正位解释', 'card-upright', card.upright, 4, 'span-4', true) + textareaField('逆位解释', 'card-reversed', card.reversed, 4, 'span-4', true) + '</div></article>';
+    }).join('') || '<div class="empty-state">暂无牌库</div>';
+  }
+
+  function collectTarot() {
+    var spreads = {};
+    document.querySelectorAll('[data-spread-key]').forEach(function(card) {
+      var key = card.querySelector('.spread-id').value.trim();
+      if (!key) return;
+      spreads[key] = { name: card.querySelector('.spread-name').value.trim(), description: card.querySelector('.spread-description').value, positions: lines(card.querySelector('.spread-positions').value) };
+    });
+    tarot.spreads = spreads;
+    tarot.cards = Array.from(document.querySelectorAll('[data-card-index]')).map(function(card) {
+      return { name: card.querySelector('.card-name').value.trim(), arcana: card.querySelector('.card-arcana').value.trim(), element: card.querySelector('.card-element').value.trim(), keywords: lines(card.querySelector('.card-keywords').value), upright: card.querySelector('.card-upright').value, reversed: card.querySelector('.card-reversed').value, image: card.querySelector('.card-image').value.trim() };
+    });
+  }
+
+  function newSpread() {
+    var key = 'spread-' + Date.now();
+    tarot.spreads[key] = { name: '新牌阵', description: '', positions: [] };
+    renderTarot();
+  }
+
+  function deleteSpread(key) {
+    if (!confirm('确定删除这个牌阵？')) return;
+    delete tarot.spreads[key];
+    renderTarot();
+  }
+
+  function saveTarot() {
+    collectTarot();
+    return saveJson('data/tarot-cards.json', tarot, 'tarotMsg', 'Update tarot cards');
+  }
+
+  function renderAnswerBook() {
+    $('answerList').value = answerBook.join('\n');
+  }
+
+  function jsString(value) {
+    return "'" + String(value || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\r?\n/g, '\\n') + "'";
+  }
+
+  function saveAnswerBook() {
+    answerBook = lines($('answerList').value);
+    return ghGet('js/answer-book.js').then(function(res) {
+      var source = b64d(res.content);
+      var replacement = 'var answers = [\n' + answerBook.map(function(item) { return '    ' + jsString(item) + ','; }).join('\n') + '\n  ];';
+      var next = source.replace(/var answers = \[[\s\S]*?\];/, replacement);
+      return ghPut('js/answer-book.js', next, res.sha, 'Update answer book answers');
+    }).then(function() { setStatus('answerBookMsg', 'ok', '答案之书已保存'); }).catch(function(err) { setStatus('answerBookMsg', 'err', '保存失败：' + friendlyError(err)); });
+  }
+
+  function renderPersonality() {
+    $('personalityJson').value = JSON.stringify(personality, null, 2);
+    $('guideJson').value = JSON.stringify(tarotGuide, null, 2);
+  }
+
+  function savePersonality() {
+    try {
+      personality = JSON.parse($('personalityJson').value);
+      tarotGuide = JSON.parse($('guideJson').value);
+    } catch (err) {
+      setStatus('personalityMsg', 'err', 'JSON 格式有误，请检查逗号和引号');
+      return Promise.reject(err);
+    }
+    return Promise.all([saveJson('data/latte-personality-layer.json', personality, 'personalityMsg', 'Update personality layer'), saveJson('data/tarot-conversation-guide.json', tarotGuide, 'personalityMsg', 'Update tarot conversation guide')]);
+  }
+
   function field(label, className, value, placeholder, extraClass) {
     return '<div class="form-group ' + (extraClass || '') + '"><label>' + label + '</label><input class="' + className + '" value="' + esc(value || '') + '" placeholder="' + esc(placeholder || '') + '"></div>';
   }
@@ -936,6 +1090,14 @@ var Admin = (function() {
       setStatus('imgMsg', 'ok', '已填入：' + path);
     }
     if (action === 'sync-music') syncMusic();
+    if (action === 'save-currently') saveCurrently();
+    if (action === 'new-song') newSong();
+    if (action === 'delete-song') deleteSong(index);
+    if (action === 'save-tarot') saveTarot();
+    if (action === 'new-spread') newSpread();
+    if (action === 'delete-spread') deleteSpread(key);
+    if (action === 'save-answer-book') saveAnswerBook();
+    if (action === 'save-personality') savePersonality();
   }
 
   function init() {

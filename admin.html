@@ -18,7 +18,7 @@
 
       <div class="form-group">
         <label for="repoInput">仓库</label>
-        <input type="text" id="repoInput" value="Latte7-9/latte-site" placeholder="Owner/Repo">
+        <input type="text" id="repoInput" value="Latte7-9/latte-personal-site" placeholder="Owner/Repo">
       </div>
       <div class="form-group">
         <label for="tokenInput">GitHub Token</label>
@@ -26,7 +26,7 @@
       </div>
       <button class="btn btn-primary btn-block" id="loginBtn" type="button">连接后台</button>
       <div class="status-line" id="loginMsg"></div>
-      <a class="site-link" href="https://latte7-9.github.io/latte-site/" target="_blank" rel="noopener">打开前台网站</a>
+      <a class="site-link" href="https://latte7-9.github.io/latte-personal-site/" target="_blank" rel="noopener">打开前台网站</a>
     </section>
 
     <section class="workspace" id="mainPanel" hidden>
@@ -37,7 +37,7 @@
         </div>
         <div class="topbar-actions">
           <span class="status-badge status-ok" id="connStatus">已连接</span>
-          <a class="btn btn-ghost btn-sm" href="https://latte7-9.github.io/latte-site/" target="_blank" rel="noopener">打开网站</a>
+          <a class="btn btn-ghost btn-sm" href="https://latte7-9.github.io/latte-personal-site/" target="_blank" rel="noopener">打开网站</a>
         </div>
       </header>
 
@@ -51,6 +51,10 @@
         <button class="tab-btn" type="button" data-tab="hiking">徒步</button>
         <button class="tab-btn" type="button" data-tab="images">图片</button>
         <button class="tab-btn" type="button" data-tab="music">音乐</button>
+        <button class="tab-btn" type="button" data-tab="currently">当前状态</button>
+        <button class="tab-btn" type="button" data-tab="tarot">塔罗</button>
+        <button class="tab-btn" type="button" data-tab="answer-book">答案之书</button>
+        <button class="tab-btn" type="button" data-tab="personality">人格层</button>
       </nav>
 
       <section class="tab-content active" id="tab-site">
@@ -204,6 +208,40 @@
           </div>
           <div id="musicStatus" class="plain-text"></div>
           <div class="status-line" id="musicMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-currently">
+        <div class="content-card">
+          <div class="card-head"><div><h2>当前状态</h2><p>编辑首页使用的最近听歌缓存数据。</p></div><button class="btn btn-primary" type="button" data-action="save-currently">保存当前状态</button></div>
+          <div class="form-grid"><div class="form-group"><label for="currentlyStatus">状态</label><input id="currentlyStatus"></div><div class="form-group"><label for="currentlyUpdatedAt">更新时间</label><input id="currentlyUpdatedAt"></div></div>
+          <div id="songList"></div><div class="button-row"><button class="btn btn-ghost" type="button" data-action="new-song">新增歌曲</button></div>
+          <div class="status-line" id="currentlyMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-tarot">
+        <div class="content-card">
+          <div class="card-head"><div><h2>塔罗配置</h2><p>牌阵可编辑；系统牌库保留 78 张完整牌面，仅支持逐张修改。</p></div><button class="btn btn-primary" type="button" data-action="save-tarot">保存塔罗</button></div>
+          <div id="spreadList"></div><div class="button-row"><button class="btn btn-ghost" type="button" data-action="new-spread">新增牌阵</button></div>
+          <details class="section-group"><summary>牌库编辑（78 张）</summary><div id="cardList"></div></details>
+          <div class="status-line" id="tarotMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-answer-book">
+        <div class="content-card">
+          <div class="card-head"><div><h2>答案之书</h2><p>每行一条答案，保存后直接更新前台答案数组。</p></div><button class="btn btn-primary" type="button" data-action="save-answer-book">保存答案</button></div>
+          <div class="form-group"><label for="answerList">答案内容（一行一条）</label><textarea id="answerList" rows="18"></textarea></div><div class="status-line" id="answerBookMsg"></div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-personality">
+        <div class="content-card">
+          <div class="card-head"><div><h2>人格层与会话指南</h2><p>用 JSON 编辑器维护塔罗语气、风险词和对话识别配置。</p></div><button class="btn btn-primary" type="button" data-action="save-personality">保存人格配置</button></div>
+          <div class="form-group"><label for="personalityJson">人格层 JSON</label><textarea id="personalityJson" class="json-editor" rows="18"></textarea></div>
+          <div class="form-group"><label for="guideJson">会话指南 JSON</label><textarea id="guideJson" class="json-editor" rows="18"></textarea></div>
+          <div class="status-line" id="personalityMsg"></div>
         </div>
       </section>
     </section>

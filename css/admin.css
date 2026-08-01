@@ -389,6 +389,27 @@ button, input, textarea, select {
   border-radius: var(--radius-sm);
 }
 
+.json-editor {
+  min-height: 260px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre;
+}
+
+details.section-group > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.data-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-row:last-child { border-bottom: 0; }
+
 @media (max-width: 720px) {
   .admin-shell { padding: 12px; }
   .topbar,
