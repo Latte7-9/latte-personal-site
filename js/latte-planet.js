@@ -219,7 +219,7 @@
   }
 
   function initMessages() {
-    var seed = [
+    var fallbackSeed = [
       { name: 'Latte', text: '\u6b22\u8fce\u6295\u5165\u4e00\u53ea\u5c0f\u9ec4\u9e2d', x: 24, y: 48 },
       { name: '\u8bbf\u5ba2', text: '\u8fd9\u4e2a\u5b87\u5b99\u6709\u70b9\u4eae', x: 52, y: 58 },
       { name: '\u670b\u53cb', text: '\u8def\u8fc7\uff0c\u6295\u5582\u4e00\u70b9\u7075\u611f', x: 77, y: 43 }
@@ -279,7 +279,25 @@
       return duck;
     }
 
-    seed.forEach(renderDuck);
+    function renderMessages(messages) {
+      var items = Array.isArray(messages) && messages.length ? messages : fallbackSeed;
+      items.forEach(function (item, index) {
+        renderDuck({
+          name: item.name || '\u533f\u540d',
+          text: item.text || '',
+          x: item.x,
+          y: item.y
+        }, index);
+      });
+    }
+
+    fetchJSON('data/comments.json?v=' + Date.now())
+      .then(function (messages) {
+        renderMessages(messages);
+      })
+      .catch(function () {
+        renderMessages(fallbackSeed);
+      });
 
     if (duckButton) {
       duckButton.addEventListener('click', function () {
