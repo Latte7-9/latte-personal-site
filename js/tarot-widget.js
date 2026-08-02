@@ -172,7 +172,7 @@
       var text = (input.value || '').trim();
       if (!text) return;
       intake.push({ role: 'user', content: text });
-      panel.dataset.tarotQuestion = text;
+      panel.dataset.tarotQuestion = intake.filter(function (item) { return item.role === 'user'; }).map(function (item) { return item.content; }).join('；');
       input.value = '';
       renderIntake();
       input.disabled = true;
@@ -182,8 +182,12 @@
         if (result.ready) qs('#tarotSpreadList', panel).hidden = false;
         else input.focus();
       }).catch(function () {
-        intake.push({ role: 'assistant', content: '我刚才没接住。你最近最难受的是哪一件事？' });
+        // 本地预案：开发服务器未启动 API 时，澄清流程仍能继续，不让访客卡在同一句话里。
+        var fallback = localIntakeResponse(intake);
+        intake.push({ role: 'assistant', content: fallback.message });
         renderIntake();
+        if (fallback.ready) qs('#tarotSpreadList', panel).hidden = false;
+        else input.focus();
       }).finally(function () { input.disabled = false; });
     });
     function renderIntake() {
@@ -241,6 +245,24 @@
     return fetch(apiBase() + '/api/tarot/intake', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ conversation: conversation })
     }).then(function (res) { if (!res.ok) throw new Error('intake unavailable'); return res.json(); });
+  }
+
+  function localIntakeResponse(conversation) {
+    var turns = (conversation || []).filter(function (item) { return item.role === 'user'; });
+    var text = String((turns[turns.length - 1] || {}).content || '').trim();
+    if (turns.length >= 2 || (text.length >= 20 && /(感情|工作|关系|考试|家里|最近|一直|因为|但是|害怕|生气|难过|失恋|事业|累)/.test(text))) {
+      return { ready: true, message: '行，线索够了。牌阵在这儿，你挑一种。' };
+    }
+    if (/事业|工作|上班|老板|同事/.test(text)) {
+      return { ready: false, message: '事业不顺心这个筐有点大。是事情推不动，还是人已经把你推得想翻白眼？' };
+    }
+    if (/失恋|分手|感情|喜欢|前任/.test(text)) {
+      return { ready: false, message: '是舍不得那个人，还是不甘心这段关系就这么收场？' };
+    }
+    if (/痛苦|难受|崩溃|焦虑|累|迷茫/.test(text)) {
+      return { ready: false, message: '最近是哪件事，或者哪个瞬间，最让你觉得撑不住？' };
+    }
+    return { ready: false, message: '这个方向先记下。你最怕它最后变成什么样？' };
   }
 
   function renderDrawArea() {
