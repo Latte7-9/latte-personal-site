@@ -38,21 +38,12 @@
         "url": "https://music.163.com/#/song?id=307594"
       },
       {
-        "id": 185700,
-        "name": "思念是一种病",
-        "artists": "张震岳 / 蔡健雅",
-        "cover": "https://p1.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
-        "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=185700"
-      },
-      {
         "id": 108251,
         "name": "当你",
         "artists": "林俊杰",
         "cover": "https://p1.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=108251"
       },
       {
@@ -61,8 +52,17 @@
         "artists": "梁静茹 / 曹格",
         "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=254101"
+      },
+      {
+        "id": 185700,
+        "name": "思念是一种病",
+        "artists": "张震岳 / 蔡健雅",
+        "cover": "https://p1.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=185700"
       },
       {
         "id": 86457,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=3367629346"
       }
     ],
-    "updatedAt": "2026-08-01T19:36:54.059Z",
+    "updatedAt": "2026-08-02T03:56:12.012Z",
     "status": "public-profile"
   }
 }
