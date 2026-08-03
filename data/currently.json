@@ -29,22 +29,22 @@
         "url": "https://music.163.com/#/song?id=3399732249"
       },
       {
-        "id": 307594,
-        "name": "泪海",
-        "artists": "许茹芸",
-        "cover": "https://p2.music.126.net/TougJlCvAbS1wf6M3kif6w==/109951172702570259.jpg",
-        "playCount": 0,
-        "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=307594"
-      },
-      {
         "id": 108251,
         "name": "当你",
         "artists": "林俊杰",
         "cover": "https://p2.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=108251"
+      },
+      {
+        "id": 307594,
+        "name": "泪海",
+        "artists": "许茹芸",
+        "cover": "https://p2.music.126.net/TougJlCvAbS1wf6M3kif6w==/109951172702570259.jpg",
+        "playCount": 0,
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=307594"
       },
       {
         "id": 254101,
@@ -56,30 +56,12 @@
         "url": "https://music.163.com/#/song?id=254101"
       },
       {
-        "id": 185700,
-        "name": "思念是一种病",
-        "artists": "张震岳 / 蔡健雅",
-        "cover": "https://p2.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
-        "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=185700"
-      },
-      {
-        "id": 86457,
-        "name": "爱美丽",
-        "artists": "古巨基",
-        "cover": "https://p2.music.126.net/66jqJuL_UDGScfi6ptwEVw==/109951165304521291.jpg",
-        "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=86457"
-      },
-      {
         "id": 5231391,
         "name": "怎么唱情歌",
         "artists": "刘惜君",
         "cover": "https://p2.music.126.net/aksSmEditXsaWZlzbx5ngA==/67070209300227.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=5231391"
       },
       {
@@ -88,11 +70,29 @@
         "artists": "陈默之",
         "cover": "https://p2.music.126.net/DLRrsFD_AEDHVX_KTJhWLQ==/109951173013122119.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=3367629346"
+      },
+      {
+        "id": 29480052,
+        "name": "爱 请问怎么走",
+        "artists": "黄丽玲",
+        "cover": "https://p2.music.126.net/PQTQhhNQ_ZFLUqsiQjXV_Q==/109951165641889806.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=29480052"
+      },
+      {
+        "id": 185700,
+        "name": "思念是一种病",
+        "artists": "张震岳 / 蔡健雅",
+        "cover": "https://p2.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=185700"
       }
     ],
-    "updatedAt": "2026-08-02T08:38:33.022Z",
+    "updatedAt": "2026-08-03T03:58:22.647Z",
     "status": "public-profile"
   }
 }
