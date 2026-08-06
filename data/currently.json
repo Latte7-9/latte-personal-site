@@ -56,12 +56,21 @@
         "url": "https://music.163.com/#/song?id=277802"
       },
       {
+        "id": 254101,
+        "name": "PK",
+        "artists": "梁静茹 / 曹格",
+        "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=254101"
+      },
+      {
         "id": 185706,
         "name": "很难",
         "artists": "张震岳",
         "cover": "https://p2.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=185706"
       },
       {
@@ -70,7 +79,7 @@
         "artists": "MC 张天赋",
         "cover": "https://p2.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=1849074502"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "林俊杰",
         "cover": "https://p2.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=108254"
-      },
-      {
-        "id": 108251,
-        "name": "当你",
-        "artists": "林俊杰",
-        "cover": "https://p2.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=108251"
+        "url": "https://music.163.com/#/song?id=108254"
       }
     ],
-    "updatedAt": "2026-08-06T09:08:51.654Z",
+    "updatedAt": "2026-08-06T14:37:31.849Z",
     "status": "public-profile"
   }
 }
