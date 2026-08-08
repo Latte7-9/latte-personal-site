@@ -2,37 +2,37 @@
   "netease": {
     "songs": [
       {
-        "id": 108487,
-        "name": "街道",
-        "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/m1Jv3k4Yl4kpBv62NPjGHQ==/109951172814148796.jpg",
-        "playCount": 0,
-        "weeklyRank": 1,
-        "url": "https://music.163.com/#/song?id=108487"
-      },
-      {
         "id": 438204707,
         "name": "天若有情",
         "artists": "黄丽玲",
-        "cover": "https://p1.music.126.net/hzs4pVOxFKS5J64nY-rugA==/109951165958851914.jpg",
+        "cover": "https://p2.music.126.net/hzs4pVOxFKS5J64nY-rugA==/109951165958851914.jpg",
         "playCount": 0,
-        "weeklyRank": 2,
+        "weeklyRank": 1,
         "url": "https://music.163.com/#/song?id=438204707"
       },
       {
         "id": 307594,
         "name": "泪海",
         "artists": "许茹芸",
-        "cover": "https://p1.music.126.net/TougJlCvAbS1wf6M3kif6w==/109951172702570259.jpg",
+        "cover": "https://p2.music.126.net/TougJlCvAbS1wf6M3kif6w==/109951172702570259.jpg",
+        "playCount": 0,
+        "weeklyRank": 2,
+        "url": "https://music.163.com/#/song?id=307594"
+      },
+      {
+        "id": 108487,
+        "name": "街道",
+        "artists": "林俊杰",
+        "cover": "https://p2.music.126.net/m1Jv3k4Yl4kpBv62NPjGHQ==/109951172814148796.jpg",
         "playCount": 0,
         "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=307594"
+        "url": "https://music.163.com/#/song?id=108487"
       },
       {
         "id": 277802,
         "name": "真的吗",
         "artists": "莫文蔚",
-        "cover": "https://p1.music.126.net/GfEwD2L0vfsWpNNl-xhAJA==/109951165806277991.jpg",
+        "cover": "https://p2.music.126.net/GfEwD2L0vfsWpNNl-xhAJA==/109951165806277991.jpg",
         "playCount": 0,
         "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=277802"
@@ -41,7 +41,7 @@
         "id": 254101,
         "name": "PK",
         "artists": "梁静茹 / 曹格",
-        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
+        "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
         "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=254101"
@@ -50,7 +50,7 @@
         "id": 185706,
         "name": "很难",
         "artists": "张震岳",
-        "cover": "https://p1.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
+        "cover": "https://p2.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
         "playCount": 0,
         "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=185706"
@@ -59,7 +59,7 @@
         "id": 1849074502,
         "name": "反对无效",
         "artists": "MC 张天赋",
-        "cover": "https://p1.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
+        "cover": "https://p2.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
         "playCount": 0,
         "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=1849074502"
@@ -68,7 +68,7 @@
         "id": 108254,
         "name": "一眼万年",
         "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
+        "cover": "https://p2.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
         "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=108254"
@@ -77,7 +77,7 @@
         "id": 82184,
         "name": "如果爱",
         "artists": "方大同",
-        "cover": "https://p1.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
+        "cover": "https://p2.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
         "playCount": 0,
         "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=82184"
@@ -86,13 +86,13 @@
         "id": 64699,
         "name": "心的距离",
         "artists": "陈奕迅",
-        "cover": "https://p1.music.126.net/c7zegIvda_ems7F47vEeBA==/109951164430304418.jpg",
+        "cover": "https://p2.music.126.net/c7zegIvda_ems7F47vEeBA==/109951164430304418.jpg",
         "playCount": 0,
         "weeklyRank": 10,
         "url": "https://music.163.com/#/song?id=64699"
       }
     ],
-    "updatedAt": "2026-08-08T02:23:49.282Z",
+    "updatedAt": "2026-08-08T13:14:24.954Z",
     "status": "public-profile"
   }
 }
