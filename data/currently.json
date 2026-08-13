@@ -29,12 +29,21 @@
         "url": "https://music.163.com/#/song?id=1361336636"
       },
       {
+        "id": 3399732249,
+        "name": "难以启齿的柔弱",
+        "artists": "金志文",
+        "cover": "https://p1.music.126.net/w4kZ5igqrY2dFaaJsjBPnQ==/109951173481227975.jpg",
+        "playCount": 0,
+        "weeklyRank": 4,
+        "url": "https://music.163.com/#/song?id=3399732249"
+      },
+      {
         "id": 254101,
         "name": "PK",
         "artists": "梁静茹 / 曹格",
         "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=254101"
       },
       {
@@ -43,8 +52,26 @@
         "artists": "张震岳 / 蔡健雅",
         "cover": "https://p1.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=185700"
+      },
+      {
+        "id": 1849074502,
+        "name": "反对无效",
+        "artists": "MC 张天赋",
+        "cover": "https://p1.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=1849074502"
+      },
+      {
+        "id": 160341,
+        "name": "听听",
+        "artists": "伍家辉",
+        "cover": "https://p1.music.126.net/gE658zbu1KBGF8r1EoEk1g==/114349209294835.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=160341"
       },
       {
         "id": 156736,
@@ -52,7 +79,7 @@
         "artists": "伍佰 & China Blue",
         "cover": "https://p1.music.126.net/ibz3f2b4NWKqYarb3aOyBA==/109951171998891782.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=156736"
       },
       {
@@ -61,38 +88,11 @@
         "artists": "林俊杰",
         "cover": "https://p1.music.126.net/m1Jv3k4Yl4kpBv62NPjGHQ==/109951172814148796.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=108487"
-      },
-      {
-        "id": 108251,
-        "name": "当你",
-        "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
-        "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=108251"
-      },
-      {
-        "id": 864647841,
-        "name": "一个人去巴黎",
-        "artists": "董又霖",
-        "cover": "https://p1.music.126.net/cA6bJg2PrTUFji5VM3dDow==/109951172350948498.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=864647841"
-      },
-      {
-        "id": 86457,
-        "name": "爱美丽",
-        "artists": "古巨基",
-        "cover": "https://p1.music.126.net/66jqJuL_UDGScfi6ptwEVw==/109951165304521291.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=86457"
+        "url": "https://music.163.com/#/song?id=108487"
       }
     ],
-    "updatedAt": "2026-08-13T03:01:52.753Z",
+    "updatedAt": "2026-08-13T07:56:23.773Z",
     "status": "public-profile"
   }
 }
