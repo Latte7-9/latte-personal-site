@@ -56,12 +56,21 @@
         "url": "https://music.163.com/#/song?id=307594"
       },
       {
+        "id": 185706,
+        "name": "很难",
+        "artists": "张震岳",
+        "cover": "https://p1.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=185706"
+      },
+      {
         "id": 1849074502,
         "name": "反对无效",
         "artists": "MC 张天赋",
         "cover": "https://p1.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=1849074502"
       },
       {
@@ -70,29 +79,20 @@
         "artists": "伍家辉",
         "cover": "https://p1.music.126.net/gE658zbu1KBGF8r1EoEk1g==/114349209294835.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=160341"
       },
       {
-        "id": 86457,
-        "name": "爱美丽",
-        "artists": "古巨基",
-        "cover": "https://p1.music.126.net/66jqJuL_UDGScfi6ptwEVw==/109951165304521291.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=86457"
-      },
-      {
-        "id": 82499,
-        "name": "总结",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/F0-_GPKLP8yJ6VE29DwrRA==/109951170565878273.jpg",
+        "id": 150424,
+        "name": "不爱",
+        "artists": "陶喆",
+        "cover": "https://p1.music.126.net/Fq9QNt2SYKvPEL3ipfVc9g==/109951166916020363.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=82499"
+        "url": "https://music.163.com/#/song?id=150424"
       }
     ],
-    "updatedAt": "2026-08-14T07:53:10.778Z",
+    "updatedAt": "2026-08-14T13:46:24.902Z",
     "status": "public-profile"
   }
 }
