@@ -20,12 +20,21 @@
         "url": "https://music.163.com/#/song?id=156736"
       },
       {
+        "id": 150424,
+        "name": "不爱",
+        "artists": "陶喆",
+        "cover": "https://p1.music.126.net/Fq9QNt2SYKvPEL3ipfVc9g==/109951166916020363.jpg",
+        "playCount": 0,
+        "weeklyRank": 3,
+        "url": "https://music.163.com/#/song?id=150424"
+      },
+      {
         "id": 864647841,
         "name": "一个人去巴黎",
         "artists": "董又霖",
         "cover": "https://p1.music.126.net/cA6bJg2PrTUFji5VM3dDow==/109951172350948498.jpg",
         "playCount": 0,
-        "weeklyRank": 3,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=864647841"
       },
       {
@@ -34,7 +43,7 @@
         "artists": "黄丽玲",
         "cover": "https://p1.music.126.net/hzs4pVOxFKS5J64nY-rugA==/109951165958851914.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=438204707"
       },
       {
@@ -43,7 +52,7 @@
         "artists": "金志文",
         "cover": "https://p1.music.126.net/w4kZ5igqrY2dFaaJsjBPnQ==/109951173481227975.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=3399732249"
       },
       {
@@ -52,7 +61,7 @@
         "artists": "许茹芸",
         "cover": "https://p1.music.126.net/TougJlCvAbS1wf6M3kif6w==/109951172702570259.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=307594"
       },
       {
@@ -61,7 +70,7 @@
         "artists": "张震岳",
         "cover": "https://p1.music.126.net/N61oLy0iLfEkZTHD2j87iA==/18693896697392706.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=185706"
       },
       {
@@ -70,7 +79,7 @@
         "artists": "MC 张天赋",
         "cover": "https://p1.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=1849074502"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "伍家辉",
         "cover": "https://p1.music.126.net/gE658zbu1KBGF8r1EoEk1g==/114349209294835.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=160341"
-      },
-      {
-        "id": 150424,
-        "name": "不爱",
-        "artists": "陶喆",
-        "cover": "https://p1.music.126.net/Fq9QNt2SYKvPEL3ipfVc9g==/109951166916020363.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=150424"
+        "url": "https://music.163.com/#/song?id=160341"
       }
     ],
-    "updatedAt": "2026-08-14T13:46:24.902Z",
+    "updatedAt": "2026-08-15T01:52:09.233Z",
     "status": "public-profile"
   }
 }
