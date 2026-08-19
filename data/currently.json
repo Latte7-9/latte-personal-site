@@ -20,22 +20,22 @@
         "url": "https://music.163.com/#/song?id=150424"
       },
       {
-        "id": 327584,
-        "name": "听海",
-        "artists": "张惠妹",
-        "cover": "https://p1.music.126.net/GQsGLS-cjm-U1RiDxvAmhg==/109951172084716035.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=327584"
-      },
-      {
         "id": 25986093,
         "name": "Kiss Goodbye",
         "artists": "王力宏",
         "cover": "https://p1.music.126.net/ZD-Mnvr5tBWAJGmhjXv2Fg==/7936274930369278.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=25986093"
+      },
+      {
+        "id": 327584,
+        "name": "听海",
+        "artists": "张惠妹",
+        "cover": "https://p1.music.126.net/GQsGLS-cjm-U1RiDxvAmhg==/109951172084716035.jpg",
+        "playCount": 0,
+        "weeklyRank": 4,
+        "url": "https://music.163.com/#/song?id=327584"
       },
       {
         "id": 254102,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=82499"
       }
     ],
-    "updatedAt": "2026-08-19T13:12:01.947Z",
+    "updatedAt": "2026-08-19T18:55:46.474Z",
     "status": "public-profile"
   }
 }
