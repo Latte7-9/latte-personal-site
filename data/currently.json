@@ -2,12 +2,21 @@
   "netease": {
     "songs": [
       {
+        "id": 33497018,
+        "name": "Kiss Goodbye (Live)",
+        "artists": "王力宏",
+        "cover": "https://p1.music.126.net/5WR7COyCteJiHAl5RyRviw==/109951172067870029.jpg",
+        "playCount": 0,
+        "weeklyRank": 1,
+        "url": "https://music.163.com/#/song?id=33497018"
+      },
+      {
         "id": 150424,
         "name": "不爱",
         "artists": "陶喆",
         "cover": "https://p1.music.126.net/Fq9QNt2SYKvPEL3ipfVc9g==/109951166916020363.jpg",
         "playCount": 0,
-        "weeklyRank": 1,
+        "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=150424"
       },
       {
@@ -16,8 +25,17 @@
         "artists": "张惠妹",
         "cover": "https://p1.music.126.net/GQsGLS-cjm-U1RiDxvAmhg==/109951172084716035.jpg",
         "playCount": 0,
-        "weeklyRank": 2,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=327584"
+      },
+      {
+        "id": 25986093,
+        "name": "Kiss Goodbye",
+        "artists": "王力宏",
+        "cover": "https://p1.music.126.net/ZD-Mnvr5tBWAJGmhjXv2Fg==/7936274930369278.jpg",
+        "playCount": 0,
+        "weeklyRank": 4,
+        "url": "https://music.163.com/#/song?id=25986093"
       },
       {
         "id": 254102,
@@ -25,7 +43,7 @@
         "artists": "梁静茹",
         "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 3,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=254102"
       },
       {
@@ -34,65 +52,47 @@
         "artists": "宇多田ヒカル",
         "cover": "https://p1.music.126.net/tMhfrzn5tIsNelc1fQbvKw==/109951173397201047.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=1361336636"
       },
       {
         "id": 160341,
         "name": "听听",
         "artists": "伍家辉",
-        "cover": "https://p2.music.126.net/gE658zbu1KBGF8r1EoEk1g==/114349209294835.jpg",
+        "cover": "https://p1.music.126.net/gE658zbu1KBGF8r1EoEk1g==/114349209294835.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=160341"
       },
       {
         "id": 156736,
         "name": "泪桥",
         "artists": "伍佰 & China Blue",
-        "cover": "https://p2.music.126.net/ibz3f2b4NWKqYarb3aOyBA==/109951171998891782.jpg",
+        "cover": "https://p1.music.126.net/ibz3f2b4NWKqYarb3aOyBA==/109951171998891782.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=156736"
       },
       {
         "id": 864647841,
         "name": "一个人去巴黎",
         "artists": "董又霖",
-        "cover": "https://p2.music.126.net/cA6bJg2PrTUFji5VM3dDow==/109951172350948498.jpg",
+        "cover": "https://p1.music.126.net/cA6bJg2PrTUFji5VM3dDow==/109951172350948498.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=864647841"
       },
       {
-        "id": 82200,
-        "name": "爱我吧",
+        "id": 82499,
+        "name": "总结",
         "artists": "方大同",
-        "cover": "https://p2.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
-        "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=82200"
-      },
-      {
-        "id": 524152313,
-        "name": "永恒的主题",
-        "artists": "丁世光",
-        "cover": "https://p2.music.126.net/vHgX5LPws_TSNzjeTGt_sQ==/109951163087231653.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=524152313"
-      },
-      {
-        "id": 431853944,
-        "name": "梦蝴蝶",
-        "artists": "方大同",
-        "cover": "https://p2.music.126.net/U0O4bNjCvxf7J5vUaR8SmQ==/109951172683065558.jpg",
+        "cover": "https://p1.music.126.net/F0-_GPKLP8yJ6VE29DwrRA==/109951170565878273.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=431853944"
+        "url": "https://music.163.com/#/song?id=82499"
       }
     ],
-    "updatedAt": "2026-08-19T07:08:00.672Z",
+    "updatedAt": "2026-08-19T13:12:01.947Z",
     "status": "public-profile"
   }
 }
