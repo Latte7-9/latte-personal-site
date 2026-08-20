@@ -56,43 +56,43 @@
         "url": "https://music.163.com/#/song?id=1361336636"
       },
       {
-        "id": 160341,
-        "name": "听听",
-        "artists": "伍家辉",
-        "cover": "https://p1.music.126.net/gE658zbu1KBGF8r1EoEk1g==/114349209294835.jpg",
+        "id": 82200,
+        "name": "爱我吧",
+        "artists": "方大同",
+        "cover": "https://p1.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
         "playCount": 0,
         "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=160341"
+        "url": "https://music.163.com/#/song?id=82200"
       },
       {
-        "id": 156736,
-        "name": "泪桥",
-        "artists": "伍佰 & China Blue",
-        "cover": "https://p1.music.126.net/ibz3f2b4NWKqYarb3aOyBA==/109951171998891782.jpg",
+        "id": 524152313,
+        "name": "永恒的主题",
+        "artists": "丁世光",
+        "cover": "https://p1.music.126.net/vHgX5LPws_TSNzjeTGt_sQ==/109951163087231653.jpg",
         "playCount": 0,
         "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=156736"
+        "url": "https://music.163.com/#/song?id=524152313"
       },
       {
-        "id": 864647841,
-        "name": "一个人去巴黎",
-        "artists": "董又霖",
-        "cover": "https://p1.music.126.net/cA6bJg2PrTUFji5VM3dDow==/109951172350948498.jpg",
+        "id": 431853944,
+        "name": "梦蝴蝶",
+        "artists": "方大同",
+        "cover": "https://p1.music.126.net/U0O4bNjCvxf7J5vUaR8SmQ==/109951172683065558.jpg",
         "playCount": 0,
         "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=864647841"
+        "url": "https://music.163.com/#/song?id=431853944"
       },
       {
-        "id": 82499,
-        "name": "总结",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/F0-_GPKLP8yJ6VE29DwrRA==/109951170565878273.jpg",
+        "id": 3395199196,
+        "name": "Unchained Melody (live)",
+        "artists": "Elliot James Reay",
+        "cover": "https://p1.music.126.net/NtMhcS_cNjYNsbu5_jSX3g==/109951173409040862.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=82499"
+        "url": "https://music.163.com/#/song?id=3395199196"
       }
     ],
-    "updatedAt": "2026-08-19T18:55:46.474Z",
+    "updatedAt": "2026-08-20T01:54:04.331Z",
     "status": "public-profile"
   }
 }
