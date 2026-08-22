@@ -5,7 +5,7 @@
         "id": 33497018,
         "name": "Kiss Goodbye (Live)",
         "artists": "王力宏",
-        "cover": "https://p2.music.126.net/5WR7COyCteJiHAl5RyRviw==/109951172067870029.jpg",
+        "cover": "https://p1.music.126.net/5WR7COyCteJiHAl5RyRviw==/109951172067870029.jpg",
         "playCount": 0,
         "weeklyRank": 1,
         "url": "https://music.163.com/#/song?id=33497018"
@@ -14,7 +14,7 @@
         "id": 150424,
         "name": "不爱",
         "artists": "陶喆",
-        "cover": "https://p2.music.126.net/Fq9QNt2SYKvPEL3ipfVc9g==/109951166916020363.jpg",
+        "cover": "https://p1.music.126.net/Fq9QNt2SYKvPEL3ipfVc9g==/109951166916020363.jpg",
         "playCount": 0,
         "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=150424"
@@ -23,7 +23,7 @@
         "id": 25986093,
         "name": "Kiss Goodbye",
         "artists": "王力宏",
-        "cover": "https://p2.music.126.net/ZD-Mnvr5tBWAJGmhjXv2Fg==/7936274930369278.jpg",
+        "cover": "https://p1.music.126.net/ZD-Mnvr5tBWAJGmhjXv2Fg==/7936274930369278.jpg",
         "playCount": 0,
         "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=25986093"
@@ -32,7 +32,7 @@
         "id": 327584,
         "name": "听海",
         "artists": "张惠妹",
-        "cover": "https://p2.music.126.net/GQsGLS-cjm-U1RiDxvAmhg==/109951172084716035.jpg",
+        "cover": "https://p1.music.126.net/GQsGLS-cjm-U1RiDxvAmhg==/109951172084716035.jpg",
         "playCount": 0,
         "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=327584"
@@ -41,10 +41,19 @@
         "id": 254102,
         "name": "情歌",
         "artists": "梁静茹",
-        "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
+        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
         "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=254102"
+      },
+      {
+        "id": 254101,
+        "name": "PK",
+        "artists": "梁静茹 / 曹格",
+        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
+        "playCount": 0,
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=254101"
       },
       {
         "id": 1361336636,
@@ -52,17 +61,8 @@
         "artists": "宇多田ヒカル",
         "cover": "https://p2.music.126.net/tMhfrzn5tIsNelc1fQbvKw==/109951173397201047.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=1361336636"
-      },
-      {
-        "id": 254101,
-        "name": "PK",
-        "artists": "梁静茹 / 曹格",
-        "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
-        "playCount": 0,
         "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=254101"
+        "url": "https://music.163.com/#/song?id=1361336636"
       },
       {
         "id": 82366,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=524152313"
       }
     ],
-    "updatedAt": "2026-08-21T18:59:03.125Z",
+    "updatedAt": "2026-08-22T01:52:39.097Z",
     "status": "public-profile"
   }
 }
