@@ -56,31 +56,13 @@
         "url": "https://music.163.com/#/song?id=254101"
       },
       {
-        "id": 1361336636,
-        "name": "Come Back To Me",
-        "artists": "宇多田ヒカル",
-        "cover": "https://p1.music.126.net/tMhfrzn5tIsNelc1fQbvKw==/109951173397201047.jpg",
-        "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=1361336636"
-      },
-      {
         "id": 82366,
         "name": "爱在",
         "artists": "方大同",
         "cover": "https://p1.music.126.net/8fTdTkzJUc4jEcoiV5JNtw==/109951168870789373.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=82366"
-      },
-      {
-        "id": 82200,
-        "name": "爱我吧",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=82200"
       },
       {
         "id": 524152313,
@@ -88,11 +70,29 @@
         "artists": "丁世光",
         "cover": "https://p1.music.126.net/vHgX5LPws_TSNzjeTGt_sQ==/109951163087231653.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=524152313"
+      },
+      {
+        "id": 472060885,
+        "name": "Classic Aftertaste Joanna (Live)",
+        "artists": "王若琳",
+        "cover": "https://p1.music.126.net/qijwgHRNFDkOCEWQVFg3xg==/109951165958757816.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=472060885"
+      },
+      {
+        "id": 431853944,
+        "name": "梦蝴蝶",
+        "artists": "方大同",
+        "cover": "https://p1.music.126.net/U0O4bNjCvxf7J5vUaR8SmQ==/109951172683065558.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=431853944"
       }
     ],
-    "updatedAt": "2026-08-22T13:02:40.589Z",
+    "updatedAt": "2026-08-23T02:01:36.281Z",
     "status": "public-profile"
   }
 }
