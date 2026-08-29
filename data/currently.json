@@ -2,97 +2,97 @@
   "netease": {
     "songs": [
       {
+        "id": 307684,
+        "name": "最熟悉的陌生人",
+        "artists": "萧亚轩",
+        "cover": "https://p1.music.126.net/ugTD9665AQ7Dl5rJvJkQsw==/109951166194472953.jpg",
+        "playCount": 0,
+        "weeklyRank": 1,
+        "url": "https://music.163.com/#/song?id=307684"
+      },
+      {
+        "id": 327584,
+        "name": "听海",
+        "artists": "张惠妹",
+        "cover": "https://p1.music.126.net/GQsGLS-cjm-U1RiDxvAmhg==/109951172084716035.jpg",
+        "playCount": 0,
+        "weeklyRank": 2,
+        "url": "https://music.163.com/#/song?id=327584"
+      },
+      {
         "id": 25986093,
         "name": "Kiss Goodbye",
         "artists": "王力宏",
-        "cover": "https://p2.music.126.net/ZD-Mnvr5tBWAJGmhjXv2Fg==/7936274930369278.jpg",
+        "cover": "https://p1.music.126.net/ZD-Mnvr5tBWAJGmhjXv2Fg==/7936274930369278.jpg",
         "playCount": 0,
-        "weeklyRank": 1,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=25986093"
       },
       {
         "id": 254103,
         "name": "天灯",
         "artists": "梁静茹",
-        "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
-        "playCount": 0,
-        "weeklyRank": 2,
-        "url": "https://music.163.com/#/song?id=254103"
-      },
-      {
-        "id": 327584,
-        "name": "听海",
-        "artists": "张惠妹",
-        "cover": "https://p2.music.126.net/GQsGLS-cjm-U1RiDxvAmhg==/109951172084716035.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=327584"
-      },
-      {
-        "id": 254102,
-        "name": "情歌",
-        "artists": "梁静茹",
-        "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
+        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
         "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=254102"
+        "url": "https://music.163.com/#/song?id=254103"
       },
       {
         "id": 21234189,
         "name": "Through The Rain",
         "artists": "Mariah Carey",
-        "cover": "https://p2.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
+        "cover": "https://p1.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
         "playCount": 0,
         "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=21234189"
       },
       {
+        "id": 329448,
+        "name": "冬天游水",
+        "artists": "张玉华",
+        "cover": "https://p1.music.126.net/htERtddeqodWjxm62HP07w==/109951163669048847.jpg",
+        "playCount": 0,
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=329448"
+      },
+      {
+        "id": 2727809377,
+        "name": "搬家",
+        "artists": "张震岳",
+        "cover": "https://p1.music.126.net/105P5IVZPNxI7pVGCeWPSA==/109951171491749256.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=2727809377"
+      },
+      {
+        "id": 254102,
+        "name": "情歌",
+        "artists": "梁静茹",
+        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=254102"
+      },
+      {
+        "id": 1849074502,
+        "name": "反对无效",
+        "artists": "MC 张天赋",
+        "cover": "https://p1.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=1849074502"
+      },
+      {
         "id": 150540,
         "name": "我喜欢(Ballad Version)",
         "artists": "陶喆",
-        "cover": "https://p2.music.126.net/4uHOznBK63ZOa9vft8qjxQ==/109951164124485287.jpg",
-        "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=150540"
-      },
-      {
-        "id": 863949788,
-        "name": "☁",
-        "artists": "FAT TIGER / Steve Tist",
-        "cover": "https://p2.music.126.net/9MDnkZmWi5SEJ1LPfa86oQ==/109951163386797534.jpg",
-        "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=863949788"
-      },
-      {
-        "id": 863515504,
-        "name": "云南里",
-        "artists": "方大同",
-        "cover": "https://p2.music.126.net/rzfp_LQ_PBqkRzofKD6wwg==/109951163391406807.jpg",
-        "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=863515504"
-      },
-      {
-        "id": 85598,
-        "name": "今天还是明天",
-        "artists": "郭顶",
-        "cover": "https://p2.music.126.net/zX1dZ7YZS4i_-IJP7hloUQ==/113249697674099.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=85598"
-      },
-      {
-        "id": 82203,
-        "name": "为你写的歌",
-        "artists": "方大同",
-        "cover": "https://p2.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
+        "cover": "https://p1.music.126.net/4uHOznBK63ZOa9vft8qjxQ==/109951164124485287.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=82203"
+        "url": "https://music.163.com/#/song?id=150540"
       }
     ],
-    "updatedAt": "2026-08-29T07:08:34.588Z",
+    "updatedAt": "2026-08-29T16:45:37.677Z",
     "status": "public-profile"
   }
 }
