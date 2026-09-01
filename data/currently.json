@@ -20,12 +20,21 @@
         "url": "https://music.163.com/#/song?id=21234189"
       },
       {
+        "id": 150412,
+        "name": "Free (Bonus Track)",
+        "artists": "陶喆",
+        "cover": "https://p1.music.126.net/K05FL1BmwrJXeoxctQILjA==/109951171530792491.jpg",
+        "playCount": 0,
+        "weeklyRank": 3,
+        "url": "https://music.163.com/#/song?id=150412"
+      },
+      {
         "id": 3399732249,
         "name": "难以启齿的柔弱",
         "artists": "金志文",
         "cover": "https://p1.music.126.net/w4kZ5igqrY2dFaaJsjBPnQ==/109951173481227975.jpg",
         "playCount": 0,
-        "weeklyRank": 3,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=3399732249"
       },
       {
@@ -34,7 +43,7 @@
         "artists": "张玉华",
         "cover": "https://p1.music.126.net/htERtddeqodWjxm62HP07w==/109951163669048847.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=329448"
       },
       {
@@ -43,7 +52,7 @@
         "artists": "张震岳",
         "cover": "https://p1.music.126.net/105P5IVZPNxI7pVGCeWPSA==/109951171491749256.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=2727809377"
       },
       {
@@ -52,7 +61,7 @@
         "artists": "王力宏",
         "cover": "https://p1.music.126.net/ZD-Mnvr5tBWAJGmhjXv2Fg==/7936274930369278.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=25986093"
       },
       {
@@ -61,7 +70,7 @@
         "artists": "梁静茹",
         "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=254103"
       },
       {
@@ -70,7 +79,7 @@
         "artists": "梁静茹",
         "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=254102"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "陶喆",
         "cover": "https://p1.music.126.net/Fq9QNt2SYKvPEL3ipfVc9g==/109951166916020363.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=150424"
-      },
-      {
-        "id": 150412,
-        "name": "Free (Bonus Track)",
-        "artists": "陶喆",
-        "cover": "https://p1.music.126.net/K05FL1BmwrJXeoxctQILjA==/109951171530792491.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=150412"
+        "url": "https://music.163.com/#/song?id=150424"
       }
     ],
-    "updatedAt": "2026-09-01T05:15:29.867Z",
+    "updatedAt": "2026-09-01T11:43:25.268Z",
     "status": "public-profile"
   }
 }
