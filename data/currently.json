@@ -29,12 +29,21 @@
         "url": "https://music.163.com/#/song?id=254103"
       },
       {
+        "id": 5239543,
+        "name": "带我走",
+        "artists": "杨丞琳",
+        "cover": "https://p2.music.126.net/Y_Z9lNHta4TZ80VgEUkMRA==/109951165641468578.jpg",
+        "playCount": 0,
+        "weeklyRank": 4,
+        "url": "https://music.163.com/#/song?id=5239543"
+      },
+      {
         "id": 3399732249,
         "name": "难以启齿的柔弱",
         "artists": "金志文",
         "cover": "https://p2.music.126.net/w4kZ5igqrY2dFaaJsjBPnQ==/109951173481227975.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=3399732249"
       },
       {
@@ -43,7 +52,7 @@
         "artists": "张玉华",
         "cover": "https://p2.music.126.net/htERtddeqodWjxm62HP07w==/109951163669048847.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=329448"
       },
       {
@@ -52,7 +61,7 @@
         "artists": "张震岳",
         "cover": "https://p2.music.126.net/105P5IVZPNxI7pVGCeWPSA==/109951171491749256.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=2727809377"
       },
       {
@@ -61,7 +70,7 @@
         "artists": "郭静",
         "cover": "https://p2.music.126.net/n0-HwVUudsearIdS2MBI9Q==/109951171423745267.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=233901"
       },
       {
@@ -70,7 +79,7 @@
         "artists": "Mariah Carey",
         "cover": "https://p2.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=21234189"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "MC 张天赋",
         "cover": "https://p2.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=1849074502"
-      },
-      {
-        "id": 150424,
-        "name": "不爱",
-        "artists": "陶喆",
-        "cover": "https://p2.music.126.net/Fq9QNt2SYKvPEL3ipfVc9g==/109951166916020363.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=150424"
+        "url": "https://music.163.com/#/song?id=1849074502"
       }
     ],
-    "updatedAt": "2026-09-03T04:37:40.138Z",
+    "updatedAt": "2026-09-03T11:20:38.205Z",
     "status": "public-profile"
   }
 }
