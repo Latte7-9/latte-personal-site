@@ -56,12 +56,21 @@
         "url": "https://music.163.com/#/song?id=329448"
       },
       {
+        "id": 28029812,
+        "name": "爱因斯坦的脑袋",
+        "artists": "纪佳松",
+        "cover": "https://p2.music.126.net/5W3gXDi1JQ9xsapbpKa-uQ==/109951167737685135.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=28029812"
+      },
+      {
         "id": 2727809377,
         "name": "搬家",
         "artists": "张震岳",
         "cover": "https://p2.music.126.net/105P5IVZPNxI7pVGCeWPSA==/109951171491749256.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=2727809377"
       },
       {
@@ -70,7 +79,7 @@
         "artists": "郭静",
         "cover": "https://p2.music.126.net/n0-HwVUudsearIdS2MBI9Q==/109951171423745267.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=233901"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "Mariah Carey",
         "cover": "https://p2.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=21234189"
-      },
-      {
-        "id": 1849074502,
-        "name": "反对无效",
-        "artists": "MC 张天赋",
-        "cover": "https://p2.music.126.net/CtVILSW-bWaxeVan0tOXFQ==/109951166045439745.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=1849074502"
+        "url": "https://music.163.com/#/song?id=21234189"
       }
     ],
-    "updatedAt": "2026-09-03T11:20:38.205Z",
+    "updatedAt": "2026-09-03T16:29:18.356Z",
     "status": "public-profile"
   }
 }
