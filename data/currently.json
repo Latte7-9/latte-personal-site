@@ -20,12 +20,21 @@
         "url": "https://music.163.com/#/song?id=103819"
       },
       {
+        "id": 28029812,
+        "name": "爱因斯坦的脑袋",
+        "artists": "纪佳松",
+        "cover": "https://p1.music.126.net/5W3gXDi1JQ9xsapbpKa-uQ==/109951167737685135.jpg",
+        "playCount": 0,
+        "weeklyRank": 3,
+        "url": "https://music.163.com/#/song?id=28029812"
+      },
+      {
         "id": 150412,
         "name": "Free (Bonus Track)",
         "artists": "陶喆",
         "cover": "https://p1.music.126.net/K05FL1BmwrJXeoxctQILjA==/109951171530792491.jpg",
         "playCount": 0,
-        "weeklyRank": 3,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=150412"
       },
       {
@@ -34,17 +43,17 @@
         "artists": "丁世光",
         "cover": "https://p1.music.126.net/w3LQN3qdX5nFU2OM-_B7lQ==/109951163072002721.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=520461800"
       },
       {
-        "id": 28029812,
-        "name": "爱因斯坦的脑袋",
-        "artists": "纪佳松",
-        "cover": "https://p1.music.126.net/5W3gXDi1JQ9xsapbpKa-uQ==/109951167737685135.jpg",
+        "id": 294529,
+        "name": "影子",
+        "artists": "唐艾萱",
+        "cover": "https://p1.music.126.net/nl8c9VXCSWuefVojnPmcJg==/109951165610853984.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=28029812"
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=294529"
       },
       {
         "id": 1411793117,
@@ -52,7 +61,7 @@
         "artists": "丁世光",
         "cover": "https://p1.music.126.net/7IaXdr22rpTZV0oGZjKoRQ==/109951164577496133.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=1411793117"
       },
       {
@@ -61,7 +70,7 @@
         "artists": "纪佳松",
         "cover": "https://p1.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=103841"
       },
       {
@@ -70,7 +79,7 @@
         "artists": "纪佳松",
         "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=103794"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "古巨基",
         "cover": "https://p1.music.126.net/S6p4Vt5hbr1DyPKcHl5h8g==/6627856092289149.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=86580"
-      },
-      {
-        "id": 863515504,
-        "name": "云南里",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/rzfp_LQ_PBqkRzofKD6wwg==/109951163391406807.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=863515504"
+        "url": "https://music.163.com/#/song?id=86580"
       }
     ],
-    "updatedAt": "2026-09-08T11:24:34.840Z",
+    "updatedAt": "2026-09-08T16:41:26.251Z",
     "status": "public-profile"
   }
 }
