@@ -29,21 +29,12 @@
         "url": "https://music.163.com/#/song?id=28029812"
       },
       {
-        "id": 150412,
-        "name": "Free (Bonus Track)",
-        "artists": "陶喆",
-        "cover": "https://p2.music.126.net/K05FL1BmwrJXeoxctQILjA==/109951171530792491.jpg",
-        "playCount": 0,
-        "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=150412"
-      },
-      {
         "id": 520461800,
         "name": "爱在什么地方都有",
         "artists": "丁世光",
         "cover": "https://p2.music.126.net/w3LQN3qdX5nFU2OM-_B7lQ==/109951163072002721.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=520461800"
       },
       {
@@ -52,8 +43,17 @@
         "artists": "唐艾萱",
         "cover": "https://p2.music.126.net/nl8c9VXCSWuefVojnPmcJg==/109951165610853984.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=294529"
+      },
+      {
+        "id": 150412,
+        "name": "Free (Bonus Track)",
+        "artists": "陶喆",
+        "cover": "https://p2.music.126.net/K05FL1BmwrJXeoxctQILjA==/109951171530792491.jpg",
+        "playCount": 0,
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=150412"
       },
       {
         "id": 1411793117,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=86580"
       }
     ],
-    "updatedAt": "2026-09-08T21:13:05.435Z",
+    "updatedAt": "2026-09-09T04:48:02.619Z",
     "status": "public-profile"
   }
 }
