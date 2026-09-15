@@ -2,46 +2,46 @@
   "netease": {
     "songs": [
       {
+        "id": 103797,
+        "name": "缝",
+        "artists": "纪佳松",
+        "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
+        "playCount": 0,
+        "weeklyRank": 1,
+        "url": "https://music.163.com/#/song?id=103797"
+      },
+      {
         "id": 28403112,
         "name": "Lights Up",
         "artists": "方大同",
-        "cover": "https://p2.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
+        "cover": "https://p1.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
         "playCount": 0,
-        "weeklyRank": 1,
+        "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=28403112"
       },
       {
         "id": 2069860802,
         "name": "泪",
         "artists": "梦fm",
-        "cover": "https://p2.music.126.net/ygYynGLgrUecUbdIPcjoYg==/109951168804498436.jpg",
+        "cover": "https://p1.music.126.net/ygYynGLgrUecUbdIPcjoYg==/109951168804498436.jpg",
         "playCount": 0,
-        "weeklyRank": 2,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=2069860802"
       },
       {
         "id": 150412,
         "name": "Free (Bonus Track)",
         "artists": "陶喆",
-        "cover": "https://p2.music.126.net/K05FL1BmwrJXeoxctQILjA==/109951171530792491.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=150412"
-      },
-      {
-        "id": 103797,
-        "name": "缝",
-        "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
+        "cover": "https://p1.music.126.net/K05FL1BmwrJXeoxctQILjA==/109951171530792491.jpg",
         "playCount": 0,
         "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=103797"
+        "url": "https://music.163.com/#/song?id=150412"
       },
       {
         "id": 103790,
         "name": "第一夫人",
         "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
+        "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
         "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=103790"
@@ -50,7 +50,7 @@
         "id": 93306,
         "name": "告诉我",
         "artists": "胡彦斌",
-        "cover": "https://p2.music.126.net/e3MNMbLUQsKLhp8w_0poig==/109951170731354932.jpg",
+        "cover": "https://p1.music.126.net/e3MNMbLUQsKLhp8w_0poig==/109951170731354932.jpg",
         "playCount": 0,
         "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=93306"
@@ -59,7 +59,7 @@
         "id": 85621,
         "name": "第一次",
         "artists": "光良",
-        "cover": "https://p2.music.126.net/NlfftxU92TkoloqyecgwPw==/109951163287267754.jpg",
+        "cover": "https://p1.music.126.net/NlfftxU92TkoloqyecgwPw==/109951163287267754.jpg",
         "playCount": 0,
         "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=85621"
@@ -68,7 +68,7 @@
         "id": 82245,
         "name": "相思河畔 (Live)",
         "artists": "方大同",
-        "cover": "https://p2.music.126.net/XcfK1IyvfSVuGHihSJOOBw==/109951168870801041.jpg",
+        "cover": "https://p1.music.126.net/XcfK1IyvfSVuGHihSJOOBw==/109951168870801041.jpg",
         "playCount": 0,
         "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=82245"
@@ -77,7 +77,7 @@
         "id": 63602,
         "name": "刮目相看",
         "artists": "曹格",
-        "cover": "https://p2.music.126.net/nhBy7xMdjra9XYWeR9dWeA==/109951163188719182.jpg",
+        "cover": "https://p1.music.126.net/nhBy7xMdjra9XYWeR9dWeA==/109951163188719182.jpg",
         "playCount": 0,
         "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=63602"
@@ -86,13 +86,13 @@
         "id": 63572,
         "name": "GIRLFRIEND",
         "artists": "曹格",
-        "cover": "https://p2.music.126.net/eDinSMXNYMZHP9nAZ_sQkw==/48378511634444.jpg",
+        "cover": "https://p1.music.126.net/eDinSMXNYMZHP9nAZ_sQkw==/48378511634444.jpg",
         "playCount": 0,
         "weeklyRank": 10,
         "url": "https://music.163.com/#/song?id=63572"
       }
     ],
-    "updatedAt": "2026-09-15T04:58:54.773Z",
+    "updatedAt": "2026-09-15T11:50:04.167Z",
     "status": "public-profile"
   }
 }
