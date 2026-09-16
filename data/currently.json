@@ -11,31 +11,13 @@
         "url": "https://music.163.com/#/song?id=103797"
       },
       {
-        "id": 28403112,
-        "name": "Lights Up",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
+        "id": 2606072623,
+        "name": "幻想",
+        "artists": "迦勒",
+        "cover": "https://p1.music.126.net/yyBBO9iSwhXlvwf66p81kQ==/109951169762558183.jpg",
         "playCount": 0,
         "weeklyRank": 2,
-        "url": "https://music.163.com/#/song?id=28403112"
-      },
-      {
-        "id": 2069860802,
-        "name": "泪",
-        "artists": "梦fm",
-        "cover": "https://p1.music.126.net/ygYynGLgrUecUbdIPcjoYg==/109951168804498436.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=2069860802"
-      },
-      {
-        "id": 150412,
-        "name": "Free (Bonus Track)",
-        "artists": "陶喆",
-        "cover": "https://p1.music.126.net/K05FL1BmwrJXeoxctQILjA==/109951171530792491.jpg",
-        "playCount": 0,
-        "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=150412"
+        "url": "https://music.163.com/#/song?id=2606072623"
       },
       {
         "id": 103790,
@@ -43,8 +25,35 @@
         "artists": "纪佳松",
         "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=103790"
+      },
+      {
+        "id": 63556,
+        "name": "爱到最后一秒也不委曲",
+        "artists": "曹格",
+        "cover": "https://p1.music.126.net/c_094VESPkdcefvHOFJCZw==/107752139527257.jpg",
+        "playCount": 0,
+        "weeklyRank": 4,
+        "url": "https://music.163.com/#/song?id=63556"
+      },
+      {
+        "id": 28403112,
+        "name": "Lights Up",
+        "artists": "方大同",
+        "cover": "https://p1.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
+        "playCount": 0,
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=28403112"
+      },
+      {
+        "id": 103774,
+        "name": "坏坏坏",
+        "artists": "纪佳松",
+        "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
+        "playCount": 0,
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=103774"
       },
       {
         "id": 93306,
@@ -52,8 +61,17 @@
         "artists": "胡彦斌",
         "cover": "https://p1.music.126.net/e3MNMbLUQsKLhp8w_0poig==/109951170731354932.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=93306"
+      },
+      {
+        "id": 865021484,
+        "name": "The Secret of The Golden Bricks",
+        "artists": "方大同",
+        "cover": "https://p1.music.126.net/0mQxHWJlDjP33Q3BaplCLg==/109951171388648339.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=865021484"
       },
       {
         "id": 85621,
@@ -61,38 +79,20 @@
         "artists": "光良",
         "cover": "https://p1.music.126.net/NlfftxU92TkoloqyecgwPw==/109951163287267754.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=85621"
       },
       {
-        "id": 82245,
-        "name": "相思河畔 (Live)",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/XcfK1IyvfSVuGHihSJOOBw==/109951168870801041.jpg",
-        "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=82245"
-      },
-      {
-        "id": 63602,
-        "name": "刮目相看",
-        "artists": "曹格",
-        "cover": "https://p1.music.126.net/nhBy7xMdjra9XYWeR9dWeA==/109951163188719182.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=63602"
-      },
-      {
-        "id": 63572,
-        "name": "GIRLFRIEND",
-        "artists": "曹格",
-        "cover": "https://p1.music.126.net/eDinSMXNYMZHP9nAZ_sQkw==/48378511634444.jpg",
+        "id": 85597,
+        "name": "下个入口",
+        "artists": "郭顶",
+        "cover": "https://p1.music.126.net/zX1dZ7YZS4i_-IJP7hloUQ==/113249697674099.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=63572"
+        "url": "https://music.163.com/#/song?id=85597"
       }
     ],
-    "updatedAt": "2026-09-15T11:50:04.167Z",
+    "updatedAt": "2026-09-16T04:54:14.383Z",
     "status": "public-profile"
   }
 }
