@@ -5,7 +5,7 @@
         "id": 103797,
         "name": "缝",
         "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
+        "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
         "weeklyRank": 1,
         "url": "https://music.163.com/#/song?id=103797"
@@ -14,7 +14,7 @@
         "id": 103790,
         "name": "第一夫人",
         "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
+        "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
         "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=103790"
@@ -23,37 +23,28 @@
         "id": 2606072623,
         "name": "幻想",
         "artists": "迦勒",
-        "cover": "https://p2.music.126.net/yyBBO9iSwhXlvwf66p81kQ==/109951169762558183.jpg",
+        "cover": "https://p1.music.126.net/yyBBO9iSwhXlvwf66p81kQ==/109951169762558183.jpg",
         "playCount": 0,
         "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=2606072623"
       },
       {
-        "id": 63556,
-        "name": "爱到最后一秒也不委曲",
-        "artists": "曹格",
-        "cover": "https://p2.music.126.net/c_094VESPkdcefvHOFJCZw==/107752139527257.jpg",
-        "playCount": 0,
-        "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=63556"
-      },
-      {
         "id": 432506316,
         "name": "很不低调",
         "artists": "方大同",
-        "cover": "https://p2.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
+        "cover": "https://p1.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=432506316"
       },
       {
-        "id": 28403112,
-        "name": "Lights Up",
-        "artists": "方大同",
-        "cover": "https://p2.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
+        "id": 63556,
+        "name": "爱到最后一秒也不委曲",
+        "artists": "曹格",
+        "cover": "https://p1.music.126.net/c_094VESPkdcefvHOFJCZw==/107752139527257.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=28403112"
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=63556"
       },
       {
         "id": 168500,
@@ -61,7 +52,7 @@
         "artists": "萧煌奇",
         "cover": "https://p1.music.126.net/bgDbLwJC3p46aaaTPaUFJQ==/109951163240608867.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=168500"
       },
       {
@@ -70,8 +61,17 @@
         "artists": "纪佳松",
         "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=103774"
+      },
+      {
+        "id": 94791,
+        "name": "那么爱你为什么",
+        "artists": "黄品源 / 莫文蔚",
+        "cover": "https://p1.music.126.net/73_nzmkvvzYjq5UsCj-KTw==/109951173924615782.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=94791"
       },
       {
         "id": 93306,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=86849"
       }
     ],
-    "updatedAt": "2026-09-17T21:26:20.685Z",
+    "updatedAt": "2026-09-18T04:49:34.626Z",
     "status": "public-profile"
   }
 }
