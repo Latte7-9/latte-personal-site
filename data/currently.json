@@ -29,22 +29,22 @@
         "url": "https://music.163.com/#/song?id=254102"
       },
       {
-        "id": 2606072623,
-        "name": "幻想",
-        "artists": "迦勒",
-        "cover": "https://p2.music.126.net/yyBBO9iSwhXlvwf66p81kQ==/109951169762558183.jpg",
-        "playCount": 0,
-        "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=2606072623"
-      },
-      {
         "id": 103790,
         "name": "第一夫人",
         "artists": "纪佳松",
         "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=103790"
+      },
+      {
+        "id": 2606072623,
+        "name": "幻想",
+        "artists": "迦勒",
+        "cover": "https://p2.music.126.net/yyBBO9iSwhXlvwf66p81kQ==/109951169762558183.jpg",
+        "playCount": 0,
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=2606072623"
       },
       {
         "id": 444524880,
@@ -83,16 +83,16 @@
         "url": "https://music.163.com/#/song?id=116869"
       },
       {
-        "id": 82200,
-        "name": "爱我吧",
+        "id": 82369,
+        "name": "公园",
         "artists": "方大同",
-        "cover": "https://p2.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
+        "cover": "https://p2.music.126.net/8fTdTkzJUc4jEcoiV5JNtw==/109951168870789373.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=82200"
+        "url": "https://music.163.com/#/song?id=82369"
       }
     ],
-    "updatedAt": "2026-09-22T05:04:02.306Z",
+    "updatedAt": "2026-09-22T11:44:54.409Z",
     "status": "public-profile"
   }
 }
