@@ -20,40 +20,13 @@
         "url": "https://music.163.com/#/song?id=34497630"
       },
       {
-        "id": 254102,
-        "name": "情歌",
-        "artists": "梁静茹",
-        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=254102"
-      },
-      {
         "id": 444524880,
         "name": "蹦蹦",
         "artists": "吴建豪 / 方大同",
         "cover": "https://p1.music.126.net/Fwmvo68zrOmyL_JqULaJCg==/18658712324774377.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=444524880"
-      },
-      {
-        "id": 254103,
-        "name": "天灯",
-        "artists": "梁静茹",
-        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
-        "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=254103"
-      },
-      {
-        "id": 160413,
-        "name": "要你说爱我",
-        "artists": "伍家辉",
-        "cover": "https://p1.music.126.net/ojYZANqLemhrw8iSUlkaUQ==/109951172697471069.jpg",
-        "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=160413"
       },
       {
         "id": 116869,
@@ -61,8 +34,17 @@
         "artists": "林子祥",
         "cover": "https://p1.music.126.net/6hWtQD6etnGZrmae7fw8tg==/41781441856457.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=116869"
+      },
+      {
+        "id": 160413,
+        "name": "要你说爱我",
+        "artists": "伍家辉",
+        "cover": "https://p1.music.126.net/ojYZANqLemhrw8iSUlkaUQ==/109951172697471069.jpg",
+        "playCount": 0,
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=160413"
       },
       {
         "id": 103790,
@@ -70,7 +52,7 @@
         "artists": "纪佳松",
         "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=103790"
       },
       {
@@ -79,20 +61,38 @@
         "artists": "方大同",
         "cover": "https://p1.music.126.net/8fTdTkzJUc4jEcoiV5JNtw==/109951168870789373.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=82369"
       },
       {
-        "id": 82200,
-        "name": "爱我吧",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
+        "id": 441612583,
+        "name": "City Of Stars (From \"La La Land\" Soundtrack)",
+        "artists": "Ryan Gosling / Emma Stone",
+        "cover": "https://p1.music.126.net/CrAb6Ryc5osJUM6zuoqxuw==/109951171012054073.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=441612583"
+      },
+      {
+        "id": 27483167,
+        "name": "唯一",
+        "artists": "王力宏",
+        "cover": "https://p1.music.126.net/59G6Y2NZlfqCHuTorgDNAw==/109951170708268079.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=27483167"
+      },
+      {
+        "id": 2659586241,
+        "name": "Puppy Love",
+        "artists": "丁世光",
+        "cover": "https://p1.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=82200"
+        "url": "https://music.163.com/#/song?id=2659586241"
       }
     ],
-    "updatedAt": "2026-09-25T21:38:10.946Z",
+    "updatedAt": "2026-09-26T05:05:22.513Z",
     "status": "public-profile"
   }
 }
