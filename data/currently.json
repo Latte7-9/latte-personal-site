@@ -2,22 +2,13 @@
   "netease": {
     "songs": [
       {
-        "id": 34497630,
-        "name": "最后一首情歌",
-        "artists": "苏琛",
-        "cover": "https://p2.music.126.net/2y5Uw6PO9wm5tpGDLj0fBA==/109951167706577169.jpg",
+        "id": 103797,
+        "name": "缝",
+        "artists": "纪佳松",
+        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
         "weeklyRank": 1,
-        "url": "https://music.163.com/#/song?id=34497630"
-      },
-      {
-        "id": 444524880,
-        "name": "蹦蹦",
-        "artists": "吴建豪 / 方大同",
-        "cover": "https://p2.music.126.net/Fwmvo68zrOmyL_JqULaJCg==/18658712324774377.jpg",
-        "playCount": 0,
-        "weeklyRank": 2,
-        "url": "https://music.163.com/#/song?id=444524880"
+        "url": "https://music.163.com/#/song?id=103797"
       },
       {
         "id": 116869,
@@ -25,8 +16,17 @@
         "artists": "林子祥",
         "cover": "https://p2.music.126.net/6hWtQD6etnGZrmae7fw8tg==/41781441856457.jpg",
         "playCount": 0,
-        "weeklyRank": 3,
+        "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=116869"
+      },
+      {
+        "id": 34497630,
+        "name": "最后一首情歌",
+        "artists": "苏琛",
+        "cover": "https://p2.music.126.net/2y5Uw6PO9wm5tpGDLj0fBA==/109951167706577169.jpg",
+        "playCount": 0,
+        "weeklyRank": 3,
+        "url": "https://music.163.com/#/song?id=34497630"
       },
       {
         "id": 160413,
@@ -38,40 +38,22 @@
         "url": "https://music.163.com/#/song?id=160413"
       },
       {
+        "id": 444524880,
+        "name": "蹦蹦",
+        "artists": "吴建豪 / 方大同",
+        "cover": "https://p2.music.126.net/Fwmvo68zrOmyL_JqULaJCg==/18658712324774377.jpg",
+        "playCount": 0,
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=444524880"
+      },
+      {
         "id": 432506316,
         "name": "很不低调",
         "artists": "方大同",
         "cover": "https://p2.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=432506316"
-      },
-      {
-        "id": 103841,
-        "name": "白黑",
-        "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
-        "playCount": 0,
         "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=103841"
-      },
-      {
-        "id": 103797,
-        "name": "缝",
-        "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
-        "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=103797"
-      },
-      {
-        "id": 496382088,
-        "name": "黑色星期二",
-        "artists": "陶喆",
-        "cover": "https://p2.music.126.net/MrzNw30shYbcJ97cHYF6fw==/109951169889419637.jpg",
-        "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=496382088"
+        "url": "https://music.163.com/#/song?id=432506316"
       },
       {
         "id": 2019573476,
@@ -79,20 +61,38 @@
         "artists": "林俊杰",
         "cover": "https://p2.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=2019573476"
       },
       {
-        "id": 82369,
-        "name": "公园",
-        "artists": "方大同",
-        "cover": "https://p2.music.126.net/8fTdTkzJUc4jEcoiV5JNtw==/109951168870789373.jpg",
+        "id": 103841,
+        "name": "白黑",
+        "artists": "纪佳松",
+        "cover": "https://p2.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=103841"
+      },
+      {
+        "id": 520461800,
+        "name": "爱在什么地方都有",
+        "artists": "丁世光",
+        "cover": "https://p2.music.126.net/w3LQN3qdX5nFU2OM-_B7lQ==/109951163072002721.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=520461800"
+      },
+      {
+        "id": 441612583,
+        "name": "City Of Stars (From \"La La Land\" Soundtrack)",
+        "artists": "Ryan Gosling / Emma Stone",
+        "cover": "https://p2.music.126.net/CrAb6Ryc5osJUM6zuoqxuw==/109951171012054073.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=82369"
+        "url": "https://music.163.com/#/song?id=441612583"
       }
     ],
-    "updatedAt": "2026-09-27T21:23:48.539Z",
+    "updatedAt": "2026-09-28T05:30:00.287Z",
     "status": "public-profile"
   }
 }
