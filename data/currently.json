@@ -47,22 +47,31 @@
         "url": "https://music.163.com/#/song?id=444524880"
       },
       {
-        "id": 432506316,
-        "name": "很不低调",
-        "artists": "方大同",
-        "cover": "https://p2.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
-        "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=432506316"
-      },
-      {
         "id": 2019573476,
         "name": "达尔文",
         "artists": "林俊杰",
         "cover": "https://p2.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=2019573476"
+      },
+      {
+        "id": 432506316,
+        "name": "很不低调",
+        "artists": "方大同",
+        "cover": "https://p2.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=432506316"
+      },
+      {
+        "id": 28403112,
+        "name": "Lights Up",
+        "artists": "方大同",
+        "cover": "https://p2.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=28403112"
       },
       {
         "id": 103841,
@@ -70,29 +79,20 @@
         "artists": "纪佳松",
         "cover": "https://p2.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=103841"
       },
       {
-        "id": 520461800,
-        "name": "爱在什么地方都有",
-        "artists": "丁世光",
-        "cover": "https://p2.music.126.net/w3LQN3qdX5nFU2OM-_B7lQ==/109951163072002721.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=520461800"
-      },
-      {
-        "id": 441612583,
-        "name": "City Of Stars (From \"La La Land\" Soundtrack)",
-        "artists": "Ryan Gosling / Emma Stone",
-        "cover": "https://p2.music.126.net/CrAb6Ryc5osJUM6zuoqxuw==/109951171012054073.jpg",
+        "id": 5239543,
+        "name": "带我走",
+        "artists": "杨丞琳",
+        "cover": "https://p2.music.126.net/Y_Z9lNHta4TZ80VgEUkMRA==/109951165641468578.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=441612583"
+        "url": "https://music.163.com/#/song?id=5239543"
       }
     ],
-    "updatedAt": "2026-09-28T05:30:00.287Z",
+    "updatedAt": "2026-09-28T14:03:27.474Z",
     "status": "public-profile"
   }
 }
