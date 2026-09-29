@@ -2,97 +2,97 @@
   "netease": {
     "songs": [
       {
-        "id": 103797,
-        "name": "缝",
-        "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
-        "playCount": 0,
-        "weeklyRank": 1,
-        "url": "https://music.163.com/#/song?id=103797"
-      },
-      {
         "id": 116869,
         "name": "敢爱敢做",
         "artists": "林子祥",
-        "cover": "https://p2.music.126.net/6hWtQD6etnGZrmae7fw8tg==/41781441856457.jpg",
+        "cover": "https://p1.music.126.net/6hWtQD6etnGZrmae7fw8tg==/41781441856457.jpg",
         "playCount": 0,
-        "weeklyRank": 2,
+        "weeklyRank": 1,
         "url": "https://music.163.com/#/song?id=116869"
-      },
-      {
-        "id": 34497630,
-        "name": "最后一首情歌",
-        "artists": "苏琛",
-        "cover": "https://p2.music.126.net/2y5Uw6PO9wm5tpGDLj0fBA==/109951167706577169.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=34497630"
       },
       {
         "id": 160413,
         "name": "要你说爱我",
         "artists": "伍家辉",
-        "cover": "https://p2.music.126.net/ojYZANqLemhrw8iSUlkaUQ==/109951172697471069.jpg",
+        "cover": "https://p1.music.126.net/ojYZANqLemhrw8iSUlkaUQ==/109951172697471069.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=160413"
-      },
-      {
-        "id": 444524880,
-        "name": "蹦蹦",
-        "artists": "吴建豪 / 方大同",
-        "cover": "https://p2.music.126.net/Fwmvo68zrOmyL_JqULaJCg==/18658712324774377.jpg",
-        "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=444524880"
       },
       {
         "id": 2019573476,
         "name": "达尔文",
         "artists": "林俊杰",
-        "cover": "https://p2.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
+        "cover": "https://p1.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
+        "playCount": 0,
+        "weeklyRank": 3,
+        "url": "https://music.163.com/#/song?id=2019573476"
+      },
+      {
+        "id": 103797,
+        "name": "缝",
+        "artists": "纪佳松",
+        "cover": "https://p1.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
+        "playCount": 0,
+        "weeklyRank": 4,
+        "url": "https://music.163.com/#/song?id=103797"
+      },
+      {
+        "id": 444524880,
+        "name": "蹦蹦",
+        "artists": "吴建豪 / 方大同",
+        "cover": "https://p1.music.126.net/Fwmvo68zrOmyL_JqULaJCg==/18658712324774377.jpg",
+        "playCount": 0,
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=444524880"
+      },
+      {
+        "id": 34497630,
+        "name": "最后一首情歌",
+        "artists": "苏琛",
+        "cover": "https://p1.music.126.net/2y5Uw6PO9wm5tpGDLj0fBA==/109951167706577169.jpg",
         "playCount": 0,
         "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=2019573476"
+        "url": "https://music.163.com/#/song?id=34497630"
+      },
+      {
+        "id": 5239543,
+        "name": "带我走",
+        "artists": "杨丞琳",
+        "cover": "https://p1.music.126.net/Y_Z9lNHta4TZ80VgEUkMRA==/109951165641468578.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=5239543"
       },
       {
         "id": 432506316,
         "name": "很不低调",
         "artists": "方大同",
-        "cover": "https://p2.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
+        "cover": "https://p1.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=432506316"
       },
       {
         "id": 28403112,
         "name": "Lights Up",
         "artists": "方大同",
-        "cover": "https://p2.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
+        "cover": "https://p1.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=28403112"
       },
       {
-        "id": 103841,
-        "name": "白黑",
-        "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=103841"
-      },
-      {
-        "id": 5239543,
-        "name": "带我走",
-        "artists": "杨丞琳",
-        "cover": "https://p2.music.126.net/Y_Z9lNHta4TZ80VgEUkMRA==/109951165641468578.jpg",
+        "id": 2659586244,
+        "name": "瘦子",
+        "artists": "丁世光",
+        "cover": "https://p1.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=5239543"
+        "url": "https://music.163.com/#/song?id=2659586244"
       }
     ],
-    "updatedAt": "2026-09-28T14:03:27.474Z",
+    "updatedAt": "2026-09-29T05:48:30.936Z",
     "status": "public-profile"
   }
 }
