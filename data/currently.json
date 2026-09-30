@@ -56,12 +56,21 @@
         "url": "https://music.163.com/#/song?id=34497630"
       },
       {
+        "id": 150617,
+        "name": "找自己",
+        "artists": "陶喆",
+        "cover": "https://p2.music.126.net/tMQXBMTy8pGjGggX1j0YNQ==/109951169389595068.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=150617"
+      },
+      {
         "id": 432506316,
         "name": "很不低调",
         "artists": "方大同",
         "cover": "https://p2.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=432506316"
       },
       {
@@ -70,17 +79,8 @@
         "artists": "なとり",
         "cover": "https://p2.music.126.net/LKsW-l3kIBQ8Xr_beBqtGw==/109951167834221616.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=1974104377"
-      },
-      {
-        "id": 150617,
-        "name": "找自己",
-        "artists": "陶喆",
-        "cover": "https://p2.music.126.net/tMQXBMTy8pGjGggX1j0YNQ==/109951169389595068.jpg",
-        "playCount": 0,
         "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=150617"
+        "url": "https://music.163.com/#/song?id=1974104377"
       },
       {
         "id": 109218,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=109218"
       }
     ],
-    "updatedAt": "2026-09-30T05:38:13.810Z",
+    "updatedAt": "2026-09-30T12:41:29.359Z",
     "status": "public-profile"
   }
 }
