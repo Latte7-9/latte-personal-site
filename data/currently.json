@@ -5,7 +5,7 @@
         "id": 116869,
         "name": "敢爱敢做",
         "artists": "林子祥",
-        "cover": "https://p1.music.126.net/6hWtQD6etnGZrmae7fw8tg==/41781441856457.jpg",
+        "cover": "https://p2.music.126.net/6hWtQD6etnGZrmae7fw8tg==/41781441856457.jpg",
         "playCount": 0,
         "weeklyRank": 1,
         "url": "https://music.163.com/#/song?id=116869"
@@ -14,7 +14,7 @@
         "id": 2019573476,
         "name": "达尔文",
         "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
+        "cover": "https://p2.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
         "playCount": 0,
         "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=2019573476"
@@ -23,7 +23,7 @@
         "id": 34497630,
         "name": "最后一首情歌",
         "artists": "苏琛",
-        "cover": "https://p1.music.126.net/2y5Uw6PO9wm5tpGDLj0fBA==/109951167706577169.jpg",
+        "cover": "https://p2.music.126.net/2y5Uw6PO9wm5tpGDLj0fBA==/109951167706577169.jpg",
         "playCount": 0,
         "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=34497630"
@@ -47,12 +47,21 @@
         "url": "https://music.163.com/#/song?id=103797"
       },
       {
+        "id": 460113004,
+        "name": "Precious Love",
+        "artists": "Charlie Wilson",
+        "cover": "https://p2.music.126.net/XZy169glr-wDL8W1Xlmw4Q==/109951165976521148.jpg",
+        "playCount": 0,
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=460113004"
+      },
+      {
         "id": 444524880,
         "name": "蹦蹦",
         "artists": "吴建豪 / 方大同",
         "cover": "https://p2.music.126.net/Fwmvo68zrOmyL_JqULaJCg==/18658712324774377.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=444524880"
       },
       {
@@ -61,8 +70,17 @@
         "artists": "方大同",
         "cover": "https://p2.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=432506316"
+      },
+      {
+        "id": 21234189,
+        "name": "Through The Rain",
+        "artists": "Mariah Carey",
+        "cover": "https://p2.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=21234189"
       },
       {
         "id": 211520,
@@ -70,29 +88,11 @@
         "artists": "蔡琴",
         "cover": "https://p2.music.126.net/2XGh-t1njea347G0mndEpA==/109951165705461811.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=211520"
-      },
-      {
-        "id": 103841,
-        "name": "白黑",
-        "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=103841"
-      },
-      {
-        "id": 86849,
-        "name": "爱与诚",
-        "artists": "古巨基",
-        "cover": "https://p2.music.126.net/nnLfKG7xgPszEkuGCPowOg==/109951167715296163.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=86849"
+        "url": "https://music.163.com/#/song?id=211520"
       }
     ],
-    "updatedAt": "2026-10-02T12:43:35.069Z",
+    "updatedAt": "2026-10-02T22:17:52.851Z",
     "status": "public-profile"
   }
 }
