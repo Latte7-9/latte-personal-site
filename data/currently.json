@@ -29,21 +29,12 @@
         "url": "https://music.163.com/#/song?id=34497630"
       },
       {
-        "id": 160413,
-        "name": "要你说爱我",
-        "artists": "伍家辉",
-        "cover": "https://p2.music.126.net/ojYZANqLemhrw8iSUlkaUQ==/109951172697471069.jpg",
-        "playCount": 0,
-        "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=160413"
-      },
-      {
         "id": 103797,
         "name": "缝",
         "artists": "纪佳松",
         "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=103797"
       },
       {
@@ -52,7 +43,7 @@
         "artists": "Charlie Wilson",
         "cover": "https://p2.music.126.net/XZy169glr-wDL8W1Xlmw4Q==/109951165976521148.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=460113004"
       },
       {
@@ -61,7 +52,7 @@
         "artists": "吴建豪 / 方大同",
         "cover": "https://p2.music.126.net/Fwmvo68zrOmyL_JqULaJCg==/18658712324774377.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=444524880"
       },
       {
@@ -70,7 +61,7 @@
         "artists": "方大同",
         "cover": "https://p2.music.126.net/YFaB9rswM-1Ni9GPQ576Ag==/109951171530573358.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=432506316"
       },
       {
@@ -79,7 +70,7 @@
         "artists": "Mariah Carey",
         "cover": "https://p2.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=21234189"
       },
       {
@@ -88,11 +79,20 @@
         "artists": "蔡琴",
         "cover": "https://p2.music.126.net/2XGh-t1njea347G0mndEpA==/109951165705461811.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=211520"
+      },
+      {
+        "id": 160413,
+        "name": "要你说爱我",
+        "artists": "伍家辉",
+        "cover": "https://p2.music.126.net/ojYZANqLemhrw8iSUlkaUQ==/109951172697471069.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=160413"
       }
     ],
-    "updatedAt": "2026-10-02T22:17:52.851Z",
+    "updatedAt": "2026-10-03T05:23:26.073Z",
     "status": "public-profile"
   }
 }
