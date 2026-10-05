@@ -2,22 +2,40 @@
   "netease": {
     "songs": [
       {
-        "id": 2659586244,
-        "name": "瘦子",
-        "artists": "丁世光",
-        "cover": "https://p2.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
-        "playCount": 0,
-        "weeklyRank": 1,
-        "url": "https://music.163.com/#/song?id=2659586244"
-      },
-      {
         "id": 2019573476,
         "name": "达尔文",
         "artists": "林俊杰",
         "cover": "https://p2.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
         "playCount": 0,
-        "weeklyRank": 2,
+        "weeklyRank": 1,
         "url": "https://music.163.com/#/song?id=2019573476"
+      },
+      {
+        "id": 114691,
+        "name": "不是对手",
+        "artists": "李圣杰",
+        "cover": "https://p2.music.126.net/YKh3UA3pEd4r5V6n8immXQ==/109951170915074096.jpg",
+        "playCount": 0,
+        "weeklyRank": 2,
+        "url": "https://music.163.com/#/song?id=114691"
+      },
+      {
+        "id": 103797,
+        "name": "缝",
+        "artists": "纪佳松",
+        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
+        "playCount": 0,
+        "weeklyRank": 3,
+        "url": "https://music.163.com/#/song?id=103797"
+      },
+      {
+        "id": 2659586244,
+        "name": "瘦子",
+        "artists": "丁世光",
+        "cover": "https://p2.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
+        "playCount": 0,
+        "weeklyRank": 4,
+        "url": "https://music.163.com/#/song?id=2659586244"
       },
       {
         "id": 116869,
@@ -25,7 +43,7 @@
         "artists": "林子祥",
         "cover": "https://p2.music.126.net/6hWtQD6etnGZrmae7fw8tg==/41781441856457.jpg",
         "playCount": 0,
-        "weeklyRank": 3,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=116869"
       },
       {
@@ -34,17 +52,8 @@
         "artists": "林俊杰",
         "cover": "https://p2.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=108245"
-      },
-      {
-        "id": 103797,
-        "name": "缝",
-        "artists": "纪佳松",
-        "cover": "https://p2.music.126.net/vG2m8_aTlCXEu4JumPLO-w==/109951165056971843.jpg",
-        "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=103797"
       },
       {
         "id": 25643258,
@@ -52,7 +61,7 @@
         "artists": "王力宏",
         "cover": "https://p2.music.126.net/hC-YGyr2cC0E_K_4Vfkztg==/109951163095172063.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=25643258"
       },
       {
@@ -61,17 +70,8 @@
         "artists": "Mariah Carey",
         "cover": "https://p2.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=21234189"
-      },
-      {
-        "id": 114691,
-        "name": "不是对手",
-        "artists": "李圣杰",
-        "cover": "https://p2.music.126.net/YKh3UA3pEd4r5V6n8immXQ==/109951170915074096.jpg",
-        "playCount": 0,
         "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=114691"
+        "url": "https://music.163.com/#/song?id=21234189"
       },
       {
         "id": 86849,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=63595"
       }
     ],
-    "updatedAt": "2026-10-05T05:48:01.022Z",
+    "updatedAt": "2026-10-05T14:48:47.285Z",
     "status": "public-profile"
   }
 }
