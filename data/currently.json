@@ -20,21 +20,12 @@
         "url": "https://music.163.com/#/song?id=103841"
       },
       {
-        "id": 108245,
-        "name": "爱笑的眼睛",
-        "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=108245"
-      },
-      {
         "id": 530995517,
         "name": "几分之几 (You Complete Me)",
         "artists": "卢广仲",
         "cover": "https://p1.music.126.net/fWpX1LILPAyiOacF96REww==/109951163191952149.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=530995517"
       },
       {
@@ -43,26 +34,17 @@
         "artists": "王力宏",
         "cover": "https://p1.music.126.net/hC-YGyr2cC0E_K_4Vfkztg==/109951163095172063.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=25643258"
       },
       {
-        "id": 2019573476,
-        "name": "达尔文",
+        "id": 108245,
+        "name": "爱笑的眼睛",
         "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
+        "cover": "https://p1.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=2019573476"
-      },
-      {
-        "id": 116869,
-        "name": "敢爱敢做",
-        "artists": "林子祥",
-        "cover": "https://p1.music.126.net/6hWtQD6etnGZrmae7fw8tg==/41781441856457.jpg",
-        "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=116869"
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=108245"
       },
       {
         "id": 86849,
@@ -70,17 +52,8 @@
         "artists": "古巨基",
         "cover": "https://p1.music.126.net/nnLfKG7xgPszEkuGCPowOg==/109951167715296163.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=86849"
-      },
-      {
-        "id": 460113004,
-        "name": "Precious Love",
-        "artists": "Charlie Wilson",
-        "cover": "https://p1.music.126.net/XZy169glr-wDL8W1Xlmw4Q==/109951165976521148.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=460113004"
       },
       {
         "id": 2659586244,
@@ -88,11 +61,38 @@
         "artists": "丁世光",
         "cover": "https://p1.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=2659586244"
+      },
+      {
+        "id": 25648011,
+        "name": "爱立刻",
+        "artists": "方大同",
+        "cover": "https://p1.music.126.net/8I4zvpNSsj--wGNg-mE2kw==/109951168870428045.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=25648011"
+      },
+      {
+        "id": 211520,
+        "name": "你不要那样看着我的眼睛",
+        "artists": "蔡琴",
+        "cover": "https://p1.music.126.net/2XGh-t1njea347G0mndEpA==/109951165705461811.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=211520"
+      },
+      {
+        "id": 1832633246,
+        "name": "Single",
+        "artists": "Kayla Rae",
+        "cover": "https://p1.music.126.net/pBzggqUrf9Wr6tZ5kN9UBA==/109951165835456297.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=1832633246"
       }
     ],
-    "updatedAt": "2026-10-06T18:25:43.869Z",
+    "updatedAt": "2026-10-07T06:06:26.537Z",
     "status": "public-profile"
   }
 }
