@@ -65,12 +65,21 @@
         "url": "https://music.163.com/#/song?id=108245"
       },
       {
+        "id": 460113004,
+        "name": "Precious Love",
+        "artists": "Charlie Wilson",
+        "cover": "https://p1.music.126.net/XZy169glr-wDL8W1Xlmw4Q==/109951165976521148.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=460113004"
+      },
+      {
         "id": 27483167,
         "name": "唯一",
         "artists": "王力宏",
         "cover": "https://p1.music.126.net/59G6Y2NZlfqCHuTorgDNAw==/109951170708268079.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=27483167"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "丁世光",
         "cover": "https://p1.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=2659586244"
-      },
-      {
-        "id": 25648011,
-        "name": "爱立刻",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/8I4zvpNSsj--wGNg-mE2kw==/109951168870428045.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=25648011"
+        "url": "https://music.163.com/#/song?id=2659586244"
       }
     ],
-    "updatedAt": "2026-10-08T13:37:09.362Z",
+    "updatedAt": "2026-10-08T23:24:05.129Z",
     "status": "public-profile"
   }
 }
