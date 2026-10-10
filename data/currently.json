@@ -14,7 +14,7 @@
         "id": 103841,
         "name": "白黑",
         "artists": "纪佳松",
-        "cover": "https://p1.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
+        "cover": "https://p2.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
         "playCount": 0,
         "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=103841"
@@ -23,7 +23,7 @@
         "id": 530995517,
         "name": "几分之几 (You Complete Me)",
         "artists": "卢广仲",
-        "cover": "https://p1.music.126.net/fWpX1LILPAyiOacF96REww==/109951163191952149.jpg",
+        "cover": "https://p2.music.126.net/fWpX1LILPAyiOacF96REww==/109951163191952149.jpg",
         "playCount": 0,
         "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=530995517"
@@ -32,7 +32,7 @@
         "id": 25643258,
         "name": "心跳",
         "artists": "王力宏",
-        "cover": "https://p1.music.126.net/hC-YGyr2cC0E_K_4Vfkztg==/109951163095172063.jpg",
+        "cover": "https://p2.music.126.net/hC-YGyr2cC0E_K_4Vfkztg==/109951163095172063.jpg",
         "playCount": 0,
         "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=25643258"
@@ -41,7 +41,7 @@
         "id": 2019573476,
         "name": "达尔文",
         "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
+        "cover": "https://p2.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
         "playCount": 0,
         "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=2019573476"
@@ -50,7 +50,7 @@
         "id": 1301736461,
         "name": "爱错",
         "artists": "王力宏",
-        "cover": "https://p1.music.126.net/febOkiCikU5OcjVLqGNLlg==/109951165994484307.jpg",
+        "cover": "https://p2.music.126.net/febOkiCikU5OcjVLqGNLlg==/109951165994484307.jpg",
         "playCount": 0,
         "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=1301736461"
@@ -59,40 +59,40 @@
         "id": 108245,
         "name": "爱笑的眼睛",
         "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
+        "cover": "https://p2.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
         "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=108245"
       },
       {
+        "id": 63595,
+        "name": "烛光晚餐",
+        "artists": "曹格",
+        "cover": "https://p2.music.126.net/nhBy7xMdjra9XYWeR9dWeA==/109951163188719182.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=63595"
+      },
+      {
         "id": 27483167,
         "name": "唯一",
         "artists": "王力宏",
-        "cover": "https://p1.music.126.net/59G6Y2NZlfqCHuTorgDNAw==/109951170708268079.jpg",
+        "cover": "https://p2.music.126.net/59G6Y2NZlfqCHuTorgDNAw==/109951170708268079.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=27483167"
       },
       {
         "id": 2659586244,
         "name": "瘦子",
         "artists": "丁世光",
-        "cover": "https://p1.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=2659586244"
-      },
-      {
-        "id": 25648011,
-        "name": "爱立刻",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/8I4zvpNSsj--wGNg-mE2kw==/109951168870428045.jpg",
+        "cover": "https://p2.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=25648011"
+        "url": "https://music.163.com/#/song?id=2659586244"
       }
     ],
-    "updatedAt": "2026-10-09T22:42:17.249Z",
+    "updatedAt": "2026-10-10T05:58:31.559Z",
     "status": "public-profile"
   }
 }
