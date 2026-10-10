@@ -29,39 +29,12 @@
         "url": "https://music.163.com/#/song?id=530995517"
       },
       {
-        "id": 2019573476,
-        "name": "达尔文",
-        "artists": "林俊杰",
-        "cover": "https://p2.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
-        "playCount": 0,
-        "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=2019573476"
-      },
-      {
-        "id": 2659586244,
-        "name": "瘦子",
-        "artists": "丁世光",
-        "cover": "https://p2.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
-        "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=2659586244"
-      },
-      {
-        "id": 25643258,
-        "name": "心跳",
-        "artists": "王力宏",
-        "cover": "https://p2.music.126.net/hC-YGyr2cC0E_K_4Vfkztg==/109951163095172063.jpg",
-        "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=25643258"
-      },
-      {
         "id": 254102,
         "name": "情歌",
         "artists": "梁静茹",
         "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=254102"
       },
       {
@@ -70,8 +43,35 @@
         "artists": "Mariah Carey",
         "cover": "https://p2.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=21234189"
+      },
+      {
+        "id": 2019573476,
+        "name": "达尔文",
+        "artists": "林俊杰",
+        "cover": "https://p2.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
+        "playCount": 0,
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=2019573476"
+      },
+      {
+        "id": 2659586244,
+        "name": "瘦子",
+        "artists": "丁世光",
+        "cover": "https://p2.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
+        "playCount": 0,
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=2659586244"
+      },
+      {
+        "id": 25643258,
+        "name": "心跳",
+        "artists": "王力宏",
+        "cover": "https://p2.music.126.net/hC-YGyr2cC0E_K_4Vfkztg==/109951163095172063.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=25643258"
       },
       {
         "id": 160413,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=1301736461"
       }
     ],
-    "updatedAt": "2026-10-10T12:38:26.118Z",
+    "updatedAt": "2026-10-10T21:48:30.541Z",
     "status": "public-profile"
   }
 }
