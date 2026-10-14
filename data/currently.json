@@ -20,21 +20,12 @@
         "url": "https://music.163.com/#/song?id=108886"
       },
       {
-        "id": 103841,
-        "name": "白黑",
-        "artists": "纪佳松",
-        "cover": "https://p1.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=103841"
-      },
-      {
         "id": 254102,
         "name": "情歌",
         "artists": "梁静茹",
         "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=254102"
       },
       {
@@ -43,7 +34,7 @@
         "artists": "林俊杰",
         "cover": "https://p1.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=108254"
       },
       {
@@ -52,7 +43,7 @@
         "artists": "李圣杰",
         "cover": "https://p1.music.126.net/YKh3UA3pEd4r5V6n8immXQ==/109951170915074096.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=114691"
       },
       {
@@ -61,17 +52,17 @@
         "artists": "孙楠",
         "cover": "https://p1.music.126.net/xP0gO2UwYu4cUmpUm2lKsQ==/109951172692392925.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=145310"
       },
       {
-        "id": 160413,
-        "name": "要你说爱我",
-        "artists": "伍家辉",
-        "cover": "https://p1.music.126.net/ojYZANqLemhrw8iSUlkaUQ==/109951172697471069.jpg",
+        "id": 103841,
+        "name": "白黑",
+        "artists": "纪佳松",
+        "cover": "https://p1.music.126.net/5PV0nScC0UpnjIPzY_SzUw==/124244813951842.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=160413"
+        "weeklyRank": 7,
+        "url": "https://music.163.com/#/song?id=103841"
       },
       {
         "id": 21234189,
@@ -79,7 +70,7 @@
         "artists": "Mariah Carey",
         "cover": "https://p1.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=21234189"
       },
       {
@@ -88,11 +79,20 @@
         "artists": "林俊杰",
         "cover": "https://p1.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=2019573476"
+      },
+      {
+        "id": 1852642778,
+        "name": "Rising Sun",
+        "artists": "Ric Hassani",
+        "cover": "https://p1.music.126.net/cypG265iHMPt2ASdn_wVlA==/109951169023343077.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=1852642778"
       }
     ],
-    "updatedAt": "2026-10-13T22:49:37.316Z",
+    "updatedAt": "2026-10-14T04:59:17.277Z",
     "status": "public-profile"
   }
 }
