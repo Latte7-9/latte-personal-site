@@ -74,25 +74,25 @@
         "url": "https://music.163.com/#/song?id=160413"
       },
       {
-        "id": 21234189,
-        "name": "Through The Rain",
-        "artists": "Mariah Carey",
-        "cover": "https://p1.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=21234189"
-      },
-      {
         "id": 2694566992,
         "name": "小城女",
         "artists": "黄建威",
         "cover": "https://p1.music.126.net/Ix0SJa4TaOhIC7RzdOXyYQ==/109951171069034849.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=2694566992"
+      },
+      {
+        "id": 21234189,
+        "name": "Through The Rain",
+        "artists": "Mariah Carey",
+        "cover": "https://p1.music.126.net/CpMcTjnm71iulHrk-N1Jvg==/109951166046322530.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=21234189"
       }
     ],
-    "updatedAt": "2026-10-16T04:37:37.833Z",
+    "updatedAt": "2026-10-17T04:34:33.610Z",
     "status": "public-profile"
   }
 }
