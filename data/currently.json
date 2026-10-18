@@ -74,25 +74,25 @@
         "url": "https://music.163.com/#/song?id=114691"
       },
       {
+        "id": 3327187217,
+        "name": "不在乎",
+        "artists": "icyball 冰球乐团",
+        "cover": "https://p2.music.126.net/Y6yw-TeB6v7yio7uEHb-LA==/109951172410818053.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=3327187217"
+      },
+      {
         "id": 2694566992,
         "name": "小城女",
         "artists": "黄建威",
         "cover": "https://p2.music.126.net/Ix0SJa4TaOhIC7RzdOXyYQ==/109951171069034849.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=2694566992"
-      },
-      {
-        "id": 1913262091,
-        "name": "留香",
-        "artists": "许嵩",
-        "cover": "https://p2.music.126.net/s7ya6briWXZ8uTBcsac2yA==/109951170065117631.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=1913262091"
+        "url": "https://music.163.com/#/song?id=2694566992"
       }
     ],
-    "updatedAt": "2026-10-18T15:55:15.617Z",
+    "updatedAt": "2026-10-18T20:49:39.397Z",
     "status": "public-profile"
   }
 }
