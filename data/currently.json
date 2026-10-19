@@ -5,7 +5,7 @@
         "id": 2642296436,
         "name": "十里亭",
         "artists": "黄建威",
-        "cover": "https://p2.music.126.net/5g8mFArQQiaCGMPbnVwezg==/109951172451800901.jpg",
+        "cover": "https://p1.music.126.net/5g8mFArQQiaCGMPbnVwezg==/109951172451800901.jpg",
         "playCount": 0,
         "weeklyRank": 1,
         "url": "https://music.163.com/#/song?id=2642296436"
@@ -14,7 +14,7 @@
         "id": 108886,
         "name": "一千年以后",
         "artists": "林俊杰",
-        "cover": "https://p2.music.126.net/lcsVW2rDqdZ9DEZo5CU4Cw==/109951171891432947.jpg",
+        "cover": "https://p1.music.126.net/lcsVW2rDqdZ9DEZo5CU4Cw==/109951171891432947.jpg",
         "playCount": 0,
         "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=108886"
@@ -23,7 +23,7 @@
         "id": 108254,
         "name": "一眼万年",
         "artists": "林俊杰",
-        "cover": "https://p2.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
+        "cover": "https://p1.music.126.net/LI3duoHIZyyLawRJLY51kA==/109951172024569374.jpg",
         "playCount": 0,
         "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=108254"
@@ -32,7 +32,7 @@
         "id": 254102,
         "name": "情歌",
         "artists": "梁静茹",
-        "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
+        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
         "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=254102"
@@ -41,7 +41,7 @@
         "id": 160324,
         "name": "很自己",
         "artists": "伍家辉",
-        "cover": "https://p2.music.126.net/DittWbu_SEqxqiOwjoFY9g==/109951172522199561.jpg",
+        "cover": "https://p1.music.126.net/DittWbu_SEqxqiOwjoFY9g==/109951172522199561.jpg",
         "playCount": 0,
         "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=160324"
@@ -50,49 +50,49 @@
         "id": 145310,
         "name": "迷人岛",
         "artists": "孙楠",
-        "cover": "https://p2.music.126.net/xP0gO2UwYu4cUmpUm2lKsQ==/109951172692392925.jpg",
+        "cover": "https://p1.music.126.net/xP0gO2UwYu4cUmpUm2lKsQ==/109951172692392925.jpg",
         "playCount": 0,
         "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=145310"
       },
       {
-        "id": 1852642778,
-        "name": "Rising Sun",
-        "artists": "Ric Hassani",
-        "cover": "https://p2.music.126.net/cypG265iHMPt2ASdn_wVlA==/109951169023343077.jpg",
-        "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=1852642778"
-      },
-      {
         "id": 114691,
         "name": "不是对手",
         "artists": "李圣杰",
-        "cover": "https://p2.music.126.net/YKh3UA3pEd4r5V6n8immXQ==/109951170915074096.jpg",
+        "cover": "https://p1.music.126.net/YKh3UA3pEd4r5V6n8immXQ==/109951170915074096.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=114691"
       },
       {
         "id": 3327187217,
         "name": "不在乎",
         "artists": "icyball 冰球乐团",
-        "cover": "https://p2.music.126.net/Y6yw-TeB6v7yio7uEHb-LA==/109951172410818053.jpg",
+        "cover": "https://p1.music.126.net/Y6yw-TeB6v7yio7uEHb-LA==/109951172410818053.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=3327187217"
       },
       {
         "id": 2694566992,
         "name": "小城女",
         "artists": "黄建威",
-        "cover": "https://p2.music.126.net/Ix0SJa4TaOhIC7RzdOXyYQ==/109951171069034849.jpg",
+        "cover": "https://p1.music.126.net/Ix0SJa4TaOhIC7RzdOXyYQ==/109951171069034849.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=2694566992"
+      },
+      {
+        "id": 2602027130,
+        "name": "Extraterrestrial Heart",
+        "artists": "Brian Cheng",
+        "cover": "https://p1.music.126.net/flExLloaRRgILi3Knycq-Q==/109951169721589296.jpg",
         "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=2694566992"
+        "url": "https://music.163.com/#/song?id=2602027130"
       }
     ],
-    "updatedAt": "2026-10-18T20:49:39.397Z",
+    "updatedAt": "2026-10-19T04:48:06.014Z",
     "status": "public-profile"
   }
 }
