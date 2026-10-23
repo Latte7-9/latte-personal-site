@@ -20,22 +20,22 @@
         "url": "https://music.163.com/#/song?id=160324"
       },
       {
-        "id": 108886,
-        "name": "一千年以后",
-        "artists": "林俊杰",
-        "cover": "https://p2.music.126.net/lcsVW2rDqdZ9DEZo5CU4Cw==/109951171891432947.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=108886"
-      },
-      {
         "id": 82463,
         "name": "手拖手",
         "artists": "方大同",
         "cover": "https://p2.music.126.net/2UjnKgcM1IXxYxhHEXVa4Q==/109951168870794250.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=82463"
+      },
+      {
+        "id": 108886,
+        "name": "一千年以后",
+        "artists": "林俊杰",
+        "cover": "https://p2.music.126.net/lcsVW2rDqdZ9DEZo5CU4Cw==/109951171891432947.jpg",
+        "playCount": 0,
+        "weeklyRank": 4,
+        "url": "https://music.163.com/#/song?id=108886"
       },
       {
         "id": 432509281,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=277789"
       }
     ],
-    "updatedAt": "2026-10-23T04:58:03.654Z",
+    "updatedAt": "2026-10-23T11:45:13.195Z",
     "status": "public-profile"
   }
 }
