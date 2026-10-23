@@ -11,22 +11,22 @@
         "url": "https://music.163.com/#/song?id=286959"
       },
       {
-        "id": 160324,
-        "name": "很自己",
-        "artists": "伍家辉",
-        "cover": "https://p2.music.126.net/DittWbu_SEqxqiOwjoFY9g==/109951172522199561.jpg",
-        "playCount": 0,
-        "weeklyRank": 2,
-        "url": "https://music.163.com/#/song?id=160324"
-      },
-      {
         "id": 82463,
         "name": "手拖手",
         "artists": "方大同",
         "cover": "https://p2.music.126.net/2UjnKgcM1IXxYxhHEXVa4Q==/109951168870794250.jpg",
         "playCount": 0,
-        "weeklyRank": 3,
+        "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=82463"
+      },
+      {
+        "id": 160324,
+        "name": "很自己",
+        "artists": "伍家辉",
+        "cover": "https://p2.music.126.net/DittWbu_SEqxqiOwjoFY9g==/109951172522199561.jpg",
+        "playCount": 0,
+        "weeklyRank": 3,
+        "url": "https://music.163.com/#/song?id=160324"
       },
       {
         "id": 108886,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=277789"
       }
     ],
-    "updatedAt": "2026-10-23T11:45:13.195Z",
+    "updatedAt": "2026-10-23T17:13:05.647Z",
     "status": "public-profile"
   }
 }
