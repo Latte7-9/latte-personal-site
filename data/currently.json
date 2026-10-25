@@ -65,12 +65,21 @@
         "url": "https://music.163.com/#/song?id=108886"
       },
       {
+        "id": 81979,
+        "name": "因为你",
+        "artists": "方大同",
+        "cover": "https://p1.music.126.net/i9LpqkYOIhaYFYsIBTh8RA==/109951168870800536.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=81979"
+      },
+      {
         "id": 316108,
         "name": "匿名的好友",
         "artists": "杨丞琳",
         "cover": "https://p1.music.126.net/Qt6sfLxRCscFZVXhbQ4bfg==/109951172020385959.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=316108"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "丁世光",
         "cover": "https://p1.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=2659584557"
-      },
-      {
-        "id": 114691,
-        "name": "不是对手",
-        "artists": "李圣杰",
-        "cover": "https://p1.music.126.net/YKh3UA3pEd4r5V6n8immXQ==/109951170915074096.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=114691"
+        "url": "https://music.163.com/#/song?id=2659584557"
       }
     ],
-    "updatedAt": "2026-10-25T04:49:22.594Z",
+    "updatedAt": "2026-10-25T11:38:53.142Z",
     "status": "public-profile"
   }
 }
