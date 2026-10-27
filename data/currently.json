@@ -38,40 +38,22 @@
         "url": "https://music.163.com/#/song?id=160324"
       },
       {
-        "id": 432509281,
-        "name": "味道",
-        "artists": "方大同 / Zion.T / Crush",
-        "cover": "https://p2.music.126.net/Rfh11_1K8Fmt7Pqzc2gaYg==/109951171530576215.jpg",
-        "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=432509281"
-      },
-      {
-        "id": 150433,
-        "name": "Susan 说",
-        "artists": "陶喆",
-        "cover": "https://p2.music.126.net/ZR6QuByWgej9-aRhZjLqHw==/109951163803188844.jpg",
-        "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=150433"
-      },
-      {
         "id": 81979,
         "name": "因为你",
         "artists": "方大同",
         "cover": "https://p2.music.126.net/i9LpqkYOIhaYFYsIBTh8RA==/109951168870800536.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=81979"
       },
       {
-        "id": 2659584557,
-        "name": "无名花香",
-        "artists": "丁世光",
-        "cover": "https://p2.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
+        "id": 432509281,
+        "name": "味道",
+        "artists": "方大同 / Zion.T / Crush",
+        "cover": "https://p2.music.126.net/Rfh11_1K8Fmt7Pqzc2gaYg==/109951171530576215.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=2659584557"
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=432509281"
       },
       {
         "id": 254180,
@@ -79,8 +61,26 @@
         "artists": "梁静茹",
         "cover": "https://p2.music.126.net/F9sGH5Cw0u-8S7J0BJG0Xw==/109951172232902168.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=254180"
+      },
+      {
+        "id": 150433,
+        "name": "Susan 说",
+        "artists": "陶喆",
+        "cover": "https://p2.music.126.net/ZR6QuByWgej9-aRhZjLqHw==/109951163803188844.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=150433"
+      },
+      {
+        "id": 2659584557,
+        "name": "无名花香",
+        "artists": "丁世光",
+        "cover": "https://p2.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=2659584557"
       },
       {
         "id": 254102,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=254102"
       }
     ],
-    "updatedAt": "2026-10-27T12:19:33.974Z",
+    "updatedAt": "2026-10-27T22:19:34.341Z",
     "status": "public-profile"
   }
 }
