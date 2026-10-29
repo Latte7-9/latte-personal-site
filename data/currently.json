@@ -74,25 +74,25 @@
         "url": "https://music.163.com/#/song?id=150433"
       },
       {
+        "id": 254102,
+        "name": "情歌",
+        "artists": "梁静茹",
+        "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=254102"
+      },
+      {
         "id": 2659584557,
         "name": "无名花香",
         "artists": "丁世光",
         "cover": "https://p1.music.126.net/eEP0i0UYMuP7bYpX_tORkw==/109951170302919617.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=2659584557"
-      },
-      {
-        "id": 25794014,
-        "name": "友人说",
-        "artists": "林俊杰 / 张怀秋",
-        "cover": "https://p1.music.126.net/D_hiKMwrdQlqD36LoKLO2w==/109951163187408030.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=25794014"
+        "url": "https://music.163.com/#/song?id=2659584557"
       }
     ],
-    "updatedAt": "2026-10-28T22:39:21.126Z",
+    "updatedAt": "2026-10-29T05:53:54.855Z",
     "status": "public-profile"
   }
 }
