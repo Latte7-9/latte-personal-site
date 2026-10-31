@@ -2,22 +2,22 @@
   "netease": {
     "songs": [
       {
-        "id": 286959,
-        "name": "当冬夜渐暖",
-        "artists": "孙燕姿",
-        "cover": "https://p2.music.126.net/I9O-KpO4bLC6LWOKYfJj4Q==/109951165992337446.jpg",
-        "playCount": 0,
-        "weeklyRank": 1,
-        "url": "https://music.163.com/#/song?id=286959"
-      },
-      {
         "id": 306651,
         "name": "惧高症",
         "artists": "徐佳莹",
         "cover": "https://p2.music.126.net/0yXDZfMmWORBqtF9sM-Ulg==/109951163187412003.jpg",
         "playCount": 0,
-        "weeklyRank": 2,
+        "weeklyRank": 1,
         "url": "https://music.163.com/#/song?id=306651"
+      },
+      {
+        "id": 286959,
+        "name": "当冬夜渐暖",
+        "artists": "孙燕姿",
+        "cover": "https://p2.music.126.net/I9O-KpO4bLC6LWOKYfJj4Q==/109951165992337446.jpg",
+        "playCount": 0,
+        "weeklyRank": 2,
+        "url": "https://music.163.com/#/song?id=286959"
       },
       {
         "id": 191316,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=28406197"
       }
     ],
-    "updatedAt": "2026-10-31T12:40:52.762Z",
+    "updatedAt": "2026-10-31T21:40:25.575Z",
     "status": "public-profile"
   }
 }
