@@ -47,12 +47,21 @@
         "url": "https://music.163.com/#/song?id=254102"
       },
       {
+        "id": 327721,
+        "name": "读心术",
+        "artists": "卓文萱",
+        "cover": "https://p2.music.126.net/QJJRK7Zqx231yshpLhJCyw==/109951171907028802.jpg",
+        "playCount": 0,
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=327721"
+      },
+      {
         "id": 108886,
         "name": "一千年以后",
         "artists": "林俊杰",
         "cover": "https://p2.music.126.net/lcsVW2rDqdZ9DEZo5CU4Cw==/109951171891432947.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=108886"
       },
       {
@@ -61,17 +70,8 @@
         "artists": "陈洁仪",
         "cover": "https://p2.music.126.net/IGYcLoymNSa6hpG0poSQBg==/109951167910572214.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=520459745"
-      },
-      {
-        "id": 327721,
-        "name": "读心术",
-        "artists": "卓文萱",
-        "cover": "https://p2.music.126.net/QJJRK7Zqx231yshpLhJCyw==/109951171907028802.jpg",
-        "playCount": 0,
         "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=327721"
+        "url": "https://music.163.com/#/song?id=520459745"
       },
       {
         "id": 327584,
@@ -92,7 +92,7 @@
         "url": "https://music.163.com/#/song?id=286959"
       }
     ],
-    "updatedAt": "2026-11-12T07:17:49.755Z",
+    "updatedAt": "2026-11-12T19:59:40.712Z",
     "status": "public-profile"
   }
 }
