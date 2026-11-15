@@ -20,31 +20,13 @@
         "url": "https://music.163.com/#/song?id=254100"
       },
       {
-        "id": 306651,
-        "name": "惧高症",
-        "artists": "徐佳莹",
-        "cover": "https://p1.music.126.net/0yXDZfMmWORBqtF9sM-Ulg==/109951163187412003.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=306651"
-      },
-      {
         "id": 277759,
         "name": "忽然之间",
         "artists": "莫文蔚",
         "cover": "https://p1.music.126.net/jqve9_wT7lQDXYpiOHZxHg==/109951165875935484.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=277759"
-      },
-      {
-        "id": 108886,
-        "name": "一千年以后",
-        "artists": "林俊杰",
-        "cover": "https://p1.music.126.net/lcsVW2rDqdZ9DEZo5CU4Cw==/109951171891432947.jpg",
-        "playCount": 0,
-        "weeklyRank": 5,
-        "url": "https://music.163.com/#/song?id=108886"
       },
       {
         "id": 3457799634,
@@ -52,7 +34,7 @@
         "artists": "容祖儿",
         "cover": "https://p1.music.126.net/OwhAt4JhyU4BsiWjQOajxg==/109951174236495541.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=3457799634"
       },
       {
@@ -61,26 +43,17 @@
         "artists": "David Campbell",
         "cover": "https://p1.music.126.net/9cXOKAyTAAE_-z7RhwADzA==/109951165972610542.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=34152366"
       },
       {
-        "id": 28406197,
-        "name": "爱不来 (feat. Miss Ko葛仲珊)",
-        "artists": "方大同 / 葛仲珊",
-        "cover": "https://p1.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
+        "id": 306651,
+        "name": "惧高症",
+        "artists": "徐佳莹",
+        "cover": "https://p1.music.126.net/0yXDZfMmWORBqtF9sM-Ulg==/109951163187412003.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
-        "url": "https://music.163.com/#/song?id=28406197"
-      },
-      {
-        "id": 2654774730,
-        "name": "爱久见人心",
-        "artists": "梁静茹",
-        "cover": "https://p1.music.126.net/gktCxLEQlxQZQAOFVtsmlw==/109951170239844188.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=2654774730"
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=306651"
       },
       {
         "id": 208889,
@@ -88,11 +61,38 @@
         "artists": "蔡健雅",
         "cover": "https://p1.music.126.net/5TTqb3sID_G-u2YOS2P0aA==/109951171536245206.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=208889"
+      },
+      {
+        "id": 86849,
+        "name": "爱与诚",
+        "artists": "古巨基",
+        "cover": "https://p1.music.126.net/nnLfKG7xgPszEkuGCPowOg==/109951167715296163.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=86849"
+      },
+      {
+        "id": 86369,
+        "name": "偏爱",
+        "artists": "张芸京",
+        "cover": "https://p1.music.126.net/a4KYp477snGHe3ZyjVpe1w==/109951165351505570.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=86369"
+      },
+      {
+        "id": 86357,
+        "name": "生生世世爱",
+        "artists": "吴雨霏",
+        "cover": "https://p1.music.126.net/a4KYp477snGHe3ZyjVpe1w==/109951165351505570.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=86357"
       }
     ],
-    "updatedAt": "2026-11-14T22:29:56.684Z",
+    "updatedAt": "2026-11-15T06:41:45.302Z",
     "status": "public-profile"
   }
 }
