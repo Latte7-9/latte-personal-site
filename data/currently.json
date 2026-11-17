@@ -20,21 +20,12 @@
         "url": "https://music.163.com/#/song?id=254100"
       },
       {
-        "id": 277759,
-        "name": "忽然之间",
-        "artists": "莫文蔚",
-        "cover": "https://p1.music.126.net/jqve9_wT7lQDXYpiOHZxHg==/109951165875935484.jpg",
-        "playCount": 0,
-        "weeklyRank": 3,
-        "url": "https://music.163.com/#/song?id=277759"
-      },
-      {
         "id": 3457799634,
         "name": "燃 (Live)",
         "artists": "容祖儿",
         "cover": "https://p1.music.126.net/OwhAt4JhyU4BsiWjQOajxg==/109951174236495541.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
+        "weeklyRank": 3,
         "url": "https://music.163.com/#/song?id=3457799634"
       },
       {
@@ -43,17 +34,17 @@
         "artists": "David Campbell",
         "cover": "https://p1.music.126.net/9cXOKAyTAAE_-z7RhwADzA==/109951165972610542.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=34152366"
       },
       {
-        "id": 306651,
-        "name": "惧高症",
-        "artists": "徐佳莹",
-        "cover": "https://p1.music.126.net/0yXDZfMmWORBqtF9sM-Ulg==/109951163187412003.jpg",
+        "id": 277759,
+        "name": "忽然之间",
+        "artists": "莫文蔚",
+        "cover": "https://p1.music.126.net/jqve9_wT7lQDXYpiOHZxHg==/109951165875935484.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=306651"
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=277759"
       },
       {
         "id": 208889,
@@ -61,7 +52,7 @@
         "artists": "蔡健雅",
         "cover": "https://p1.music.126.net/5TTqb3sID_G-u2YOS2P0aA==/109951171536245206.jpg",
         "playCount": 0,
-        "weeklyRank": 7,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=208889"
       },
       {
@@ -70,17 +61,8 @@
         "artists": "古巨基",
         "cover": "https://p1.music.126.net/nnLfKG7xgPszEkuGCPowOg==/109951167715296163.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=86849"
-      },
-      {
-        "id": 86369,
-        "name": "偏爱",
-        "artists": "张芸京",
-        "cover": "https://p1.music.126.net/a4KYp477snGHe3ZyjVpe1w==/109951165351505570.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=86369"
       },
       {
         "id": 86357,
@@ -88,11 +70,29 @@
         "artists": "吴雨霏",
         "cover": "https://p1.music.126.net/a4KYp477snGHe3ZyjVpe1w==/109951165351505570.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=86357"
+      },
+      {
+        "id": 82461,
+        "name": "四人游",
+        "artists": "方大同 / 薛凯琪",
+        "cover": "https://p1.music.126.net/2UjnKgcM1IXxYxhHEXVa4Q==/109951168870794250.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=82461"
+      },
+      {
+        "id": 82105,
+        "name": "玩乐",
+        "artists": "方大同",
+        "cover": "https://p1.music.126.net/weIC8au491_bgAVj52WGFQ==/109951165161505214.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=82105"
       }
     ],
-    "updatedAt": "2026-11-16T22:11:50.912Z",
+    "updatedAt": "2026-11-17T08:00:02.256Z",
     "status": "public-profile"
   }
 }
