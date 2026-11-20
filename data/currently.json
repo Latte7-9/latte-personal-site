@@ -47,13 +47,13 @@
         "url": "https://music.163.com/#/song?id=3457799634"
       },
       {
-        "id": 34152366,
-        "name": "Can't Take My Eyes off You",
-        "artists": "David Campbell",
-        "cover": "https://p1.music.126.net/9cXOKAyTAAE_-z7RhwADzA==/109951165972610542.jpg",
+        "id": 28481104,
+        "name": "娱乐天空",
+        "artists": "陈奕迅",
+        "cover": "https://p1.music.126.net/itkdsMFR8nYzaTiDdHO3tA==/109951165995320408.jpg",
         "playCount": 0,
         "weeklyRank": 6,
-        "url": "https://music.163.com/#/song?id=34152366"
+        "url": "https://music.163.com/#/song?id=28481104"
       },
       {
         "id": 28406199,
@@ -74,25 +74,25 @@
         "url": "https://music.163.com/#/song?id=1405430727"
       },
       {
-        "id": 86849,
-        "name": "爱与诚",
-        "artists": "古巨基",
-        "cover": "https://p1.music.126.net/nnLfKG7xgPszEkuGCPowOg==/109951167715296163.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=86849"
-      },
-      {
         "id": 865052867,
         "name": "Probably Up",
         "artists": "Lawrence",
         "cover": "https://p1.music.126.net/HwYWdbmukD523gPdUtV2Xg==/109951172909321131.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=865052867"
+      },
+      {
+        "id": 82461,
+        "name": "四人游",
+        "artists": "方大同 / 薛凯琪",
+        "cover": "https://p1.music.126.net/2UjnKgcM1IXxYxhHEXVa4Q==/109951168870794250.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=82461"
       }
     ],
-    "updatedAt": "2026-11-19T20:42:51.658Z",
+    "updatedAt": "2026-11-20T07:23:52.543Z",
     "status": "public-profile"
   }
 }
