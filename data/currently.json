@@ -38,12 +38,30 @@
         "url": "https://music.163.com/#/song?id=3447355117"
       },
       {
+        "id": 1996755298,
+        "name": "Never See Me Again",
+        "artists": "Goostavo",
+        "cover": "https://p2.music.126.net/zsiK_k8JbUCQSI3r5keX2A==/109951171936434402.jpg",
+        "playCount": 0,
+        "weeklyRank": 5,
+        "url": "https://music.163.com/#/song?id=1996755298"
+      },
+      {
+        "id": 28481104,
+        "name": "娱乐天空",
+        "artists": "陈奕迅",
+        "cover": "https://p2.music.126.net/itkdsMFR8nYzaTiDdHO3tA==/109951165995320408.jpg",
+        "playCount": 0,
+        "weeklyRank": 6,
+        "url": "https://music.163.com/#/song?id=28481104"
+      },
+      {
         "id": 82455,
         "name": "苏丽珍",
         "artists": "方大同",
         "cover": "https://p2.music.126.net/2UjnKgcM1IXxYxhHEXVa4Q==/109951168870794250.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=82455"
       },
       {
@@ -52,17 +70,8 @@
         "artists": "方大同",
         "cover": "https://p2.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 8,
         "url": "https://music.163.com/#/song?id=82184"
-      },
-      {
-        "id": 28481104,
-        "name": "娱乐天空",
-        "artists": "陈奕迅",
-        "cover": "https://p2.music.126.net/itkdsMFR8nYzaTiDdHO3tA==/109951165995320408.jpg",
-        "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=28481104"
       },
       {
         "id": 28406199,
@@ -70,7 +79,7 @@
         "artists": "方大同",
         "cover": "https://p2.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 9,
         "url": "https://music.163.com/#/song?id=28406199"
       },
       {
@@ -79,20 +88,11 @@
         "artists": "梁静茹",
         "cover": "https://p2.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=254102"
-      },
-      {
-        "id": 233901,
-        "name": "我不想忘记你",
-        "artists": "郭静",
-        "cover": "https://p1.music.126.net/n0-HwVUudsearIdS2MBI9Q==/109951171423745267.jpg",
-        "playCount": 0,
         "weeklyRank": 10,
-        "url": "https://music.163.com/#/song?id=233901"
+        "url": "https://music.163.com/#/song?id=254102"
       }
     ],
-    "updatedAt": "2026-11-24T09:59:22.053Z",
+    "updatedAt": "2026-11-24T22:31:00.631Z",
     "status": "public-profile"
   }
 }
