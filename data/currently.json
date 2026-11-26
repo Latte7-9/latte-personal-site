@@ -11,31 +11,22 @@
         "url": "https://music.163.com/#/song?id=254319"
       },
       {
-        "id": 2601622789,
-        "name": "去北极忘记你",
-        "artists": "Gareth.T",
-        "cover": "https://p1.music.126.net/5bZYAmUKMqiUK9K7kDi5Jg==/109951169718000739.jpg",
-        "playCount": 0,
-        "weeklyRank": 2,
-        "url": "https://music.163.com/#/song?id=2601622789"
-      },
-      {
         "id": 4874559,
         "name": "黄昏晓",
         "artists": "王心凌",
         "cover": "https://p1.music.126.net/-INJAg8vRzcPR4jaFvjYtA==/109951163250096729.jpg",
         "playCount": 0,
-        "weeklyRank": 3,
+        "weeklyRank": 2,
         "url": "https://music.163.com/#/song?id=4874559"
       },
       {
-        "id": 3447355117,
-        "name": "Lasso The Moon",
-        "artists": "Ashe",
-        "cover": "https://p1.music.126.net/ARYjDTYiczcUZisEIrgDag==/109951174101278037.jpg",
+        "id": 2601622789,
+        "name": "去北极忘记你",
+        "artists": "Gareth.T",
+        "cover": "https://p1.music.126.net/5bZYAmUKMqiUK9K7kDi5Jg==/109951169718000739.jpg",
         "playCount": 0,
-        "weeklyRank": 4,
-        "url": "https://music.163.com/#/song?id=3447355117"
+        "weeklyRank": 3,
+        "url": "https://music.163.com/#/song?id=2601622789"
       },
       {
         "id": 1996755298,
@@ -43,7 +34,7 @@
         "artists": "Goostavo",
         "cover": "https://p1.music.126.net/zsiK_k8JbUCQSI3r5keX2A==/109951171936434402.jpg",
         "playCount": 0,
-        "weeklyRank": 5,
+        "weeklyRank": 4,
         "url": "https://music.163.com/#/song?id=1996755298"
       },
       {
@@ -52,17 +43,8 @@
         "artists": "Ryan Gosling / Emma Stone",
         "cover": "https://p1.music.126.net/CrAb6Ryc5osJUM6zuoqxuw==/109951171012054073.jpg",
         "playCount": 0,
-        "weeklyRank": 6,
+        "weeklyRank": 5,
         "url": "https://music.163.com/#/song?id=441612583"
-      },
-      {
-        "id": 28481104,
-        "name": "娱乐天空",
-        "artists": "陈奕迅",
-        "cover": "https://p1.music.126.net/itkdsMFR8nYzaTiDdHO3tA==/109951165995320408.jpg",
-        "playCount": 0,
-        "weeklyRank": 7,
-        "url": "https://music.163.com/#/song?id=28481104"
       },
       {
         "id": 254102,
@@ -70,17 +52,8 @@
         "artists": "梁静茹",
         "cover": "https://p1.music.126.net/UfOKakR07SZ663uV6iJrmg==/109951172232905539.jpg",
         "playCount": 0,
-        "weeklyRank": 8,
+        "weeklyRank": 6,
         "url": "https://music.163.com/#/song?id=254102"
-      },
-      {
-        "id": 82455,
-        "name": "苏丽珍",
-        "artists": "方大同",
-        "cover": "https://p1.music.126.net/2UjnKgcM1IXxYxhHEXVa4Q==/109951168870794250.jpg",
-        "playCount": 0,
-        "weeklyRank": 9,
-        "url": "https://music.163.com/#/song?id=82455"
       },
       {
         "id": 82184,
@@ -88,11 +61,38 @@
         "artists": "方大同",
         "cover": "https://p1.music.126.net/oOTHG5woHSA3qmUUhxCy1g==/109951168870419734.jpg",
         "playCount": 0,
-        "weeklyRank": 10,
+        "weeklyRank": 7,
         "url": "https://music.163.com/#/song?id=82184"
+      },
+      {
+        "id": 3447355117,
+        "name": "Lasso The Moon",
+        "artists": "Ashe",
+        "cover": "https://p1.music.126.net/ARYjDTYiczcUZisEIrgDag==/109951174101278037.jpg",
+        "playCount": 0,
+        "weeklyRank": 8,
+        "url": "https://music.163.com/#/song?id=3447355117"
+      },
+      {
+        "id": 28481104,
+        "name": "娱乐天空",
+        "artists": "陈奕迅",
+        "cover": "https://p1.music.126.net/itkdsMFR8nYzaTiDdHO3tA==/109951165995320408.jpg",
+        "playCount": 0,
+        "weeklyRank": 9,
+        "url": "https://music.163.com/#/song?id=28481104"
+      },
+      {
+        "id": 233882,
+        "name": "下一个天亮",
+        "artists": "郭静",
+        "cover": "https://p1.music.126.net/-ccXZvLLbvLQc99YEbylUA==/109951171316025348.jpg",
+        "playCount": 0,
+        "weeklyRank": 10,
+        "url": "https://music.163.com/#/song?id=233882"
       }
     ],
-    "updatedAt": "2026-11-25T21:45:55.310Z",
+    "updatedAt": "2026-11-26T08:28:21.027Z",
     "status": "public-profile"
   }
 }
